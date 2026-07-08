@@ -11,6 +11,9 @@
   --accent: #14a05a;
   --accent-deep: #0b7c46;
   --accent-soft: rgba(20, 160, 90, 0.12);
+  --accent-2: #2d5be3;
+  --accent-2-deep: #1c3fb8;
+  --accent-2-soft: rgba(45, 91, 227, 0.12);
 }
 
 * {
@@ -43,4 +46,19 @@ body,
 /* Accent-tinted heading variant. */
 .accent-text {
   color: var(--accent);
+}
+
+/* Green→blue gradient text for key words. */
+.duo-text {
+  background: linear-gradient(105deg, var(--accent) 0%, var(--accent-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Outlined watermark type used behind the hero. */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(14, 14, 12, 0.1);
 }

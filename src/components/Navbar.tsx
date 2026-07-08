@@ -31,7 +31,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
     <nav className="sticky top-0 z-40 flex justify-between items-center px-6 md:px-10 py-5 md:py-6 backdrop-blur-md bg-bg/70 border-b border-black/[0.06]">
       <Link
         to="/"
-        className={`${textColor} font-black text-lg md:text-xl tracking-tight transition-opacity duration-200 hover:opacity-60`}
+        className={`${textColor} font-bold text-lg md:text-xl tracking-tight transition-opacity duration-200 hover:opacity-60`}
       >
         Oscar Díaz<span className="text-accent">.</span>
       </Link>
@@ -41,7 +41,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
             key={link.id}
             type="button"
             onClick={() => goTo(link.id)}
-            className={`${textColor} font-medium uppercase tracking-wider text-xs md:text-sm transition-opacity duration-200 hover:opacity-60`}
+            className={`${textColor} font-medium uppercase tracking-wider text-xs md:text-sm transition-colors duration-200 hover:text-accent2-deep`}
           >
             {link.label}
           </button>

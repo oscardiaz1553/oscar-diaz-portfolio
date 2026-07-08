@@ -6,31 +6,44 @@ import {
   useSpring,
   useMotionValue,
 } from 'framer-motion';
+import type { MotionValue } from 'framer-motion';
 import { MousePointer2, Sparkles, PenTool } from 'lucide-react';
+
+interface HeroArtifactProps {
+  /**
+   * Scroll progress (0→1) driving the scene. Must be passed when the artifact
+   * lives inside a sticky/pinned container — its own scroll tracking would
+   * freeze there. Falls back to tracking itself when omitted.
+   */
+  progress?: MotionValue<number>;
+}
 
 /**
  * Abstract, interactive "design artifact" for the hero.
- * - Reacts to page scroll: the orb grows, the stacked artboards fan open and
- *   the whole composition rotates as you scroll away from the hero.
+ * - Reacts to page scroll: the orbs grow, the stacked artboards fan open and
+ *   the whole composition rotates as the hero scene plays out.
  * - Reacts to the pointer: layers shift at different depths (parallax).
  * - Never fully still: rings and cards keep a gentle idle motion.
  */
-export default function HeroArtifact() {
+export default function HeroArtifact({ progress }: HeroArtifactProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  // Scroll-driven progress across the hero.
+  // Fallback scroll tracking for standalone usage.
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
-  const p = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
+  const own = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
+  const p = progress ?? own;
 
-  const orbScale = useTransform(p, [0, 1], [1, 1.55]);
-  const orbRotate = useTransform(p, [0, 1], [0, 90]);
-  const groupRotate = useTransform(p, [0, 1], [0, -18]);
+  const orbScale = useTransform(p, [0, 1], [1, 1.4]);
+  const orbRotate = useTransform(p, [0, 1], [0, 80]);
+  const orbBlueScale = useTransform(p, [0, 1], [1, 1.7]);
+  const orbBlueShift = useTransform(p, [0, 1], [0, 70]);
+  const groupRotate = useTransform(p, [0, 1], [0, -22]);
   const fan = useTransform(p, [0, 1], [0, 1]); // 0 stacked → 1 fanned
-  const dotShift = useTransform(p, [0, 1], [0, -120]);
-  const dotShift2 = useTransform(p, [0, 1], [0, 90]);
+  const dotShift = useTransform(p, [0, 1], [0, -140]);
+  const dotShift2 = useTransform(p, [0, 1], [0, 110]);
 
   // Pointer parallax.
   const px = useMotionValue(0);
@@ -40,10 +53,8 @@ export default function HeroArtifact() {
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      const nx = e.clientX / window.innerWidth - 0.5;
-      const ny = e.clientY / window.innerHeight - 0.5;
-      px.set(nx);
-      py.set(ny);
+      px.set(e.clientX / window.innerWidth - 0.5);
+      py.set(e.clientY / window.innerHeight - 0.5);
     };
     window.addEventListener('mousemove', onMove);
     return () => window.removeEventListener('mousemove', onMove);
@@ -61,18 +72,33 @@ export default function HeroArtifact() {
   const dotMoveB = move(-50);
 
   // Fanned card transforms.
-  const card1Rot = useTransform(fan, [0, 1], [-10, -30]);
-  const card1X = useTransform(fan, [0, 1], [0, -60]);
-  const card2Rot = useTransform(fan, [0, 1], [4, 26]);
-  const card2X = useTransform(fan, [0, 1], [0, 64]);
-  const card3Rot = useTransform(fan, [0, 1], [-2, 2]);
+  const card1Rot = useTransform(fan, [0, 1], [-10, -34]);
+  const card1X = useTransform(fan, [0, 1], [0, -85]);
+  const card2Rot = useTransform(fan, [0, 1], [4, 30]);
+  const card2X = useTransform(fan, [0, 1], [0, 90]);
+  const card3Rot = useTransform(fan, [0, 1], [-2, 3]);
+  const card3Y = useTransform(fan, [0, 1], [0, 24]);
 
   return (
     <div
       ref={ref}
       className="relative w-full aspect-square max-w-[560px] mx-auto select-none"
     >
-      {/* Gradient orb */}
+      {/* Blue companion orb — peeks from behind, grows faster for depth */}
+      <motion.div
+        className="absolute inset-[16%] rounded-full blur-[10px]"
+        style={{
+          scale: orbBlueScale,
+          x: orbBlueShift,
+          y: orbBlueShift,
+          background:
+            'radial-gradient(55% 55% at 40% 35%, #6d8ef5 0%, #2d5be3 50%, #1c3fb8 100%)',
+          boxShadow: '0 40px 120px -20px rgba(45,91,227,0.45)',
+        }}
+        aria-hidden
+      />
+
+      {/* Green gradient orb */}
       <motion.div
         className="absolute inset-[8%] rounded-full blur-[6px]"
         style={{
@@ -137,7 +163,7 @@ export default function HeroArtifact() {
             <div className="h-2.5 w-1/2 rounded-full bg-black/10" />
             <div className="mt-3 h-2 w-3/4 rounded-full bg-black/5" />
             <div className="mt-2 h-2 w-2/3 rounded-full bg-black/5" />
-            <div className="mt-4 h-16 rounded-xl bg-[#14a05a]/10" />
+            <div className="mt-4 h-16 rounded-xl bg-gradient-to-br from-[#14a05a]/15 to-[#2d5be3]/15" />
           </div>
         </motion.div>
 
@@ -150,12 +176,12 @@ export default function HeroArtifact() {
         >
           <div className="p-4">
             <div className="flex items-center gap-2">
-              <div className="h-6 w-6 rounded-lg bg-[#14a05a]" />
+              <div className="h-6 w-6 rounded-lg bg-[#2d5be3]" />
               <div className="h-2.5 w-1/2 rounded-full bg-black/10" />
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2">
               <div className="h-10 rounded-lg bg-black/5" />
-              <div className="h-10 rounded-lg bg-black/5" />
+              <div className="h-10 rounded-lg bg-[#2d5be3]/15" />
               <div className="h-10 rounded-lg bg-[#14a05a]/15" />
             </div>
             <div className="mt-3 h-2 w-3/4 rounded-full bg-black/5" />
@@ -165,9 +191,9 @@ export default function HeroArtifact() {
         {/* Front card */}
         <motion.div
           className="absolute w-[46%] h-[54%] rounded-3xl bg-white border border-black/10 shadow-2xl overflow-hidden"
-          style={{ rotate: card3Rot }}
+          style={{ rotate: card3Rot, y: card3Y }}
         >
-          <div className="h-8 bg-[#14a05a] flex items-center px-3 gap-1.5">
+          <div className="h-8 bg-gradient-to-r from-[#14a05a] to-[#2d5be3] flex items-center px-3 gap-1.5">
             <span className="h-2 w-2 rounded-full bg-white/70" />
             <span className="h-2 w-2 rounded-full bg-white/40" />
             <span className="h-2 w-2 rounded-full bg-white/40" />
@@ -177,7 +203,7 @@ export default function HeroArtifact() {
             <div className="mt-3 h-2 w-full rounded-full bg-black/5" />
             <div className="mt-2 h-2 w-4/5 rounded-full bg-black/5" />
             <motion.div
-              className="mt-4 h-9 w-28 rounded-full bg-[#0e0e0c]"
+              className="mt-4 h-9 w-28 rounded-full bg-[#2d5be3]"
               animate={{ opacity: [0.85, 1, 0.85] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
@@ -195,7 +221,7 @@ export default function HeroArtifact() {
       </motion.div>
 
       <motion.div
-        className="absolute right-0 top-[8%] h-11 w-11 rounded-full bg-[#0e0e0c] shadow-lg flex items-center justify-center"
+        className="absolute right-0 top-[8%] h-11 w-11 rounded-full bg-[#2d5be3] shadow-lg shadow-[#2d5be3]/30 flex items-center justify-center"
         style={{ y: dotShift2, x: dotMoveB.x }}
         aria-hidden
       >
@@ -212,7 +238,7 @@ export default function HeroArtifact() {
 
       {/* Small orbiting dot */}
       <motion.span
-        className="absolute left-[10%] bottom-[20%] h-3 w-3 rounded-full bg-[#0e0e0c]"
+        className="absolute left-[10%] bottom-[20%] h-3 w-3 rounded-full bg-[#2d5be3]"
         style={{ y: dotShift2 }}
         animate={{ scale: [1, 1.6, 1] }}
         transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}

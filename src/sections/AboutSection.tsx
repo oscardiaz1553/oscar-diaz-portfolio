@@ -22,7 +22,7 @@ export default function AboutSection() {
       />
       <motion.div
         className="absolute bottom-[12%] right-[8%] h-32 w-32 md:h-52 md:w-52 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(14,14,12,0.06)' }}
+        style={{ background: 'rgba(45,91,227,0.14)' }}
         animate={{ y: [0, 24, 0], x: [0, -18, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
@@ -51,13 +51,19 @@ export default function AboutSection() {
         transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
+      <motion.div
+        className="absolute top-[24%] left-[18%] h-6 w-6 rounded-full bg-accent2/70 pointer-events-none"
+        animate={{ y: [0, 18, 0], x: [0, 10, 0] }}
+        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden
+      />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-12 sm:gap-16 md:gap-20">
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-14 text-center">
           <FadeIn
             as="p"
-            className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
+            className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
           >
             Acerca de mí
           </FadeIn>
@@ -65,10 +71,10 @@ export default function AboutSection() {
             as="h2"
             delay={0.05}
             y={40}
-            className="hero-heading font-black leading-[0.95] tracking-tight text-center"
+            className="hero-heading font-bold leading-[0.95] tracking-tight text-center"
             style={{ fontSize: 'clamp(2.5rem, 9vw, 110px)' }}
           >
-            Diseño con propósito
+            Diseño con <span className="duo-text">propósito</span>
           </FadeIn>
 
           <AnimatedText

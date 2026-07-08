@@ -35,13 +35,13 @@ function ProjectCard({
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
             <span
-              className="font-black leading-none text-black/10"
+              className="font-bold leading-none text-black/10"
               style={{ fontSize: 'clamp(2.5rem, 8vw, 110px)' }}
             >
               {number}
             </span>
             <div className="flex flex-col gap-1">
-              <span className="text-accent-deep font-medium uppercase tracking-widest text-xs sm:text-sm">
+              <span className="text-accent2-deep font-medium uppercase tracking-widest text-xs sm:text-sm">
                 {project.tag}
               </span>
               <h3
@@ -110,11 +110,11 @@ export default function ProjectsSection() {
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-6xl mx-auto mb-14 sm:mb-16">
-        <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+        <p className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
           Trabajos seleccionados
         </p>
         <h2
-          className="hero-heading font-black tracking-tight leading-[0.95] mt-3"
+          className="hero-heading font-bold tracking-tight leading-[0.95] mt-3"
           style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}
         >
           Proyectos

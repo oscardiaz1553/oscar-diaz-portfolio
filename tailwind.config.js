@@ -12,6 +12,8 @@ export default {
         ink: '#0E0E0C',
         accent: '#14A05A',
         'accent-deep': '#0B7C46',
+        accent2: '#2D5BE3',
+        'accent2-deep': '#1C3FB8',
       },
     },
   },

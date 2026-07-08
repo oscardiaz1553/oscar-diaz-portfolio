@@ -13,19 +13,19 @@ export default function Footer() {
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-6xl mx-auto">
-        <FadeIn as="p" className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+        <FadeIn as="p" className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
           Contacto
         </FadeIn>
         <FadeIn
           as="h2"
           delay={0.05}
           y={40}
-          className="hero-heading font-black leading-[0.95] tracking-tight mt-4"
+          className="hero-heading font-bold leading-[0.95] tracking-tight mt-4"
           style={{ fontSize: 'clamp(2.25rem, 7vw, 6rem)' }}
         >
           Te gustaría que
           <br />
-          trabajáramos juntos?
+          trabajáramos <span className="duo-text">juntos?</span>
         </FadeIn>
 
         <FadeIn delay={0.15} y={20}>
@@ -43,14 +43,14 @@ export default function Footer() {
 
         <FadeIn delay={0.25} y={20}>
           <div className="mt-16 sm:mt-20 md:mt-24 pt-6 border-t border-black/10 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-ink font-black tracking-tight">
+            <p className="text-ink font-bold tracking-tight">
               Oscar Díaz<span className="text-accent">.</span>
             </p>
             <div className="flex items-center gap-6 uppercase tracking-widest text-xs sm:text-sm font-medium" style={{ color: 'var(--muted)' }}>
-              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
+              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent2 transition-colors duration-200">
                 LinkedIn
               </a>
-              <a href={BEHANCE} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
+              <a href={BEHANCE} target="_blank" rel="noreferrer" className="hover:text-accent2 transition-colors duration-200">
                 Behance
               </a>
               <a href={`mailto:${EMAIL}`} className="hover:text-accent transition-colors duration-200">

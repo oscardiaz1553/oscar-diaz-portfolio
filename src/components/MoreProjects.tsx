@@ -18,7 +18,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
   return (
     <section className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28">
       <div className="max-w-6xl mx-auto">
-        <FadeIn as="h2" y={30} className="text-ink font-black tracking-tight mb-12 sm:mb-16" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
+        <FadeIn as="h2" y={30} className="text-ink font-bold tracking-tight mb-12 sm:mb-16" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
           Mira más proyectos
         </FadeIn>
 
@@ -45,7 +45,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
                       {project.tag}
                     </p>
                   </div>
-                  <ArrowUpRight className="h-5 w-5 mt-1 text-ink transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-5 w-5 mt-1 text-ink transition-all duration-200 group-hover:text-accent2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </Link>
             </FadeIn>

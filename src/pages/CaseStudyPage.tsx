@@ -20,7 +20,7 @@ function TextBlock({
         <FadeIn
           as="h2"
           y={30}
-          className="text-ink font-black tracking-tight leading-tight mb-6"
+          className="text-ink font-bold tracking-tight leading-tight mb-6"
           style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)' }}
         >
           {section.title}
@@ -56,13 +56,13 @@ export default function CaseStudyPage() {
       <header className="px-5 sm:px-8 md:px-10 pt-14 sm:pt-16 md:pt-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <FadeIn as="p" className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm mb-5">
+            <FadeIn as="p" className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm mb-5">
               {study.tag}
             </FadeIn>
             <FadeIn
               as="h1"
               y={40}
-              className="hero-heading font-black tracking-tight leading-[0.95]"
+              className="hero-heading font-bold tracking-tight leading-[0.95]"
               style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)' }}
             >
               {study.title}
@@ -94,7 +94,7 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-black/10 pt-10">
           {study.meta.map((item, i) => (
             <FadeIn key={item.label} delay={i * 0.08} y={20}>
-              <p className="text-accent-deep font-medium uppercase tracking-widest text-xs">
+              <p className="text-accent2-deep font-medium uppercase tracking-widest text-xs">
                 {item.label}
               </p>
               <p className="mt-2 text-ink font-medium text-base sm:text-lg">
@@ -118,7 +118,7 @@ export default function CaseStudyPage() {
           <div className="max-w-4xl mx-auto">
             <FadeIn as="blockquote" y={30}>
               <p
-                className="text-ink font-black text-center leading-snug tracking-tight"
+                className="text-ink font-bold text-center leading-snug tracking-tight"
                 style={{ fontSize: 'clamp(1.4rem, 3vw, 2.4rem)' }}
               >
                 {study.quote}
@@ -224,7 +224,7 @@ export default function CaseStudyPage() {
                 y={20}
                 className="rounded-2xl bg-surface border border-black/10 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.4)] p-6 text-center"
               >
-                <p className="text-accent font-black text-2xl sm:text-3xl">
+                <p className="text-accent font-bold text-2xl sm:text-3xl">
                   {metric.value}
                 </p>
                 <p className="mt-2 font-light text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
