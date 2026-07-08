@@ -19,7 +19,7 @@ const PHASES = [
   },
 ];
 
-const TOOLS = ['Claude', 'Gemini', 'ChatGPT', 'NotebookLM'];
+const TOOLS = ['Claude', 'Claude Code', 'Gemini', 'ChatGPT', 'NotebookLM'];
 
 export default function AISection() {
   return (
