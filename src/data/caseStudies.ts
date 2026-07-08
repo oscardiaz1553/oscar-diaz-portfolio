@@ -54,12 +54,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'metro-de-medellin',
     title: 'Metro de Medellín — Rediseño de Plataforma Interna',
     cardTitle: 'Metro de Medellín — Rediseño de Plataforma Interna',
-    tag: 'Case Study',
+    tag: 'Sofka Technologies',
     subtitle:
       'Rediseño de la plataforma de gestión de usuarios, permisos y movimientos del sistema de transporte público más importante de Colombia — de un sistema confuso a una herramienta centralizada implementada en producción.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Softe Technologies' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Miro' },
       { label: 'Usuarios', value: 'Administradores internos' },
     ],
@@ -104,12 +104,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'logyca',
     title: 'Logyca — Gestión de Inventario en Tiempo Real',
     cardTitle: 'Logyca — Gestión de Inventario en Tiempo Real',
-    tag: 'Case Study',
+    tag: 'Sofka Technologies',
     subtitle:
       'Diseñé el corazón de una plataforma que reemplazó procesos manuales en Excel por un sistema visual e intuitivo para dos perfiles de usuario con necesidades radicalmente distintas.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Softe Technologies' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Miro' },
       { label: 'Usuarios', value: 'Internos y externos' },
     ],
@@ -160,12 +160,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'summa-snetwork',
     title: 'SUMMA - SNetwork',
     cardTitle: 'SUMMA - SNetwork',
-    tag: 'Case Study',
+    tag: 'Sofka Technologies',
     subtitle:
       'Rediseño completo de una plataforma con más de 10 módulos, en un sistema complejo, convirtiendo cientos de pasos innecesarios a una experiencia unificada con flujos simplificados y un sistema de diseño documentado.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Softe Technologies' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Figma Make · VO · Cursor · Azure' },
       { label: 'Alcance', value: '+10 módulos rediseñados' },
     ],
@@ -211,12 +211,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'game-view',
     title: 'Game View — Ecosistema de Espacios 3D Interactivos',
     cardTitle: 'Game View — Ecosistema de Espacios 3D Interactivos',
-    tag: 'Case Study',
+    tag: 'Sofka Technologies',
     subtitle:
       'Diseñé el sistema completo de dos productos alrededor de una experiencia 3D interactiva — una herramienta de creación de espacios 3D y su app de consumo para TV y móvil. El prototipo fue clave para conseguir el funding.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Softe Technologies' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Miro · Stitch · Lovable' },
       { label: 'Impacto', value: 'Funding conseguido' },
     ],
@@ -309,12 +309,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'serfinanza',
     title: 'Serfinanza app - Rediseño',
     cardTitle: 'Serfinanza app - Rediseño',
-    tag: 'Case Study',
+    tag: 'Sofka Technologies',
     subtitle:
       'Rediseño de la app de Serfinanza enfocado en claridad, jerarquía y una experiencia financiera más simple para el usuario.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Sector', value: 'Fintech' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma' },
       { label: 'Plataforma', value: 'Mobile app' },
     ],
@@ -345,12 +345,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'sura-mexico',
     title: 'Sura México - Cotizadores',
     cardTitle: 'Sura México - Cotizadores',
-    tag: 'Case Study',
+    tag: 'Sofka Technologies',
     subtitle:
       'Diseño desde cero de una plataforma enterprise que digitalizó completamente un proceso 100% manual, conectando 5 tipos de usuario en un solo flujo.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Sura México' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma' },
       { label: 'Usuarios', value: '5 tipos de usuario' },
     ],
