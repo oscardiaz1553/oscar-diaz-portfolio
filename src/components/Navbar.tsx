@@ -41,7 +41,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
             key={link.id}
             type="button"
             onClick={() => goTo(link.id)}
-            className={`${textColor} font-medium uppercase tracking-wider text-xs md:text-sm transition-colors duration-200 hover:text-accent2-deep`}
+            className={`${textColor} font-medium uppercase tracking-wider text-xs md:text-sm transition-colors duration-200 hover:text-accent-deep`}
           >
             {link.label}
           </button>

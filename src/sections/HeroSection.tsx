@@ -44,7 +44,7 @@ export default function HeroSection() {
           style={{
             scale: blobGreenScale,
             background:
-              'radial-gradient(circle at 40% 40%, rgba(20,160,90,0.22), rgba(20,160,90,0) 70%)',
+              'radial-gradient(circle at 40% 40%, rgba(45,91,227,0.22), rgba(45,91,227,0) 70%)',
           }}
         />
         <motion.div
@@ -86,7 +86,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease }}
                 className="inline-flex items-center gap-2 font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
-                style={{ color: 'var(--accent-2-deep)' }}
+                style={{ color: 'var(--accent-deep)' }}
               >
                 <span className="h-2 w-2 rounded-full bg-accent" />
                 UX/UI Designer
@@ -128,7 +128,7 @@ export default function HeroSection() {
                       .getElementById('trabajos')
                       ?.scrollIntoView({ behavior: 'smooth' })
                   }
-                  className="rounded-full border border-black/15 px-7 py-3 sm:py-3.5 font-medium uppercase tracking-widest text-sm hover:border-accent2 hover:text-accent2-deep transition-colors duration-200"
+                  className="rounded-full border border-black/15 px-7 py-3 sm:py-3.5 font-medium uppercase tracking-widest text-sm hover:border-accent hover:text-accent-deep transition-colors duration-200"
                 >
                   Ver trabajos
                 </button>

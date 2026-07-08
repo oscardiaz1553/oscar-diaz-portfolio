@@ -8,12 +8,9 @@
   --ink: #0e0e0c;
   --muted: rgba(14, 14, 12, 0.58);
   --line: rgba(14, 14, 12, 0.12);
-  --accent: #14a05a;
-  --accent-deep: #0b7c46;
-  --accent-soft: rgba(20, 160, 90, 0.12);
-  --accent-2: #2d5be3;
-  --accent-2-deep: #1c3fb8;
-  --accent-2-soft: rgba(45, 91, 227, 0.12);
+  --accent: #2d5be3;
+  --accent-deep: #1c3fb8;
+  --accent-soft: rgba(45, 91, 227, 0.12);
 }
 
 * {
@@ -34,13 +31,9 @@ body,
   font-family: 'Kanit', sans-serif;
 }
 
-/* Big display headings on the light theme: a subtle dark gradient for depth. */
+/* Display headings: solid ink, no gradients on text. */
 .hero-heading {
-  background: linear-gradient(180deg, #2b2b28 0%, #0e0e0c 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--ink);
 }
 
 /* Accent-tinted heading variant. */
@@ -48,16 +41,7 @@ body,
   color: var(--accent);
 }
 
-/* Green→blue gradient text for key words. */
-.duo-text {
-  background: linear-gradient(105deg, var(--accent) 0%, var(--accent-2) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* Outlined watermark type used behind the hero. */
+/* Outlined watermark type used behind the hero (stroke, not a gradient). */
 .outline-text {
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(14, 14, 12, 0.1);

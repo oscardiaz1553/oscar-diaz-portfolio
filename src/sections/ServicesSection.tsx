@@ -43,7 +43,7 @@ export default function ServicesSection() {
     >
       <div className="max-w-5xl mx-auto">
         <div className="mb-12 sm:mb-16">
-          <p className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+          <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
             Lo que hago
           </p>
           <h2
@@ -63,7 +63,7 @@ export default function ServicesSection() {
               className="group flex items-start gap-4 sm:gap-8 md:gap-12 py-7 sm:py-9 md:py-10 border-t border-black/10 last:border-b transition-colors duration-300 hover:bg-black/[0.02] rounded-2xl px-2 sm:px-4"
             >
               <span
-                className="font-bold leading-none text-black/15 group-hover:text-accent2 transition-colors duration-300 flex-shrink-0"
+                className="font-bold leading-none text-black/15 group-hover:text-accent transition-colors duration-300 flex-shrink-0"
                 style={{ fontSize: 'clamp(2.25rem, 8vw, 96px)' }}
               >
                 {service.number}

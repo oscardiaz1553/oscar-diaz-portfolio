@@ -41,7 +41,7 @@ function ProjectCard({
               {number}
             </span>
             <div className="flex flex-col gap-1">
-              <span className="text-accent2-deep font-medium uppercase tracking-widest text-xs sm:text-sm">
+              <span className="text-accent-deep font-medium uppercase tracking-widest text-xs sm:text-sm">
                 {project.tag}
               </span>
               <h3
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-6xl mx-auto mb-14 sm:mb-16">
-        <p className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+        <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
           Trabajos seleccionados
         </p>
         <h2

@@ -13,7 +13,7 @@ export default function Footer() {
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-6xl mx-auto">
-        <FadeIn as="p" className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+        <FadeIn as="p" className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
           Contacto
         </FadeIn>
         <FadeIn
@@ -25,7 +25,7 @@ export default function Footer() {
         >
           Te gustaría que
           <br />
-          trabajáramos <span className="duo-text">juntos?</span>
+          trabajáramos <span className="accent-text">juntos?</span>
         </FadeIn>
 
         <FadeIn delay={0.15} y={20}>
@@ -47,10 +47,10 @@ export default function Footer() {
               Oscar Díaz<span className="text-accent">.</span>
             </p>
             <div className="flex items-center gap-6 uppercase tracking-widest text-xs sm:text-sm font-medium" style={{ color: 'var(--muted)' }}>
-              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent2 transition-colors duration-200">
+              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
                 LinkedIn
               </a>
-              <a href={BEHANCE} target="_blank" rel="noreferrer" className="hover:text-accent2 transition-colors duration-200">
+              <a href={BEHANCE} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
                 Behance
               </a>
               <a href={`mailto:${EMAIL}`} className="hover:text-accent transition-colors duration-200">

@@ -15,14 +15,14 @@ export default function AboutSection() {
       {/* Decorative floating shapes */}
       <motion.div
         className="absolute top-[10%] left-[6%] h-40 w-40 md:h-64 md:w-64 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(20,160,90,0.16)' }}
+        style={{ background: 'rgba(45,91,227,0.16)' }}
         animate={{ y: [0, -30, 0], x: [0, 16, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
       <motion.div
         className="absolute bottom-[12%] right-[8%] h-32 w-32 md:h-52 md:w-52 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(45,91,227,0.14)' }}
+        style={{ background: 'rgba(14,14,12,0.06)' }}
         animate={{ y: [0, 24, 0], x: [0, -18, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
@@ -52,7 +52,7 @@ export default function AboutSection() {
         aria-hidden
       />
       <motion.div
-        className="absolute top-[24%] left-[18%] h-6 w-6 rounded-full bg-accent2/70 pointer-events-none"
+        className="absolute top-[24%] left-[18%] h-6 w-6 rounded-full bg-accent/70 pointer-events-none"
         animate={{ y: [0, 18, 0], x: [0, 10, 0] }}
         transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
@@ -63,7 +63,7 @@ export default function AboutSection() {
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-14 text-center">
           <FadeIn
             as="p"
-            className="text-accent2-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
+            className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
           >
             Acerca de mí
           </FadeIn>
@@ -74,7 +74,7 @@ export default function AboutSection() {
             className="hero-heading font-bold leading-[0.95] tracking-tight text-center"
             style={{ fontSize: 'clamp(2.5rem, 9vw, 110px)' }}
           >
-            Diseño con <span className="duo-text">propósito</span>
+            Diseño con <span className="accent-text">propósito</span>
           </FadeIn>
 
           <AnimatedText

@@ -92,8 +92,8 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
           x: orbBlueShift,
           y: orbBlueShift,
           background:
-            'radial-gradient(55% 55% at 40% 35%, #6d8ef5 0%, #2d5be3 50%, #1c3fb8 100%)',
-          boxShadow: '0 40px 120px -20px rgba(45,91,227,0.45)',
+            'radial-gradient(55% 55% at 40% 35%, #3d63e8 0%, #1c3fb8 50%, #10267a 100%)',
+          boxShadow: '0 40px 120px -20px rgba(28,63,184,0.45)',
         }}
         aria-hidden
       />
@@ -107,8 +107,8 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
           x: orbMove.x,
           y: orbMove.y,
           background:
-            'radial-gradient(60% 60% at 35% 30%, #35d089 0%, #14a05a 45%, #0b7c46 100%)',
-          boxShadow: '0 40px 120px -20px rgba(20,160,90,0.45)',
+            'radial-gradient(60% 60% at 35% 30%, #7d9bf7 0%, #2d5be3 45%, #1c3fb8 100%)',
+          boxShadow: '0 40px 120px -20px rgba(45,91,227,0.45)',
         }}
         aria-hidden
       />
@@ -163,7 +163,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
             <div className="h-2.5 w-1/2 rounded-full bg-black/10" />
             <div className="mt-3 h-2 w-3/4 rounded-full bg-black/5" />
             <div className="mt-2 h-2 w-2/3 rounded-full bg-black/5" />
-            <div className="mt-4 h-16 rounded-xl bg-gradient-to-br from-[#14a05a]/15 to-[#2d5be3]/15" />
+            <div className="mt-4 h-16 rounded-xl bg-[#2d5be3]/10" />
           </div>
         </motion.div>
 
@@ -182,7 +182,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
             <div className="mt-4 grid grid-cols-3 gap-2">
               <div className="h-10 rounded-lg bg-black/5" />
               <div className="h-10 rounded-lg bg-[#2d5be3]/15" />
-              <div className="h-10 rounded-lg bg-[#14a05a]/15" />
+              <div className="h-10 rounded-lg bg-[#2d5be3]/30" />
             </div>
             <div className="mt-3 h-2 w-3/4 rounded-full bg-black/5" />
           </div>
@@ -193,7 +193,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
           className="absolute w-[46%] h-[54%] rounded-3xl bg-white border border-black/10 shadow-2xl overflow-hidden"
           style={{ rotate: card3Rot, y: card3Y }}
         >
-          <div className="h-8 bg-gradient-to-r from-[#14a05a] to-[#2d5be3] flex items-center px-3 gap-1.5">
+          <div className="h-8 bg-[#2d5be3] flex items-center px-3 gap-1.5">
             <span className="h-2 w-2 rounded-full bg-white/70" />
             <span className="h-2 w-2 rounded-full bg-white/40" />
             <span className="h-2 w-2 rounded-full bg-white/40" />
@@ -203,7 +203,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
             <div className="mt-3 h-2 w-full rounded-full bg-black/5" />
             <div className="mt-2 h-2 w-4/5 rounded-full bg-black/5" />
             <motion.div
-              className="mt-4 h-9 w-28 rounded-full bg-[#2d5be3]"
+              className="mt-4 h-9 w-28 rounded-full bg-[#0e0e0c]"
               animate={{ opacity: [0.85, 1, 0.85] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
@@ -217,7 +217,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
         style={{ y: dotShift, x: dotMoveA.x, rotate: -8 }}
         aria-hidden
       >
-        <PenTool className="h-5 w-5 text-[#14a05a]" />
+        <PenTool className="h-5 w-5 text-[#2d5be3]" />
       </motion.div>
 
       <motion.div
@@ -229,7 +229,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
       </motion.div>
 
       <motion.div
-        className="absolute right-[14%] bottom-[6%] h-12 w-12 rounded-2xl bg-[#14a05a] shadow-lg flex items-center justify-center"
+        className="absolute right-[14%] bottom-[6%] h-12 w-12 rounded-2xl bg-[#0e0e0c] shadow-lg flex items-center justify-center"
         style={{ y: dotShift, x: dotMoveA.x, rotate: 10 }}
         aria-hidden
       >

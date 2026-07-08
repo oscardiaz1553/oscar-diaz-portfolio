@@ -45,7 +45,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
                       {project.tag}
                     </p>
                   </div>
-                  <ArrowUpRight className="h-5 w-5 mt-1 text-ink transition-all duration-200 group-hover:text-accent2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-5 w-5 mt-1 text-ink transition-all duration-200 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </Link>
             </FadeIn>
