@@ -35,7 +35,7 @@ export default function ImagePlaceholder({
 
   return (
     <div
-      className={`flex items-center justify-center border border-black/10 bg-[linear-gradient(135deg,#ECEBE4_0%,#F4F3EE_100%)] ${rounded} ${className}`}
+      className={`flex items-center justify-center border border-black/10 bg-[#ECEBE4] ${rounded} ${className}`}
       style={style}
     >
       <span className="text-black/30 text-xs sm:text-sm uppercase tracking-widest font-light px-4 text-center">

@@ -26,8 +26,8 @@ export default function HeroSection() {
   const leftOpacity = useTransform(p, [0, 0.75, 1], [1, 1, 0]);
   const artScale = useTransform(p, [0, 1], [1, 1.45]);
   const artY = useTransform(p, [0, 1], [0, -130]);
-  const blobGreenScale = useTransform(p, [0, 1], [1, 2.4]);
-  const blobBlueScale = useTransform(p, [0, 1], [1, 2.9]);
+  const blobScaleA = useTransform(p, [0, 1], [1, 2.4]);
+  const blobScaleB = useTransform(p, [0, 1], [1, 2.9]);
   const blobBlueX = useTransform(p, [0, 1], [0, -80]);
   const watermarkScale = useTransform(p, [0, 1], [1, 1.5]);
   const watermarkY = useTransform(p, [0, 1], [0, -70]);
@@ -41,20 +41,15 @@ export default function HeroSection() {
         <motion.div
           aria-hidden
           className="absolute -top-[12%] -left-[8%] h-[46vmax] w-[46vmax] rounded-full blur-3xl pointer-events-none"
-          style={{
-            scale: blobGreenScale,
-            background:
-              'radial-gradient(circle at 40% 40%, rgba(45,91,227,0.22), rgba(45,91,227,0) 70%)',
-          }}
+          style={{ scale: blobScaleA, background: 'rgba(45,91,227,0.1)' }}
         />
         <motion.div
           aria-hidden
           className="absolute -bottom-[18%] -right-[10%] h-[52vmax] w-[52vmax] rounded-full blur-3xl pointer-events-none"
           style={{
-            scale: blobBlueScale,
+            scale: blobScaleB,
             x: blobBlueX,
-            background:
-              'radial-gradient(circle at 60% 60%, rgba(45,91,227,0.2), rgba(45,91,227,0) 70%)',
+            background: 'rgba(45,91,227,0.09)',
           }}
         />
 

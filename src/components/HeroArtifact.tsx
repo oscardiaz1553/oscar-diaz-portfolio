@@ -84,41 +84,30 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
       ref={ref}
       className="relative w-full aspect-square max-w-[560px] mx-auto select-none"
     >
-      {/* Blue companion orb — peeks from behind, grows faster for depth */}
+      {/* Navy companion orb — peeks from behind, grows faster for depth */}
       <motion.div
-        className="absolute inset-[16%] rounded-full blur-[10px]"
+        className="absolute inset-[16%] rounded-full"
         style={{
           scale: orbBlueScale,
           x: orbBlueShift,
           y: orbBlueShift,
-          background:
-            'radial-gradient(55% 55% at 40% 35%, #3d63e8 0%, #1c3fb8 50%, #10267a 100%)',
+          background: '#1c3fb8',
           boxShadow: '0 40px 120px -20px rgba(28,63,184,0.45)',
         }}
         aria-hidden
       />
 
-      {/* Green gradient orb */}
+      {/* Flat cobalt orb */}
       <motion.div
-        className="absolute inset-[8%] rounded-full blur-[6px]"
+        className="absolute inset-[8%] rounded-full"
         style={{
           scale: orbScale,
           rotate: orbRotate,
           x: orbMove.x,
           y: orbMove.y,
-          background:
-            'radial-gradient(60% 60% at 35% 30%, #7d9bf7 0%, #2d5be3 45%, #1c3fb8 100%)',
+          background: '#2d5be3',
           boxShadow: '0 40px 120px -20px rgba(45,91,227,0.45)',
         }}
-        aria-hidden
-      />
-
-      {/* Soft inner highlight blob, slow idle drift */}
-      <motion.div
-        className="absolute left-[22%] top-[18%] w-[36%] h-[36%] rounded-full blur-2xl"
-        style={{ background: 'rgba(255,255,255,0.55)' }}
-        animate={{ x: [0, 24, 0], y: [0, -18, 0], opacity: [0.5, 0.8, 0.5] }}
-        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
 
