@@ -2,11 +2,12 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import ImagePlaceholder from '../components/ImagePlaceholder';
 import { CASE_STUDIES } from '../data/caseStudies';
 import type { CaseStudy } from '../data/caseStudies';
 
-const CARD_RADIUS = 'rounded-[40px] sm:rounded-[50px] md:rounded-[60px]';
+const CARD_RADIUS = 'rounded-[32px] sm:rounded-[40px] md:rounded-[48px]';
 
 function ProjectCard({
   project,
@@ -25,27 +26,27 @@ function ProjectCard({
   const number = String(index + 1).padStart(2, '0');
 
   return (
-    <div className="h-[85vh] sticky top-24 md:top-32 flex justify-center">
+    <div className="h-[85vh] sticky top-28 md:top-32 flex justify-center">
       <motion.div
-        style={{ scale, top: `${index * 28}px` }}
-        className={`relative w-full ${CARD_RADIUS} border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col`}
+        style={{ scale, top: `${index * 26}px` }}
+        className={`relative w-full ${CARD_RADIUS} bg-surface border border-black/10 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)] p-4 sm:p-6 md:p-8 flex flex-col`}
       >
         {/* Top row */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
             <span
-              className="font-black leading-none text-[#D7E2EA]"
-              style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+              className="font-black leading-none text-black/10"
+              style={{ fontSize: 'clamp(2.5rem, 8vw, 110px)' }}
             >
               {number}
             </span>
             <div className="flex flex-col gap-1">
-              <span className="text-[#D7E2EA] font-light uppercase tracking-widest text-xs sm:text-sm opacity-60">
+              <span className="text-accent-deep font-medium uppercase tracking-widest text-xs sm:text-sm">
                 {project.tag}
               </span>
               <h3
-                className="text-[#D7E2EA] font-medium uppercase leading-tight max-w-[18ch]"
-                style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2.2rem)' }}
+                className="text-ink font-medium leading-tight max-w-[20ch]"
+                style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2.1rem)' }}
               >
                 {project.cardTitle}
               </h3>
@@ -53,36 +54,40 @@ function ProjectCard({
           </div>
           <Link
             to={`/trabajos/${project.slug}`}
-            className="rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base transition-colors duration-200 hover:bg-[#D7E2EA]/10"
+            className="group inline-flex items-center gap-2 rounded-full bg-ink text-white font-medium uppercase tracking-widest px-6 py-3 text-xs sm:text-sm hover:bg-accent transition-colors duration-200"
           >
             Ver proyecto
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
 
         {/* Bottom row: image grid (placeholders for now) */}
         <Link
           to={`/trabajos/${project.slug}`}
-          className="flex gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 md:mt-8 group"
+          className="flex gap-3 sm:gap-4 md:gap-5 mt-4 sm:mt-6 md:mt-8 group"
         >
-          <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 w-[40%]">
+          <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 w-[40%]">
             <ImagePlaceholder
               src={project.carousel[0]}
               label={project.cardTitle}
-              className="w-full transition-opacity duration-300 group-hover:opacity-90"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
+              rounded="rounded-2xl sm:rounded-3xl"
+              className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
+              style={{ height: 'clamp(120px, 15vw, 210px)' }}
             />
             <ImagePlaceholder
               src={project.carousel[1]}
               label="Detalle"
-              className="w-full transition-opacity duration-300 group-hover:opacity-90"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
+              rounded="rounded-2xl sm:rounded-3xl"
+              className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
+              style={{ height: 'clamp(150px, 20vw, 300px)' }}
             />
           </div>
           <div className="w-[60%]">
             <ImagePlaceholder
               src={project.carousel[2]}
               label="Vista principal"
-              className="w-full h-full transition-opacity duration-300 group-hover:opacity-90"
+              rounded="rounded-2xl sm:rounded-3xl"
+              className="w-full h-full transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </div>
         </Link>
@@ -101,15 +106,20 @@ export default function ProjectsSection() {
   return (
     <section
       id="trabajos"
-      className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
-      style={{ background: '#0C0C0C' }}
+      className="relative px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28"
+      style={{ background: 'var(--bg)' }}
     >
-      <h2
-        className="hero-heading font-black uppercase leading-none tracking-tight text-center mb-16 sm:mb-20 md:mb-28"
-        style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
-      >
-        Trabajos
-      </h2>
+      <div className="max-w-6xl mx-auto mb-14 sm:mb-16">
+        <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+          Trabajos seleccionados
+        </p>
+        <h2
+          className="hero-heading font-black tracking-tight leading-[0.95] mt-3"
+          style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}
+        >
+          Proyectos
+        </h2>
+      </div>
 
       <div ref={container} className="max-w-6xl mx-auto">
         {CASE_STUDIES.map((project, index) => (

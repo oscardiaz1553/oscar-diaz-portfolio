@@ -2,23 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #f4f3ee;
+  --surface: #ffffff;
+  --ink: #0e0e0c;
+  --muted: rgba(14, 14, 12, 0.58);
+  --line: rgba(14, 14, 12, 0.12);
+  --accent: #14a05a;
+  --accent-deep: #0b7c46;
+  --accent-soft: rgba(20, 160, 90, 0.12);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
-  background: #0c0c0c;
+  background: var(--bg);
+  color: var(--ink);
   font-family: 'Kanit', sans-serif;
 }
 
+/* Big display headings on the light theme: a subtle dark gradient for depth. */
 .hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  background: linear-gradient(180deg, #2b2b28 0%, #0e0e0c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+/* Accent-tinted heading variant. */
+.accent-text {
+  color: var(--accent);
 }

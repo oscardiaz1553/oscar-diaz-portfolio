@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import FadeIn from './FadeIn';
 import ImagePlaceholder from './ImagePlaceholder';
 import { getCaseStudy } from '../data/caseStudies';
@@ -17,12 +18,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
   return (
     <section className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28">
       <div className="max-w-6xl mx-auto">
-        <FadeIn
-          as="h2"
-          y={30}
-          className="text-[#D7E2EA] font-medium text-center mb-12 sm:mb-16"
-          style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)' }}
-        >
+        <FadeIn as="h2" y={30} className="text-ink font-black tracking-tight mb-12 sm:mb-16" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
           Mira más proyectos
         </FadeIn>
 
@@ -30,20 +26,27 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
           {projects.map((project, i) => (
             <FadeIn key={project.slug} delay={i * 0.1} y={30}>
               <Link to={`/trabajos/${project.slug}`} className="group block">
-                <ImagePlaceholder
-                  src={project.thumb}
-                  label={project.cardTitle}
-                  alt={project.cardTitle}
-                  rounded="rounded-2xl sm:rounded-3xl"
-                  className="w-full transition-transform duration-300 group-hover:-translate-y-1"
-                  style={{ height: 'clamp(200px, 26vw, 300px)' }}
-                />
-                <h3 className="mt-5 text-[#D7E2EA] font-medium leading-tight group-hover:opacity-70 transition-opacity duration-200 text-lg sm:text-xl">
-                  {project.cardTitle}
-                </h3>
-                <p className="mt-1 text-[#D7E2EA]/50 font-light text-sm uppercase tracking-widest">
-                  {project.tag}
-                </p>
+                <div className="overflow-hidden rounded-2xl sm:rounded-3xl">
+                  <ImagePlaceholder
+                    src={project.thumb}
+                    label={project.cardTitle}
+                    alt={project.cardTitle}
+                    rounded="rounded-2xl sm:rounded-3xl"
+                    className="w-full transition-transform duration-500 group-hover:scale-[1.05]"
+                    style={{ height: 'clamp(200px, 26vw, 300px)' }}
+                  />
+                </div>
+                <div className="mt-5 flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-ink font-medium leading-tight group-hover:text-accent transition-colors duration-200 text-lg sm:text-xl">
+                      {project.cardTitle}
+                    </h3>
+                    <p className="mt-1 uppercase tracking-widest text-xs font-medium" style={{ color: 'var(--muted)' }}>
+                      {project.tag}
+                    </p>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 mt-1 text-ink transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
               </Link>
             </FadeIn>
           ))}

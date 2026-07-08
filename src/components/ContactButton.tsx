@@ -1,13 +1,13 @@
+import { motion } from 'framer-motion';
+
 interface ContactButtonProps {
   className?: string;
   label?: string;
-  /** Where to scroll on click; defaults to the contact section. */
   targetId?: string;
 }
 
 /**
- * Rounded gradient pill CTA used across the page. Scrolls to a section on
- * click (the contact footer by default).
+ * Primary CTA — accent green pill with a subtle lift on hover.
  */
 export default function ContactButton({
   className = '',
@@ -16,28 +16,19 @@ export default function ContactButton({
 }: ContactButtonProps) {
   const handleClick = () => {
     const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = 'mailto:oscardiaczs@gmail.com';
-    }
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    else window.location.href = 'mailto:oscardiaczs@gmail.com';
   };
 
   return (
-    <button
+    <motion.button
       type="button"
       onClick={handleClick}
-      className={`rounded-full text-white font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base transition-transform duration-200 hover:scale-[1.03] active:scale-95 ${className}`}
-      style={{
-        background:
-          'linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)',
-        boxShadow:
-          '0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721B1 inset',
-        outline: '2px solid #FFFFFF',
-        outlineOffset: '-3px',
-      }}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.96 }}
+      className={`rounded-full bg-accent text-white font-medium uppercase tracking-widest px-8 py-3 sm:px-9 sm:py-3.5 text-sm shadow-lg shadow-accent/25 hover:bg-accent-deep transition-colors duration-200 ${className}`}
     >
       {label}
-    </button>
+    </motion.button>
   );
 }

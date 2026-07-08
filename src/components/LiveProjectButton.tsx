@@ -1,19 +1,21 @@
 interface LiveProjectButtonProps {
   className?: string;
+  label?: string;
 }
 
 /**
- * Ghost / outline pill button used inside project cards.
+ * Ghost / outline pill button for the light theme.
  */
 export default function LiveProjectButton({
   className = '',
+  label = 'Ver proyecto',
 }: LiveProjectButtonProps) {
   return (
     <button
       type="button"
-      className={`rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base transition-colors duration-200 hover:bg-[#D7E2EA]/10 ${className}`}
+      className={`rounded-full border border-black/20 text-ink font-medium uppercase tracking-widest px-7 py-3 text-sm transition-colors duration-200 hover:bg-black/5 ${className}`}
     >
-      Live Project
+      {label}
     </button>
   );
 }

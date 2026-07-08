@@ -7,11 +7,10 @@ const LINKS: { label: string; id: string }[] = [
 ];
 
 interface NavbarProps {
-  /** On dark pages the brand/links are light; on light pages they invert. */
-  variant?: 'dark' | 'light';
+  variant?: 'light' | 'dark';
 }
 
-export default function Navbar({ variant = 'dark' }: NavbarProps) {
+export default function Navbar({ variant = 'light' }: NavbarProps) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -20,30 +19,29 @@ export default function Navbar({ variant = 'dark' }: NavbarProps) {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     } else {
       navigate('/');
-      // Wait for the home route to mount before scrolling to the section.
       window.setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
       }, 120);
     }
   };
 
-  const textColor = variant === 'dark' ? 'text-[#D7E2EA]' : 'text-[#0C0C0C]';
+  const textColor = variant === 'dark' ? 'text-white' : 'text-ink';
 
   return (
-    <nav className="relative z-30 flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8">
+    <nav className="sticky top-0 z-40 flex justify-between items-center px-6 md:px-10 py-5 md:py-6 backdrop-blur-md bg-bg/70 border-b border-black/[0.06]">
       <Link
         to="/"
-        className={`${textColor} font-black text-lg md:text-xl tracking-tight transition-opacity duration-200 hover:opacity-70`}
+        className={`${textColor} font-black text-lg md:text-xl tracking-tight transition-opacity duration-200 hover:opacity-60`}
       >
-        Oscar Díaz
+        Oscar Díaz<span className="text-accent">.</span>
       </Link>
-      <div className="flex items-center gap-6 md:gap-10">
+      <div className="flex items-center gap-5 md:gap-9">
         {LINKS.map((link) => (
           <button
             key={link.id}
             type="button"
             onClick={() => goTo(link.id)}
-            className={`${textColor} font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70`}
+            className={`${textColor} font-medium uppercase tracking-wider text-xs md:text-sm transition-opacity duration-200 hover:opacity-60`}
           >
             {link.label}
           </button>

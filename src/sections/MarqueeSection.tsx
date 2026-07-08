@@ -78,8 +78,8 @@ export default function MarqueeSection() {
   return (
     <section
       ref={sectionRef}
-      className="pt-24 sm:pt-32 md:pt-40 pb-10 flex flex-col gap-3 overflow-hidden"
-      style={{ background: '#0C0C0C' }}
+      className="pt-10 sm:pt-14 md:pt-16 pb-14 flex flex-col gap-3 overflow-hidden"
+      style={{ background: 'var(--bg)' }}
     >
       <MarqueeRow tiles={ROW_ONE} offset={offset} direction="right" />
       <MarqueeRow tiles={ROW_TWO} offset={offset} direction="left" />

@@ -1,73 +1,100 @@
-import FadeIn from '../components/FadeIn';
-import Magnet from '../components/Magnet';
-import ContactButton from '../components/ContactButton';
+import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import ContactButton from '../components/ContactButton';
+import HeroArtifact from '../components/HeroArtifact';
+
+const ease = [0.25, 0.1, 0.25, 1] as const;
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative h-screen flex flex-col"
-      style={{ overflowX: 'clip' }}
-    >
-      <FadeIn as="div" delay={0} y={-20}>
-        <Navbar variant="dark" />
-      </FadeIn>
+    <section className="relative min-h-screen flex flex-col" style={{ overflowX: 'clip' }}>
+      <Navbar variant="light" />
 
-      {/* Hero content */}
-      <div className="relative flex-1 flex flex-col justify-between px-6 md:px-10">
-        {/* Heading */}
-        <div className="overflow-hidden">
-          <FadeIn
-            as="h1"
-            delay={0.15}
-            y={40}
-            className="hero-heading font-black uppercase tracking-tight leading-[0.85] w-full text-[13.5vw] sm:text-[14.5vw] md:text-[14.5vw] lg:text-[15vw] mt-6 sm:mt-4 md:-mt-5"
+      <div className="flex-1 flex items-center px-6 md:px-10 py-10 md:py-0">
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Left: intro */}
+          <div className="order-2 lg:order-1">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease }}
+              className="inline-flex items-center gap-2 text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
+            >
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              UX/UI Designer
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08, ease }}
+              className="hero-heading font-black tracking-tight leading-[0.95] mt-4"
+              style={{ fontSize: 'clamp(2.75rem, 6vw, 5rem)' }}
+            >
+              Oscar Díaz
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, ease }}
+              className="mt-6 max-w-md font-light leading-relaxed"
+              style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 1.5vw, 1.25rem)' }}
+            >
+              Convierto sistemas complejos —plataformas internas, procesos
+              manuales y herramientas enterprise— en experiencias claras,
+              consistentes y usables que llegan a producción.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.32, ease }}
+              className="mt-9 flex flex-wrap items-center gap-4"
+            >
+              <ContactButton />
+              <button
+                type="button"
+                onClick={() =>
+                  document
+                    .getElementById('trabajos')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
+                className="rounded-full border border-black/15 px-7 py-3 sm:py-3.5 font-medium uppercase tracking-widest text-sm hover:bg-black/5 transition-colors duration-200"
+              >
+                Ver trabajos
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Right: interactive artifact */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.25, ease }}
+            className="order-1 lg:order-2"
           >
-            <span className="block whitespace-nowrap">Hola,</span>
-            <span className="block whitespace-nowrap">soy oscar</span>
-          </FadeIn>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10">
-          <FadeIn
-            as="p"
-            delay={0.35}
-            y={20}
-            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[300px]"
-            style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
-          >
-            diseñador ux/ui que convierte sistemas complejos en productos claros
-            y usables
-          </FadeIn>
-
-          <FadeIn delay={0.5} y={20}>
-            <ContactButton />
-          </FadeIn>
+            <HeroArtifact />
+          </motion.div>
         </div>
       </div>
 
-      {/* Portrait — positioning lives on this outer wrapper so it doesn't
-          clash with the transform Framer Motion applies for the fade-in. */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]">
-        <FadeIn delay={0.6} y={30}>
-          <Magnet
-            padding={150}
-            strength={3}
-            activeTransition="transform 0.3s ease-out"
-            inactiveTransition="transform 0.6s ease-in-out"
-          >
-            <ImagePlaceholder
-              label="Retrato"
-              alt="Oscar Díaz"
-              rounded="rounded-[32px]"
-              className="w-full"
-              style={{ height: 'clamp(320px, 46vw, 560px)' }}
-            />
-          </Magnet>
-        </FadeIn>
-      </div>
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        className="hidden md:flex justify-center pb-8"
+      >
+        <motion.span
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          className="text-xs uppercase tracking-[0.3em]"
+          style={{ color: 'var(--muted)' }}
+        >
+          Scroll
+        </motion.span>
+      </motion.div>
     </section>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import FadeIn from '../components/FadeIn';
 
 const SERVICES = [
@@ -37,58 +38,62 @@ export default function ServicesSection() {
   return (
     <section
       id="servicios"
-      className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative z-10"
-      style={{ background: '#FFFFFF' }}
+      className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28"
+      style={{ background: 'var(--bg)' }}
     >
-      <h2
-        className="font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
-        style={{ color: '#0C0C0C', fontSize: 'clamp(3rem, 12vw, 160px)' }}
-      >
-        Servicios
-      </h2>
-
       <div className="max-w-5xl mx-auto">
-        {SERVICES.map((service, i) => (
-          <FadeIn
-            key={service.number}
-            delay={i * 0.1}
-            y={30}
-            className="flex items-start gap-4 sm:gap-8 md:gap-12 py-8 sm:py-10 md:py-12"
-            style={{
-              borderTop:
-                i === 0 ? '1px solid rgba(12, 12, 12, 0.15)' : undefined,
-              borderBottom: '1px solid rgba(12, 12, 12, 0.15)',
-            }}
+        <div className="mb-12 sm:mb-16">
+          <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+            Lo que hago
+          </p>
+          <h2
+            className="hero-heading font-black tracking-tight leading-[0.95] mt-3"
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}
           >
-            <span
-              className="font-black leading-none flex-shrink-0"
-              style={{ color: '#0C0C0C', fontSize: 'clamp(3rem, 10vw, 140px)' }}
+            Servicios
+          </h2>
+        </div>
+
+        <div>
+          {SERVICES.map((service, i) => (
+            <FadeIn
+              key={service.number}
+              delay={i * 0.08}
+              y={24}
+              className="group flex items-start gap-4 sm:gap-8 md:gap-12 py-7 sm:py-9 md:py-10 border-t border-black/10 last:border-b transition-colors duration-300 hover:bg-black/[0.02] rounded-2xl px-2 sm:px-4"
             >
-              {service.number}
-            </span>
-            <div className="flex flex-col gap-3 pt-1 sm:pt-2 md:pt-3">
-              <h3
-                className="font-medium uppercase"
-                style={{
-                  color: '#0C0C0C',
-                  fontSize: 'clamp(1rem, 2.2vw, 2.1rem)',
-                }}
+              <span
+                className="font-black leading-none text-black/15 group-hover:text-accent transition-colors duration-300 flex-shrink-0"
+                style={{ fontSize: 'clamp(2.25rem, 8vw, 96px)' }}
               >
-                {service.name}
-              </h3>
-              <p
-                className="font-light leading-relaxed max-w-2xl"
-                style={{
-                  color: '#0C0C0C',
-                  opacity: 0.6,
-                  fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)',
-                }}
-              >
-                {service.description}
-              </p>
-            </div>
-          </FadeIn>
-        ))}
+                {service.number}
+              </span>
+              <div className="flex flex-col gap-2 pt-1 sm:pt-2">
+                <div className="flex items-center gap-3">
+                  <h3
+                    className="text-ink font-medium leading-tight"
+                    style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2rem)' }}
+                  >
+                    {service.name}
+                  </h3>
+                  <motion.span
+                    className="hidden sm:inline-block h-1.5 w-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    aria-hidden
+                  />
+                </div>
+                <p
+                  className="font-light leading-relaxed max-w-2xl"
+                  style={{
+                    color: 'var(--muted)',
+                    fontSize: 'clamp(0.9rem, 1.5vw, 1.15rem)',
+                  }}
+                >
+                  {service.description}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
