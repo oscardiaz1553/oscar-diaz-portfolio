@@ -11,12 +11,12 @@ const LEGO = `${BASE}/lego_icon-1.703bb594.png`;
 const GROUP = `${BASE}/Group_134-1.2e04f3ce.png`;
 
 const ABOUT_TEXT =
-  "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
+  'Soy diseñador ux/ui enfocado en producto. Me especializo en tomar sistemas complejos —plataformas internas, procesos manuales, herramientas enterprise— y convertirlos en experiencias claras, consistentes y usables. Disfruto trabajar cerca del negocio y del equipo de desarrollo para que el diseño llegue a producción y genere impacto real. ¡Construyamos algo increíble juntos!';
 
 export default function AboutSection() {
   return (
     <section
-      id="about"
+      id="acerca"
       className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden"
     >
       {/* Decorative corner objects */}
@@ -86,7 +86,7 @@ export default function AboutSection() {
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >
-            About me
+            Acerca de mí
           </FadeIn>
 
           <AnimatedText

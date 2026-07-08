@@ -3,40 +3,40 @@ import FadeIn from '../components/FadeIn';
 const SERVICES = [
   {
     number: '01',
-    name: '3D Modeling',
+    name: 'UX Research',
     description:
-      'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+      'Evaluaciones heurísticas, mapeo de flujos y entrevistas para entender el problema real antes de diseñar la solución.',
   },
   {
     number: '02',
-    name: 'Rendering',
+    name: 'UX Design',
     description:
-      'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+      'Arquitectura de información, flujos y wireframes que simplifican procesos complejos y reducen la fricción operativa.',
   },
   {
     number: '03',
-    name: 'Motion Design',
+    name: 'UI Design',
     description:
-      'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+      'Interfaces claras, consistentes y accesibles, con jerarquía visual cuidada y atención al detalle en cada estado.',
   },
   {
     number: '04',
-    name: 'Branding',
+    name: 'Design Systems',
     description:
-      'Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.',
+      'Sistemas de diseño documentados —tipografía, color, grid, componentes— que dan consistencia y escalan con el producto.',
   },
   {
     number: '05',
-    name: 'Web Design',
+    name: 'Prototipado',
     description:
-      'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+      'Prototipos de alta fidelidad para validar decisiones, alinear al equipo y presentar la visión a stakeholders e inversores.',
   },
 ];
 
 export default function ServicesSection() {
   return (
     <section
-      id="price"
+      id="servicios"
       className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative z-10"
       style={{ background: '#FFFFFF' }}
     >
@@ -44,7 +44,7 @@ export default function ServicesSection() {
         className="font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
         style={{ color: '#0C0C0C', fontSize: 'clamp(3rem, 12vw, 160px)' }}
       >
-        Services
+        Servicios
       </h2>
 
       <div className="max-w-5xl mx-auto">

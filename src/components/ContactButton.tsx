@@ -1,14 +1,32 @@
 interface ContactButtonProps {
   className?: string;
+  label?: string;
+  /** Where to scroll on click; defaults to the contact section. */
+  targetId?: string;
 }
 
 /**
- * Rounded gradient pill CTA used across the page.
+ * Rounded gradient pill CTA used across the page. Scrolls to a section on
+ * click (the contact footer by default).
  */
-export default function ContactButton({ className = '' }: ContactButtonProps) {
+export default function ContactButton({
+  className = '',
+  label = 'Contáctame',
+  targetId = 'contacto',
+}: ContactButtonProps) {
+  const handleClick = () => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = 'mailto:oscardiaczs@gmail.com';
+    }
+  };
+
   return (
     <button
       type="button"
+      onClick={handleClick}
       className={`rounded-full text-white font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base transition-transform duration-200 hover:scale-[1.03] active:scale-95 ${className}`}
       style={{
         background:
@@ -19,7 +37,7 @@ export default function ContactButton({ className = '' }: ContactButtonProps) {
         outlineOffset: '-3px',
       }}
     >
-      Contact Me
+      {label}
     </button>
   );
 }

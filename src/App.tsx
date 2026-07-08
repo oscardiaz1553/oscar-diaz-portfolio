@@ -1,8 +1,7 @@
-import HeroSection from './sections/HeroSection';
-import MarqueeSection from './sections/MarqueeSection';
-import AboutSection from './sections/AboutSection';
-import ServicesSection from './sections/ServicesSection';
-import ProjectsSection from './sections/ProjectsSection';
+import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import CaseStudyPage from './pages/CaseStudyPage';
 
 export default function App() {
   return (
@@ -10,11 +9,12 @@ export default function App() {
       className="min-h-screen font-kanit"
       style={{ background: '#0C0C0C', overflowX: 'clip' }}
     >
-      <HeroSection />
-      <MarqueeSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/trabajos/:slug" element={<CaseStudyPage />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </main>
   );
 }

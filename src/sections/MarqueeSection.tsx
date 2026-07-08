@@ -1,43 +1,32 @@
 import { useEffect, useRef, useState } from 'react';
+import ImagePlaceholder from '../components/ImagePlaceholder';
+import { CASE_STUDIES } from '../data/caseStudies';
 
-const MARQUEE_IMAGES = [
-  'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-  'https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif',
-  'https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
-  'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-  'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
-  'https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif',
-  'https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif',
-  'https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif',
-  'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
-  'https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif',
-  'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
-  'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-  'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
-  'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
-  'https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif',
-  'https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif',
-  'https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif',
-  'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
-  'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif',
-];
+interface Tile {
+  src?: string;
+  label: string;
+}
 
-const ROW_ONE = MARQUEE_IMAGES.slice(0, 11);
-const ROW_TWO = MARQUEE_IMAGES.slice(11);
+// Build a pool of project thumbnails to scroll. Real URLs drop in via `thumb`.
+const TILES: Tile[] = CASE_STUDIES.map((c) => ({
+  src: c.thumb,
+  label: c.cardTitle,
+}));
+
+const ROW_ONE = [...TILES, ...TILES].slice(0, Math.ceil(TILES.length * 1.5));
+const ROW_TWO = [...TILES, ...TILES].slice(Math.floor(TILES.length * 0.5));
 
 function MarqueeRow({
-  images,
+  tiles,
   offset,
   direction,
 }: {
-  images: string[];
+  tiles: Tile[];
   offset: number;
   direction: 'right' | 'left';
 }) {
-  // Triple the images for a seamless loop.
-  const tiles = [...images, ...images, ...images];
+  // Triple the tiles for a seamless loop.
+  const all = [...tiles, ...tiles, ...tiles];
   const shift = offset - 200;
   const translateX = direction === 'right' ? shift : -shift;
 
@@ -49,13 +38,14 @@ function MarqueeRow({
         willChange: 'transform',
       }}
     >
-      {tiles.map((src, i) => (
-        <img
+      {all.map((tile, i) => (
+        <ImagePlaceholder
           key={i}
-          src={src}
-          alt=""
-          loading="lazy"
-          className="rounded-2xl object-cover flex-shrink-0"
+          src={tile.src}
+          label={tile.label}
+          alt={tile.label}
+          rounded="rounded-2xl"
+          className="flex-shrink-0"
           style={{ width: '420px', height: '270px' }}
         />
       ))}
@@ -72,8 +62,7 @@ export default function MarqueeSection() {
       const node = sectionRef.current;
       if (!node) return;
       const sectionTop = node.offsetTop;
-      const next =
-        (window.scrollY - sectionTop + window.innerHeight) * 0.3;
+      const next = (window.scrollY - sectionTop + window.innerHeight) * 0.3;
       setOffset(next);
     };
 
@@ -92,8 +81,8 @@ export default function MarqueeSection() {
       className="pt-24 sm:pt-32 md:pt-40 pb-10 flex flex-col gap-3 overflow-hidden"
       style={{ background: '#0C0C0C' }}
     >
-      <MarqueeRow images={ROW_ONE} offset={offset} direction="right" />
-      <MarqueeRow images={ROW_TWO} offset={offset} direction="left" />
+      <MarqueeRow tiles={ROW_ONE} offset={offset} direction="right" />
+      <MarqueeRow tiles={ROW_TWO} offset={offset} direction="left" />
     </section>
   );
 }

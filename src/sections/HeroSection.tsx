@@ -1,11 +1,8 @@
 import FadeIn from '../components/FadeIn';
 import Magnet from '../components/Magnet';
 import ContactButton from '../components/ContactButton';
-
-const NAV_LINKS = ['About', 'Price', 'Projects', 'Contact'];
-
-const PORTRAIT_URL =
-  'https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png';
+import Navbar from '../components/Navbar';
+import ImagePlaceholder from '../components/ImagePlaceholder';
 
 export default function HeroSection() {
   return (
@@ -13,22 +10,8 @@ export default function HeroSection() {
       className="relative h-screen flex flex-col"
       style={{ overflowX: 'clip' }}
     >
-      {/* Navbar */}
-      <FadeIn
-        as="nav"
-        delay={0}
-        y={-20}
-        className="relative z-20 flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8"
-      >
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link}
-            href={`#${link.toLowerCase()}`}
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-          >
-            {link}
-          </a>
-        ))}
+      <FadeIn as="div" delay={0} y={-20}>
+        <Navbar variant="dark" />
       </FadeIn>
 
       {/* Hero content */}
@@ -39,9 +22,10 @@ export default function HeroSection() {
             as="h1"
             delay={0.15}
             y={40}
-            className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw] mt-6 sm:mt-4 md:-mt-5"
+            className="hero-heading font-black uppercase tracking-tight leading-[0.85] w-full text-[13.5vw] sm:text-[14.5vw] md:text-[14.5vw] lg:text-[15vw] mt-6 sm:mt-4 md:-mt-5"
           >
-            Hi, i&apos;m jack
+            <span className="block whitespace-nowrap">Hola,</span>
+            <span className="block whitespace-nowrap">soy oscar</span>
           </FadeIn>
         </div>
 
@@ -51,10 +35,11 @@ export default function HeroSection() {
             as="p"
             delay={0.35}
             y={20}
-            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
+            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[300px]"
             style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
           >
-            a 3d creator driven by crafting striking and unforgettable projects
+            diseñador ux/ui que convierte sistemas complejos en productos claros
+            y usables
           </FadeIn>
 
           <FadeIn delay={0.5} y={20}>
@@ -73,11 +58,12 @@ export default function HeroSection() {
             activeTransition="transform 0.3s ease-out"
             inactiveTransition="transform 0.6s ease-in-out"
           >
-            <img
-              src={PORTRAIT_URL}
-              alt="Jack portrait"
-              className="w-full h-auto select-none pointer-events-none"
-              draggable={false}
+            <ImagePlaceholder
+              label="Retrato"
+              alt="Oscar Díaz"
+              rounded="rounded-[32px]"
+              className="w-full"
+              style={{ height: 'clamp(320px, 46vw, 560px)' }}
             />
           </Magnet>
         </FadeIn>

@@ -1,32 +1,50 @@
-# Jack — 3D Creator Portfolio
+# Oscar Díaz — Portafolio UX/UI
 
-A dark-themed 3D creator portfolio landing page built with React, TypeScript,
-Tailwind CSS, Framer Motion, and Lucide React.
+Portafolio personal de Oscar Díaz (diseñador UX/UI), con una landing animada de
+tema oscuro y páginas de case study detalladas.
 
 ## Stack
 
 - **React 18** + **TypeScript**
-- **Vite** for dev/build tooling
-- **Tailwind CSS** for styling
-- **Framer Motion** for scroll and reveal animations
-- **Lucide React** for icons
+- **React Router** para la navegación entre la home y los case studies
+- **Vite** para dev/build
+- **Tailwind CSS** para estilos
+- **Framer Motion** para animaciones de scroll y reveal
+- **Lucide React** para iconos
 
-## Sections
+## Estructura
 
-1. **Hero** — magnetic portrait, gradient heading, navbar and contact CTA
-2. **Marquee** — two rows of previews that scroll horizontally with the page
-3. **About** — scroll-driven character-by-character reveal with decorative 3D props
-4. **Services** — five services on a light panel with fluid typography
-5. **Projects** — sticky-stacking cards that scale as you scroll past them
+```
+src/
+├── App.tsx                 # rutas: / (home) y /trabajos/:slug (case study)
+├── data/caseStudies.ts     # contenido de los 7 case studies (editable)
+├── pages/
+│   ├── Home.tsx
+│   └── CaseStudyPage.tsx    # plantilla data-driven de case study
+├── sections/               # Hero, Marquee, Trabajos, Acerca de mí, Servicios
+└── components/             # Navbar, Footer, MoreProjects, ImagePlaceholder,
+                            # FadeIn, Magnet, AnimatedText, botones
+```
 
-## Getting started
+## Imágenes
+
+Las imágenes se cargan mediante `ImagePlaceholder`: mientras un campo de imagen
+esté vacío se muestra un placeholder con etiqueta. Para publicar imágenes reales
+basta con rellenar los campos `heroImage`, `thumb` y `carousel` en
+`src/data/caseStudies.ts` (y el retrato del hero) — el layout se completa solo.
+
+## Comandos
 
 ```bash
 npm install
-npm run dev      # start the dev server
-npm run build    # type-check and build for production
-npm run preview  # preview the production build
+npm run dev      # servidor de desarrollo
+npm run build    # type-check + build de producción
+npm run preview  # previsualizar el build
 ```
 
-The design uses fluid `clamp()` typography and Tailwind's default breakpoints
-(`sm` 640px, `md` 768px, `lg` 1024px) so it scales from mobile to ultra-wide.
+## Deploy
+
+Es una SPA con rutas del lado del cliente. Se incluye `public/_redirects`
+(Netlify) y `vercel.json` (Vercel) para el fallback a `index.html`. En otros
+hosts estáticos, configura una regla equivalente que sirva `index.html` para
+cualquier ruta.
