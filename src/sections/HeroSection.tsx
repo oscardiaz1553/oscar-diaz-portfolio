@@ -1,5 +1,11 @@
 import { useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useReducedMotion,
+} from 'framer-motion';
 import Navbar from '../components/Navbar';
 import ContactButton from '../components/ContactButton';
 import HeroArtifact from '../components/HeroArtifact';
@@ -11,9 +17,13 @@ const ease = [0.25, 0.1, 0.25, 1] as const;
  * sticks while layers grow at different rates as you scroll ("growing
  * parallax"): color blobs expand, the watermark type scales up, the heading
  * grows and the artifact zooms toward the viewer before the pin releases.
+ *
+ * When the user prefers reduced motion the pinning and scroll parallax are
+ * dropped: the hero renders as a static, single-viewport section.
  */
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end end'],
@@ -21,19 +31,34 @@ export default function HeroSection() {
   const p = useSpring(scrollYProgress, { stiffness: 80, damping: 22 });
 
   // Growing parallax layers — each moves/scales at its own rate.
-  const headingScale = useTransform(p, [0, 1], [1, 1.22]);
-  const leftY = useTransform(p, [0, 1], [0, -90]);
-  const leftOpacity = useTransform(p, [0, 0.75, 1], [1, 1, 0]);
-  const artScale = useTransform(p, [0, 1], [1, 1.45]);
-  const artY = useTransform(p, [0, 1], [0, -130]);
-  const watermarkScale = useTransform(p, [0, 1], [1, 1.5]);
-  const watermarkY = useTransform(p, [0, 1], [0, -70]);
-  const watermarkOpacity = useTransform(p, [0, 0.55, 1], [0.55, 1, 0]);
-  const cueOpacity = useTransform(p, [0, 0.18], [1, 0]);
+  // Collapsed to identity when the user prefers reduced motion.
+  const headingScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.22]);
+  const leftY = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -90]);
+  const leftOpacity = useTransform(p, [0, 0.75, 1], reduce ? [1, 1, 1] : [1, 1, 0]);
+  const artScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.45]);
+  const artY = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -130]);
+  const watermarkScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.5]);
+  const watermarkY = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -70]);
+  const watermarkOpacity = useTransform(
+    p,
+    [0, 0.55, 1],
+    reduce ? [0.55, 0.55, 0.55] : [0.55, 1, 0]
+  );
+  const cueOpacity = useTransform(p, [0, 0.18], reduce ? [1, 1] : [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-[175vh]" style={{ overflowX: 'clip' }}>
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
+    <section
+      ref={ref}
+      className={reduce ? 'relative min-h-screen' : 'relative h-[175vh]'}
+      style={{ overflowX: 'clip' }}
+    >
+      <div
+        className={
+          reduce
+            ? 'relative min-h-screen overflow-hidden flex flex-col'
+            : 'sticky top-0 h-screen overflow-hidden flex flex-col'
+        }
+      >
         {/* Watermark type behind everything */}
         <motion.span
           aria-hidden

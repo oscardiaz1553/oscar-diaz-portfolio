@@ -5,6 +5,7 @@ import {
   useTransform,
   useSpring,
   useMotionValue,
+  useReducedMotion,
 } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
 import { MousePointer2, Sparkles, PenTool } from 'lucide-react';
@@ -27,6 +28,7 @@ interface HeroArtifactProps {
  */
 export default function HeroArtifact({ progress }: HeroArtifactProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
 
   // Fallback scroll tracking for standalone usage.
   const { scrollYProgress } = useScroll({
@@ -36,14 +38,15 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
   const own = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
   const p = progress ?? own;
 
-  const orbScale = useTransform(p, [0, 1], [1, 1.4]);
-  const orbRotate = useTransform(p, [0, 1], [0, 80]);
-  const orbBlueScale = useTransform(p, [0, 1], [1, 1.7]);
-  const orbBlueShift = useTransform(p, [0, 1], [0, 70]);
-  const groupRotate = useTransform(p, [0, 1], [0, -22]);
-  const fan = useTransform(p, [0, 1], [0, 1]); // 0 stacked → 1 fanned
-  const dotShift = useTransform(p, [0, 1], [0, -140]);
-  const dotShift2 = useTransform(p, [0, 1], [0, 110]);
+  // Scroll-driven transforms — collapsed to identity under reduced motion.
+  const orbScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.4]);
+  const orbRotate = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 80]);
+  const orbBlueScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.7]);
+  const orbBlueShift = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 70]);
+  const groupRotate = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -22]);
+  const fan = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 1]); // 0 stacked → 1 fanned
+  const dotShift = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -140]);
+  const dotShift2 = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 110]);
 
   // Pointer parallax.
   const px = useMotionValue(0);

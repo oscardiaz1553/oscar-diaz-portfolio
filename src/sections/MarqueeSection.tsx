@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import ImagePlaceholder from '../components/ImagePlaceholder';
 import { CASE_STUDIES } from '../data/caseStudies';
 
@@ -56,8 +57,11 @@ function MarqueeRow({
 export default function MarqueeSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [offset, setOffset] = useState(0);
+  const reduce = useReducedMotion();
 
   useEffect(() => {
+    // Freeze the marquee when the user prefers reduced motion.
+    if (reduce) return;
     const handleScroll = () => {
       const node = sectionRef.current;
       if (!node) return;
@@ -73,7 +77,7 @@ export default function MarqueeSection() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [reduce]);
 
   return (
     <section

@@ -46,3 +46,37 @@ body,
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(14, 14, 12, 0.1);
 }
+
+/* Visible keyboard focus on every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+/* Don't show the focus ring for mouse users. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Buttons should signal they are clickable. */
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

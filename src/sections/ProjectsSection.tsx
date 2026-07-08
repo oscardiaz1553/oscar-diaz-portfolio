@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
@@ -20,9 +20,10 @@ function ProjectCard({
   totalCards: number;
   progress: MotionValue<number>;
 }) {
+  const reduce = useReducedMotion();
   const targetScale = 1 - (totalCards - 1 - index) * 0.03;
   const range: [number, number] = [index / totalCards, 1];
-  const scale = useTransform(progress, range, [1, targetScale]);
+  const scale = useTransform(progress, range, reduce ? [1, 1] : [1, targetScale]);
   const number = String(index + 1).padStart(2, '0');
 
   return (
