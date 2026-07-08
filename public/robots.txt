@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oscardiaz1553.github.io/oscar-diaz-portfolio/sitemap.xml

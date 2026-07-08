@@ -28,9 +28,16 @@ export default function Footer() {
           trabajáramos <span className="accent-text">juntos?</span>
         </FadeIn>
 
-        <FadeIn delay={0.15} y={20}>
+        <FadeIn delay={0.12} y={20}>
+          <p className="mt-6 max-w-xl font-light leading-relaxed" style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 1.6vw, 1.25rem)' }}>
+            Abierto a roles de producto, freelance y colaboraciones. Cuéntame
+            qué estás construyendo — respondo en menos de 24 horas.
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.18} y={20}>
           <div className="mt-8 flex flex-wrap items-center gap-6">
-            <ContactButton />
+            <ContactButton label="Escríbeme" />
             <a
               href={`mailto:${EMAIL}`}
               className="font-light hover:text-accent transition-colors duration-200"

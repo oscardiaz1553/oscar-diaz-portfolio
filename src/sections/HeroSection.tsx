@@ -65,7 +65,7 @@ export default function HeroSection() {
                 style={{ color: 'var(--accent-deep)' }}
               >
                 <span className="h-2 w-2 rounded-full bg-accent" />
-                UX/UI Designer
+                Diseñador de Producto · UX/UI
               </motion.p>
 
               <motion.h1
@@ -96,7 +96,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.7, delay: 0.32, ease }}
                 className="mt-9 flex flex-wrap items-center gap-4"
               >
-                <ContactButton />
+                <ContactButton label="Trabajemos juntos" />
                 <button
                   type="button"
                   onClick={() =>
@@ -108,6 +108,21 @@ export default function HeroSection() {
                 >
                   Ver trabajos
                 </button>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.44, ease }}
+                className="mt-7 inline-flex items-center gap-2.5 rounded-full border border-black/10 bg-surface px-4 py-2"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+                </span>
+                <span className="text-sm font-medium text-ink">
+                  Disponible para nuevos proyectos
+                </span>
               </motion.div>
             </motion.div>
 
