@@ -12,19 +12,11 @@ export default function AboutSection() {
       id="acerca"
       className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-24 overflow-hidden"
     >
-      {/* Decorative floating shapes */}
+      {/* Decorative floating shapes — flat geometry only */}
       <motion.div
-        className="absolute top-[10%] left-[6%] h-40 w-40 md:h-64 md:w-64 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(45,91,227,0.16)' }}
-        animate={{ y: [0, -30, 0], x: [0, 16, 0] }}
+        className="absolute top-[12%] left-[8%] h-16 w-16 md:h-24 md:w-24 rounded-full border-2 border-accent/25 pointer-events-none"
+        animate={{ y: [0, -24, 0], x: [0, 14, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden
-      />
-      <motion.div
-        className="absolute bottom-[12%] right-[8%] h-32 w-32 md:h-52 md:w-52 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(14,14,12,0.06)' }}
-        animate={{ y: [0, 24, 0], x: [0, -18, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
       <motion.svg

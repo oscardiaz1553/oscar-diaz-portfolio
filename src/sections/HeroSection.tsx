@@ -26,9 +26,6 @@ export default function HeroSection() {
   const leftOpacity = useTransform(p, [0, 0.75, 1], [1, 1, 0]);
   const artScale = useTransform(p, [0, 1], [1, 1.45]);
   const artY = useTransform(p, [0, 1], [0, -130]);
-  const blobScaleA = useTransform(p, [0, 1], [1, 2.4]);
-  const blobScaleB = useTransform(p, [0, 1], [1, 2.9]);
-  const blobBlueX = useTransform(p, [0, 1], [0, -80]);
   const watermarkScale = useTransform(p, [0, 1], [1, 1.5]);
   const watermarkY = useTransform(p, [0, 1], [0, -70]);
   const watermarkOpacity = useTransform(p, [0, 0.55, 1], [0.55, 1, 0]);
@@ -37,22 +34,6 @@ export default function HeroSection() {
   return (
     <section ref={ref} className="relative h-[175vh]" style={{ overflowX: 'clip' }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
-        {/* Growing color blobs */}
-        <motion.div
-          aria-hidden
-          className="absolute -top-[12%] -left-[8%] h-[46vmax] w-[46vmax] rounded-full blur-3xl pointer-events-none"
-          style={{ scale: blobScaleA, background: 'rgba(45,91,227,0.1)' }}
-        />
-        <motion.div
-          aria-hidden
-          className="absolute -bottom-[18%] -right-[10%] h-[52vmax] w-[52vmax] rounded-full blur-3xl pointer-events-none"
-          style={{
-            scale: blobScaleB,
-            x: blobBlueX,
-            background: 'rgba(45,91,227,0.09)',
-          }}
-        />
-
         {/* Watermark type behind everything */}
         <motion.span
           aria-hidden

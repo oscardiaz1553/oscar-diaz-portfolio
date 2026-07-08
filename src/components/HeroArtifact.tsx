@@ -92,7 +92,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
           x: orbBlueShift,
           y: orbBlueShift,
           background: '#1c3fb8',
-          boxShadow: '0 40px 120px -20px rgba(28,63,184,0.45)',
+          boxShadow: '0 30px 60px -30px rgba(14,14,12,0.3)',
         }}
         aria-hidden
       />
@@ -106,7 +106,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
           x: orbMove.x,
           y: orbMove.y,
           background: '#2d5be3',
-          boxShadow: '0 40px 120px -20px rgba(45,91,227,0.45)',
+          boxShadow: '0 30px 60px -30px rgba(14,14,12,0.3)',
         }}
         aria-hidden
       />
@@ -210,7 +210,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
       </motion.div>
 
       <motion.div
-        className="absolute right-0 top-[8%] h-11 w-11 rounded-full bg-[#2d5be3] shadow-lg shadow-[#2d5be3]/30 flex items-center justify-center"
+        className="absolute right-0 top-[8%] h-11 w-11 rounded-full bg-[#2d5be3] shadow-lg flex items-center justify-center"
         style={{ y: dotShift2, x: dotMoveB.x }}
         aria-hidden
       >
