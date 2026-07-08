@@ -13,7 +13,7 @@ export default function LiveProjectButton({
   return (
     <button
       type="button"
-      className={`rounded-full border border-black/20 text-ink font-medium uppercase tracking-widest px-7 py-3 text-sm transition-colors duration-200 hover:bg-black/5 ${className}`}
+      className={`rounded-full border border-black/20 text-ink font-medium tracking-wide px-7 py-3 text-sm transition-colors duration-200 hover:bg-black/5 ${className}`}
     >
       {label}
     </button>

@@ -43,7 +43,7 @@ export default function ServicesSection() {
     >
       <div className="max-w-5xl mx-auto">
         <div className="mb-12 sm:mb-16">
-          <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+          <p className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
             Lo que hago
           </p>
           <h2

@@ -26,7 +26,7 @@ export default function ContactButton({
       onClick={handleClick}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.96 }}
-      className={`rounded-full bg-accent text-white font-medium uppercase tracking-widest px-8 py-3 sm:px-9 sm:py-3.5 text-sm hover:bg-accent-deep transition-colors duration-200 ${className}`}
+      className={`rounded-full bg-accent text-white font-medium tracking-wide px-8 py-3 sm:px-9 sm:py-3.5 text-sm hover:bg-accent-deep transition-colors duration-200 ${className}`}
     >
       {label}
     </motion.button>

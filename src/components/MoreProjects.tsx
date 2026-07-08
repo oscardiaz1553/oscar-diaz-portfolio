@@ -41,7 +41,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
                     <h3 className="text-ink font-medium leading-tight group-hover:text-accent transition-colors duration-200 text-lg sm:text-xl">
                       {project.cardTitle}
                     </h3>
-                    <p className="mt-1 uppercase tracking-widest text-xs font-medium" style={{ color: 'var(--muted)' }}>
+                    <p className="mt-1 tracking-wide text-xs font-medium" style={{ color: 'var(--muted)' }}>
                       {project.tag}
                     </p>
                   </div>

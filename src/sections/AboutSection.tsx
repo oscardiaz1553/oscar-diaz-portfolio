@@ -55,7 +55,7 @@ export default function AboutSection() {
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-14 text-center">
           <FadeIn
             as="p"
-            className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
+            className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm"
           >
             Acerca de mí
           </FadeIn>

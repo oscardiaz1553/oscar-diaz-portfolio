@@ -56,7 +56,7 @@ export default function CaseStudyPage() {
       <header className="px-5 sm:px-8 md:px-10 pt-14 sm:pt-16 md:pt-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <FadeIn as="p" className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm mb-5">
+            <FadeIn as="p" className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm mb-5">
               {study.tag}
             </FadeIn>
             <FadeIn
@@ -94,7 +94,7 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-black/10 pt-10">
           {study.meta.map((item, i) => (
             <FadeIn key={item.label} delay={i * 0.08} y={20}>
-              <p className="text-accent-deep font-medium uppercase tracking-widest text-xs">
+              <p className="text-accent-deep font-medium tracking-wide text-xs">
                 {item.label}
               </p>
               <p className="mt-2 text-ink font-medium text-base sm:text-lg">

@@ -45,7 +45,7 @@ export default function HeroSection() {
             opacity: watermarkOpacity,
           }}
         >
-          OSCAR
+          Oscar
         </motion.span>
 
         <Navbar variant="light" />
@@ -61,7 +61,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease }}
-                className="inline-flex items-center gap-2 font-medium uppercase tracking-[0.2em] text-xs sm:text-sm"
+                className="inline-flex items-center gap-2 font-medium tracking-wide text-xs sm:text-sm"
                 style={{ color: 'var(--accent-deep)' }}
               >
                 <span className="h-2 w-2 rounded-full bg-accent" />
@@ -104,7 +104,7 @@ export default function HeroSection() {
                       .getElementById('trabajos')
                       ?.scrollIntoView({ behavior: 'smooth' })
                   }
-                  className="rounded-full border border-black/15 px-7 py-3 sm:py-3.5 font-medium uppercase tracking-widest text-sm hover:border-accent hover:text-accent-deep transition-colors duration-200"
+                  className="rounded-full border border-black/15 px-7 py-3 sm:py-3.5 font-medium tracking-wide text-sm hover:border-accent hover:text-accent-deep transition-colors duration-200"
                 >
                   Ver trabajos
                 </button>
@@ -136,7 +136,7 @@ export default function HeroSection() {
           <motion.span
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-            className="text-xs uppercase tracking-[0.3em]"
+            className="text-xs tracking-wide"
             style={{ color: 'var(--muted)' }}
           >
             Scroll

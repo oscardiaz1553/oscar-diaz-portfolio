@@ -38,7 +38,7 @@ export default function ImagePlaceholder({
       className={`flex items-center justify-center border border-black/10 bg-[#ECEBE4] ${rounded} ${className}`}
       style={style}
     >
-      <span className="text-black/30 text-xs sm:text-sm uppercase tracking-widest font-light px-4 text-center">
+      <span className="text-black/30 text-xs sm:text-sm tracking-wide font-light px-4 text-center">
         {label}
       </span>
     </div>

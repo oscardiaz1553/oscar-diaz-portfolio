@@ -41,7 +41,7 @@ function ProjectCard({
               {number}
             </span>
             <div className="flex flex-col gap-1">
-              <span className="text-accent-deep font-medium uppercase tracking-widest text-xs sm:text-sm">
+              <span className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
                 {project.tag}
               </span>
               <h3
@@ -54,7 +54,7 @@ function ProjectCard({
           </div>
           <Link
             to={`/trabajos/${project.slug}`}
-            className="group inline-flex items-center gap-2 rounded-full bg-ink text-white font-medium uppercase tracking-widest px-6 py-3 text-xs sm:text-sm hover:bg-accent transition-colors duration-200"
+            className="group inline-flex items-center gap-2 rounded-full bg-ink text-white font-medium tracking-wide px-6 py-3 text-xs sm:text-sm hover:bg-accent transition-colors duration-200"
           >
             Ver proyecto
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-6xl mx-auto mb-14 sm:mb-16">
-        <p className="text-accent-deep font-medium uppercase tracking-[0.2em] text-xs sm:text-sm">
+        <p className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
           Trabajos seleccionados
         </p>
         <h2
