@@ -28,7 +28,7 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
   const textColor = variant === 'dark' ? 'text-white' : 'text-ink';
 
   return (
-    <nav className="sticky top-0 z-40 flex justify-between items-center px-6 md:px-10 py-5 md:py-6 backdrop-blur-md bg-bg/70 border-b border-black/[0.06]">
+    <nav className="sticky top-0 z-40 flex justify-between items-center px-6 md:px-10 py-5 md:py-6 bg-bg/95 md:bg-bg/70 md:backdrop-blur-md border-b border-black/[0.06]">
       <Link
         to="/"
         className={`${textColor} font-bold text-lg md:text-xl tracking-tight transition-opacity duration-200 hover:opacity-60`}

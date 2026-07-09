@@ -1,5 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { useRef } from 'react';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from 'framer-motion';
+import type { MotionValue } from 'framer-motion';
 import ImagePlaceholder from '../components/ImagePlaceholder';
 import { CASE_STUDIES } from '../data/caseStudies';
 
@@ -17,28 +23,12 @@ const TILES: Tile[] = CASE_STUDIES.map((c) => ({
 const ROW_ONE = [...TILES, ...TILES].slice(0, Math.ceil(TILES.length * 1.5));
 const ROW_TWO = [...TILES, ...TILES].slice(Math.floor(TILES.length * 0.5));
 
-function MarqueeRow({
-  tiles,
-  offset,
-  direction,
-}: {
-  tiles: Tile[];
-  offset: number;
-  direction: 'right' | 'left';
-}) {
+function MarqueeRow({ tiles, x }: { tiles: Tile[]; x: MotionValue<number> }) {
   // Triple the tiles for a seamless loop.
   const all = [...tiles, ...tiles, ...tiles];
-  const shift = offset - 200;
-  const translateX = direction === 'right' ? shift : -shift;
 
   return (
-    <div
-      className="flex gap-3"
-      style={{
-        transform: `translateX(${translateX}px)`,
-        willChange: 'transform',
-      }}
-    >
+    <motion.div className="flex gap-3" style={{ x, willChange: 'transform' }}>
       {all.map((tile, i) => (
         <ImagePlaceholder
           key={i}
@@ -50,34 +40,25 @@ function MarqueeRow({
           style={{ width: '420px', height: '270px' }}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
 
 export default function MarqueeSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [offset, setOffset] = useState(0);
   const reduce = useReducedMotion();
 
-  useEffect(() => {
-    // Freeze the marquee when the user prefers reduced motion.
-    if (reduce) return;
-    const handleScroll = () => {
-      const node = sectionRef.current;
-      if (!node) return;
-      const sectionTop = node.offsetTop;
-      const next = (window.scrollY - sectionTop + window.innerHeight) * 0.3;
-      setOffset(next);
-    };
+  // Drive the drift from scroll via a MotionValue (composited, no React
+  // re-render on scroll — the previous setState-per-scroll approach janked
+  // on mobile).
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, [reduce]);
+  const range = reduce ? [0, 0] : [-260, 260];
+  const x1 = useTransform(scrollYProgress, [0, 1], range);
+  const x2 = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [260, -260]);
 
   return (
     <section
@@ -85,8 +66,8 @@ export default function MarqueeSection() {
       className="pt-10 sm:pt-14 md:pt-16 pb-14 flex flex-col gap-3 overflow-hidden"
       style={{ background: 'var(--bg)' }}
     >
-      <MarqueeRow tiles={ROW_ONE} offset={offset} direction="right" />
-      <MarqueeRow tiles={ROW_TWO} offset={offset} direction="left" />
+      <MarqueeRow tiles={ROW_ONE} x={x1} />
+      <MarqueeRow tiles={ROW_TWO} x={x2} />
     </section>
   );
 }

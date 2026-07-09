@@ -17,6 +17,11 @@ interface HeroArtifactProps {
    * freeze there. Falls back to tracking itself when omitted.
    */
   progress?: MotionValue<number>;
+  /**
+   * Drops scroll parallax, pointer parallax and idle loops. Set on small /
+   * touch screens (and under reduced motion) to keep scrolling smooth.
+   */
+  simplify?: boolean;
 }
 
 /**
@@ -26,9 +31,10 @@ interface HeroArtifactProps {
  * - Reacts to the pointer: layers shift at different depths (parallax).
  * - Never fully still: rings and cards keep a gentle idle motion.
  */
-export default function HeroArtifact({ progress }: HeroArtifactProps) {
+export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+  const off = reduce || simplify;
 
   // Fallback scroll tracking for standalone usage.
   const { scrollYProgress } = useScroll({
@@ -38,30 +44,31 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
   const own = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
   const p = progress ?? own;
 
-  // Scroll-driven transforms — collapsed to identity under reduced motion.
-  const orbScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.4]);
-  const orbRotate = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 80]);
-  const orbBlueScale = useTransform(p, [0, 1], reduce ? [1, 1] : [1, 1.7]);
-  const orbBlueShift = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 70]);
-  const groupRotate = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -22]);
-  const fan = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 1]); // 0 stacked → 1 fanned
-  const dotShift = useTransform(p, [0, 1], reduce ? [0, 0] : [0, -140]);
-  const dotShift2 = useTransform(p, [0, 1], reduce ? [0, 0] : [0, 110]);
+  // Scroll-driven transforms — collapsed to identity when simplified.
+  const orbScale = useTransform(p, [0, 1], off ? [1, 1] : [1, 1.4]);
+  const orbRotate = useTransform(p, [0, 1], off ? [0, 0] : [0, 80]);
+  const orbBlueScale = useTransform(p, [0, 1], off ? [1, 1] : [1, 1.7]);
+  const orbBlueShift = useTransform(p, [0, 1], off ? [0, 0] : [0, 70]);
+  const groupRotate = useTransform(p, [0, 1], off ? [0, 0] : [0, -22]);
+  const fan = useTransform(p, [0, 1], off ? [0, 0] : [0, 1]); // 0 stacked → 1 fanned
+  const dotShift = useTransform(p, [0, 1], off ? [0, 0] : [0, -140]);
+  const dotShift2 = useTransform(p, [0, 1], off ? [0, 0] : [0, 110]);
 
-  // Pointer parallax.
+  // Pointer parallax (desktop only).
   const px = useMotionValue(0);
   const py = useMotionValue(0);
   const sx = useSpring(px, { stiffness: 60, damping: 18 });
   const sy = useSpring(py, { stiffness: 60, damping: 18 });
 
   useEffect(() => {
+    if (off) return;
     const onMove = (e: MouseEvent) => {
       px.set(e.clientX / window.innerWidth - 0.5);
       py.set(e.clientY / window.innerHeight - 0.5);
     };
     window.addEventListener('mousemove', onMove);
     return () => window.removeEventListener('mousemove', onMove);
-  }, [px, py]);
+  }, [px, py, off]);
 
   const move = (depth: number) => ({
     x: useTransform(sx, (v) => v * depth),
@@ -123,7 +130,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
         <motion.svg
           viewBox="0 0 200 200"
           className="w-[112%] h-[112%]"
-          animate={{ rotate: 360 }}
+          animate={off ? undefined : { rotate: 360 }}
           transition={{ duration: 46, repeat: Infinity, ease: 'linear' }}
         >
           <circle
@@ -148,7 +155,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
         <motion.div
           className="absolute w-[52%] h-[62%] rounded-3xl bg-white border border-black/10 shadow-xl"
           style={{ rotate: card1Rot, x: card1X }}
-          animate={{ y: [0, -10, 0] }}
+          animate={off ? undefined : { y: [0, -10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         >
           <div className="p-4">
@@ -163,7 +170,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
         <motion.div
           className="absolute w-[50%] h-[58%] rounded-3xl bg-white border border-black/10 shadow-xl"
           style={{ rotate: card2Rot, x: card2X }}
-          animate={{ y: [0, 12, 0] }}
+          animate={off ? undefined : { y: [0, 12, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
         >
           <div className="p-4">
@@ -196,7 +203,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
             <div className="mt-2 h-2 w-4/5 rounded-full bg-black/5" />
             <motion.div
               className="mt-4 h-9 w-28 rounded-full bg-[#0e0e0c]"
-              animate={{ opacity: [0.85, 1, 0.85] }}
+              animate={off ? undefined : { opacity: [0.85, 1, 0.85] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
           </div>
@@ -232,7 +239,7 @@ export default function HeroArtifact({ progress }: HeroArtifactProps) {
       <motion.span
         className="absolute left-[10%] bottom-[20%] h-3 w-3 rounded-full bg-[#2d5be3]"
         style={{ y: dotShift2 }}
-        animate={{ scale: [1, 1.6, 1] }}
+        animate={off ? undefined : { scale: [1, 1.6, 1] }}
         transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
