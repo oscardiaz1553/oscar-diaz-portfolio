@@ -41,9 +41,8 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          # Serve assets from the repo subpath on GitHub Pages.
-          VITE_BASE: ${{ steps.pages.outputs.base_path }}/
+        # Custom domain (oscardiaz.online) serves the site at the root,
+        # so assets are built with base "/".
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
