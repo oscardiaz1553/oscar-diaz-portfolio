@@ -130,7 +130,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
         <motion.svg
           viewBox="0 0 200 200"
           className="w-[112%] h-[112%]"
-          animate={off ? undefined : { rotate: 360 }}
+          animate={reduce ? undefined : { rotate: 360 }}
           transition={{ duration: 46, repeat: Infinity, ease: 'linear' }}
         >
           <circle
@@ -155,7 +155,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
         <motion.div
           className="absolute w-[52%] h-[62%] rounded-3xl bg-white border border-black/10 shadow-xl"
           style={{ rotate: card1Rot, x: card1X }}
-          animate={off ? undefined : { y: [0, -10, 0] }}
+          animate={reduce ? undefined : { y: [0, -10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         >
           <div className="p-4">
@@ -170,7 +170,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
         <motion.div
           className="absolute w-[50%] h-[58%] rounded-3xl bg-white border border-black/10 shadow-xl"
           style={{ rotate: card2Rot, x: card2X }}
-          animate={off ? undefined : { y: [0, 12, 0] }}
+          animate={reduce ? undefined : { y: [0, 12, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
         >
           <div className="p-4">
@@ -203,7 +203,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
             <div className="mt-2 h-2 w-4/5 rounded-full bg-black/5" />
             <motion.div
               className="mt-4 h-9 w-28 rounded-full bg-[#0e0e0c]"
-              animate={off ? undefined : { opacity: [0.85, 1, 0.85] }}
+              animate={reduce ? undefined : { opacity: [0.85, 1, 0.85] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
           </div>
@@ -239,7 +239,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
       <motion.span
         className="absolute left-[10%] bottom-[20%] h-3 w-3 rounded-full bg-[#2d5be3]"
         style={{ y: dotShift2 }}
-        animate={off ? undefined : { scale: [1, 1.6, 1] }}
+        animate={reduce ? undefined : { scale: [1, 1.6, 1] }}
         transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden
       />
