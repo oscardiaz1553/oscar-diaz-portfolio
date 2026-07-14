@@ -56,7 +56,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     cardTitle: 'Sura México - Cotizadores',
     tag: 'Sofka Technologies',
     heroImage: '/images/sura-mexico/calendario-abierto.webp',
-    thumb: '/images/sura-mexico/pantalla-cero.webp',
+    thumb: '/images/sura-mexico/calendario-abierto.webp',
     subtitle:
       'Diseño desde cero de una plataforma enterprise que digitalizó completamente un proceso 100% manual, conectando 5 tipos de usuario en un solo flujo.',
     meta: [
@@ -72,8 +72,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     carousel: [
-      '/images/sura-mexico/calendario-abierto.webp',
       '/images/sura-mexico/duplicidad.webp',
+      '/images/sura-mexico/pantalla-cero.webp',
       '/images/sura-mexico/boton-tooltip.webp',
     ],
     steps: ['Discovery', 'Arquitectura', 'Flujos', 'Diseño UI'],
@@ -334,7 +334,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Trib',
     cardTitle: 'Trib',
     tag: 'Case Study',
-    heroImage: '/images/trib/slide-30.webp',
+    heroImage: '/images/trib/misiones-pres.webp',
     thumb: '/images/trib/user-persona.webp',
     subtitle:
       'UX case study de una app mobile: research, definición de personas, arquitectura de información, flujos, wireframes y un sistema de diseño completo (tipografía, color, grid, componentes).',
@@ -351,7 +351,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     carousel: [
-      '/images/trib/slide-29.webp',
+      '/images/trib/slide-30.webp',
       '/images/trib/slide-27.webp',
       '/images/trib/misiones-pres.webp',
     ],
