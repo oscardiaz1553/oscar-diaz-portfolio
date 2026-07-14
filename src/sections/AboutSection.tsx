@@ -11,6 +11,7 @@ export default function AboutSection() {
     <section
       id="acerca"
       className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-24 overflow-hidden"
+      style={{ background: 'var(--bg)' }}
     >
       {/* Decorative floating shapes — flat geometry only */}
       <motion.div

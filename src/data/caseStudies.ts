@@ -51,6 +51,48 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: 'sura-mexico',
+    title: 'Sura México - Cotizadores',
+    cardTitle: 'Sura México - Cotizadores',
+    tag: 'Sofka Technologies',
+    heroImage: '/images/sura-mexico/calendario-abierto.webp',
+    thumb: '/images/sura-mexico/pantalla-cero.webp',
+    subtitle:
+      'Diseño desde cero de una plataforma enterprise que digitalizó completamente un proceso 100% manual, conectando 5 tipos de usuario en un solo flujo.',
+    meta: [
+      { label: 'Rol', value: 'UX/UI Designer' },
+      { label: 'Empresa', value: 'Sofka Technologies' },
+      { label: 'Herramientas', value: 'Figma' },
+      { label: 'Usuarios', value: '5 tipos de usuario' },
+    ],
+    problem: {
+      title: 'El problema de negocio',
+      body: [
+        'Sura México operaba un proceso de cotización 100% manual que involucraba a múltiples tipos de usuario sin un flujo unificado. El reto fue diseñar desde cero una plataforma enterprise capaz de digitalizar completamente el proceso.',
+      ],
+    },
+    carousel: [
+      '/images/sura-mexico/calendario-abierto.webp',
+      '/images/sura-mexico/duplicidad.webp',
+      '/images/sura-mexico/boton-tooltip.webp',
+    ],
+    steps: ['Discovery', 'Arquitectura', 'Flujos', 'Diseño UI'],
+    solution: {
+      title: 'La solución',
+      body: [
+        'Una plataforma enterprise que conecta a los 5 tipos de usuario en un solo flujo digital, eliminando el proceso manual y centralizando la cotización de punta a punta.',
+      ],
+    },
+    result: {
+      title: 'El resultado',
+      body: [
+        'Un proceso antes 100% manual quedó completamente digitalizado en una sola plataforma que conecta a todos los perfiles involucrados.',
+      ],
+    },
+    more: ['metro-de-medellin', 'logyca', 'summa-snetwork'],
+  },
+
+  {
     slug: 'metro-de-medellin',
     title: 'Metro de Medellín — Rediseño de Plataforma Interna',
     cardTitle: 'Metro de Medellín — Rediseño de Plataforma Interna',
@@ -357,48 +399,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     more: ['metro-de-medellin', 'trib', 'sura-mexico'],
-  },
-
-  {
-    slug: 'sura-mexico',
-    title: 'Sura México - Cotizadores',
-    cardTitle: 'Sura México - Cotizadores',
-    tag: 'Sofka Technologies',
-    heroImage: '/images/sura-mexico/calendario-abierto.webp',
-    thumb: '/images/sura-mexico/pantalla-cero.webp',
-    subtitle:
-      'Diseño desde cero de una plataforma enterprise que digitalizó completamente un proceso 100% manual, conectando 5 tipos de usuario en un solo flujo.',
-    meta: [
-      { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Sofka Technologies' },
-      { label: 'Herramientas', value: 'Figma' },
-      { label: 'Usuarios', value: '5 tipos de usuario' },
-    ],
-    problem: {
-      title: 'El problema de negocio',
-      body: [
-        'Sura México operaba un proceso de cotización 100% manual que involucraba a múltiples tipos de usuario sin un flujo unificado. El reto fue diseñar desde cero una plataforma enterprise capaz de digitalizar completamente el proceso.',
-      ],
-    },
-    carousel: [
-      '/images/sura-mexico/calendario-abierto.webp',
-      '/images/sura-mexico/duplicidad.webp',
-      '/images/sura-mexico/boton-tooltip.webp',
-    ],
-    steps: ['Discovery', 'Arquitectura', 'Flujos', 'Diseño UI'],
-    solution: {
-      title: 'La solución',
-      body: [
-        'Una plataforma enterprise que conecta a los 5 tipos de usuario en un solo flujo digital, eliminando el proceso manual y centralizando la cotización de punta a punta.',
-      ],
-    },
-    result: {
-      title: 'El resultado',
-      body: [
-        'Un proceso antes 100% manual quedó completamente digitalizado en una sola plataforma que conecta a todos los perfiles involucrados.',
-      ],
-    },
-    more: ['metro-de-medellin', 'logyca', 'summa-snetwork'],
   },
 ];
 

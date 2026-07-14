@@ -37,7 +37,7 @@ function MarqueeRow({ tiles, x }: { tiles: Tile[]; x: MotionValue<number> }) {
           alt={tile.label}
           rounded="rounded-2xl"
           className="flex-shrink-0"
-          style={{ width: '420px', height: '270px' }}
+          style={{ width: '480px', height: '300px' }}
         />
       ))}
     </motion.div>
