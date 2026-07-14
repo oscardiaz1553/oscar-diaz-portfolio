@@ -2,8 +2,7 @@ import FadeIn from './FadeIn';
 import ContactButton from './ContactButton';
 
 const EMAIL = 'oscardiaczs@gmail.com';
-const LINKEDIN = 'https://www.linkedin.com/';
-const BEHANCE = 'https://www.behance.net/';
+const LINKEDIN = 'https://www.linkedin.com/in/oscarddiaz/';
 
 export default function Footer() {
   return (
@@ -56,12 +55,6 @@ export default function Footer() {
             <div className="flex items-center gap-6 tracking-wide text-xs sm:text-sm font-medium" style={{ color: 'var(--muted)' }}>
               <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
                 LinkedIn
-              </a>
-              <a href={BEHANCE} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
-                Behance
-              </a>
-              <a href={`mailto:${EMAIL}`} className="hover:text-accent transition-colors duration-200">
-                Email
               </a>
             </div>
           </div>
