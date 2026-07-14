@@ -16,6 +16,42 @@ export interface CaseStudySection {
   body?: string[];
 }
 
+/**
+ * Flexible content blocks for richer case-study pages. When a study defines
+ * `blocks`, the page renders them in order (in place of the fixed
+ * gallery/solution/insight sections), so each project can tell its own story.
+ */
+export type CaseBlock =
+  | { kind: 'wide'; image: string; caption?: string }
+  | {
+      kind: 'gallery';
+      title?: string;
+      intro?: string;
+      cols?: 2 | 3 | 4;
+      items: { image: string; caption?: string }[];
+    }
+  | {
+      kind: 'imageText';
+      title?: string;
+      body?: string[];
+      image: string;
+      /** Put the image on the right instead of the left. */
+      reverse?: boolean;
+    }
+  | {
+      kind: 'columns';
+      title?: string;
+      intro?: string;
+      items: { label: string; description?: string }[];
+    }
+  | {
+      kind: 'comparison';
+      title?: string;
+      before: { title: string; points: string[] };
+      after: { title: string; points: string[] };
+    }
+  | { kind: 'metrics'; items: { value: string; label: string }[] };
+
 export interface CaseStudy {
   slug: string;
   /** Full title used on the case study hero. */
@@ -45,6 +81,11 @@ export interface CaseStudy {
   metrics?: { label: string; value: string }[];
   /** Optional status note (e.g. "en desarrollo"). */
   status?: string;
+  /**
+   * Optional rich content blocks. When present, they replace the fixed
+   * gallery/solution/insight sections on the case-study page.
+   */
+  blocks?: CaseBlock[];
   /** Slugs shown under "Mira más proyectos". */
   more: string[];
 }
@@ -361,6 +402,43 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Wireframes',
       'Sistema de diseño',
       'UI HiFi',
+    ],
+    blocks: [
+      {
+        kind: 'wide',
+        image: '/images/trib/user-persona.webp',
+        caption: 'Definición de personas',
+      },
+      {
+        kind: 'wide',
+        image: '/images/trib/slide-36.webp',
+        caption: 'Arquitectura de features y priorización del MVP',
+      },
+      {
+        kind: 'gallery',
+        title: 'Sistema de diseño',
+        intro:
+          'Un sistema de diseño completo y documentado que da consistencia a toda la experiencia.',
+        cols: 2,
+        items: [
+          { image: '/images/trib/slide-27.webp', caption: 'Tipografía · Poppins' },
+          { image: '/images/trib/slide-28.webp', caption: 'Paleta de color' },
+          { image: '/images/trib/slide-29.webp', caption: 'Grid & spacing' },
+          { image: '/images/trib/slide-30.webp', caption: 'Componentes' },
+          { image: '/images/trib/slide-7.webp', caption: 'Atomic design' },
+        ],
+      },
+      {
+        kind: 'gallery',
+        title: 'Pantallas de la app',
+        cols: 4,
+        items: [
+          { image: '/images/trib/misiones-pres.webp', caption: 'Home · Misiones' },
+          { image: '/images/trib/mision-recompensas.webp', caption: 'Recompensas' },
+          { image: '/images/trib/tienda-tribcoins.webp', caption: 'Tienda de TribCoins' },
+          { image: '/images/trib/compra.webp', caption: 'Checkout' },
+        ],
+      },
     ],
     solution: {
       title: 'Sistema de diseño',
