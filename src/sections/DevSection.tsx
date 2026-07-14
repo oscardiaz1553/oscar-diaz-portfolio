@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 
 const CAPABILITIES = [
@@ -9,6 +10,12 @@ const CAPABILITIES = [
     title: 'Tiendas en Shopify',
     copy: 'Monto tiendas online en Shopify de principio a fin: catálogo, checkout y una experiencia de compra cuidada.',
   },
+];
+
+const PROJECTS = [
+  { name: 'Eticolor', url: 'https://eticolor.com.co/', detail: 'Diseño y desarrollo en Shopify' },
+  { name: 'The Black Box', url: 'https://theblackboxsnack.com/', detail: 'Diseño y desarrollo en Shopify' },
+  { name: 'Maison Caviar', url: 'https://maisoncaviar.com.co/', detail: 'Diseño y desarrollo en Shopify' },
 ];
 
 export default function DevSection() {
@@ -67,6 +74,40 @@ export default function DevSection() {
               </p>
             </FadeIn>
           ))}
+        </div>
+
+        {/* Tiendas en producción */}
+        <div className="mt-16 sm:mt-20">
+          <FadeIn as="p" className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
+            Tiendas en producción
+          </FadeIn>
+          <div className="mt-6">
+            {PROJECTS.map((project) => (
+              <a
+                key={project.name}
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-wrap items-center justify-between gap-3 py-6 sm:py-7 border-t border-black/10 last:border-b transition-colors duration-300 hover:border-accent/40"
+              >
+                <div className="flex flex-col gap-1">
+                  <h3
+                    className="text-ink font-medium leading-tight group-hover:text-accent transition-colors duration-300"
+                    style={{ fontSize: 'clamp(1.2rem, 2.2vw, 1.75rem)' }}
+                  >
+                    {project.name}
+                  </h3>
+                  <p className="font-light" style={{ color: 'var(--muted)', fontSize: 'clamp(0.9rem, 1.3vw, 1.05rem)' }}>
+                    {project.detail}
+                  </p>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-accent-deep font-medium tracking-wide text-sm">
+                  Ver tienda
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

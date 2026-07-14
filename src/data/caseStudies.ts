@@ -145,7 +145,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         'La plataforma rediseñada fue implementada en producción. Los administradores pasaron de un sistema fragmentado y confuso a una herramienta centralizada que permite gestionar usuarios, permisos y trazabilidad de movimientos desde un único punto de control — reduciendo errores operativos y agilizando la toma de decisiones.',
       ],
     },
-    more: ['trib', 'serfinanza', 'sura-mexico'],
+    more: ['trib', 'summa-snetwork', 'sura-mexico'],
   },
 
   {
@@ -207,7 +207,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Feedback positivo de usuarios internos y externos en validación', value: 'Feedback positivo' },
       { label: 'Cero dependencia de Excel — proceso completamente digitalizado', value: '0 excel' },
     ],
-    more: ['metro-de-medellin', 'trib', 'serfinanza'],
+    more: ['metro-de-medellin', 'trib', 'sura-mexico'],
   },
 
   {
@@ -363,42 +363,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     more: ['metro-de-medellin', 'logyca', 'game-view'],
-  },
-
-  {
-    slug: 'serfinanza',
-    title: 'Serfinanza app - Rediseño',
-    cardTitle: 'Serfinanza app - Rediseño',
-    tag: 'Sofka Technologies',
-    subtitle:
-      'Rediseño de la app de Serfinanza enfocado en claridad, jerarquía y una experiencia financiera más simple para el usuario.',
-    meta: [
-      { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Sofka Technologies' },
-      { label: 'Herramientas', value: 'Figma' },
-      { label: 'Plataforma', value: 'Mobile app' },
-    ],
-    problem: {
-      title: 'El problema de negocio',
-      body: [
-        'La app existente presentaba fricciones en los flujos financieros clave. El objetivo del rediseño fue simplificar la experiencia, mejorar la jerarquía visual y hacer más clara la gestión de productos financieros del usuario.',
-      ],
-    },
-    carousel: [],
-    steps: ['Análisis', 'Arquitectura', 'Wireframes', 'UI HiFi'],
-    solution: {
-      title: 'La solución',
-      body: [
-        'Una interfaz más limpia y jerarquizada que pone los productos y movimientos del usuario en primer plano, reduciendo pasos y aclarando cada acción financiera.',
-      ],
-    },
-    result: {
-      title: 'El resultado',
-      body: [
-        'Una experiencia financiera más clara y directa, con flujos simplificados y una interfaz consistente.',
-      ],
-    },
-    more: ['metro-de-medellin', 'trib', 'sura-mexico'],
   },
 ];
 
