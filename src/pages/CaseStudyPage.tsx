@@ -78,13 +78,12 @@ export default function CaseStudyPage() {
           </div>
           <FadeIn delay={0.2} y={30}>
             <ImagePlaceholder
-              fit="contain"
+              natural
               src={study.heroImage}
               label={study.cardTitle}
               alt={study.cardTitle}
-              rounded="rounded-[28px] sm:rounded-[36px]"
-              className="w-full shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)]"
-              style={{ height: 'clamp(280px, 34vw, 460px)' }}
+              rounded="rounded-[24px] sm:rounded-[32px]"
+              maxHeight="clamp(340px, 44vw, 600px)"
             />
           </FadeIn>
         </div>
@@ -134,12 +133,11 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn y={30}>
             <ImagePlaceholder
-              fit="contain"
+              natural
               src={study.carousel[0]}
               label="Galería del proyecto"
-              rounded="rounded-[28px] sm:rounded-[36px]"
-              className="w-full shadow-[0_30px_80px_-45px_rgba(0,0,0,0.3)]"
-              style={{ height: 'clamp(300px, 40vw, 560px)' }}
+              rounded="rounded-[24px] sm:rounded-[32px]"
+              maxHeight="clamp(380px, 52vw, 720px)"
             />
           </FadeIn>
         </div>
@@ -180,12 +178,11 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <FadeIn y={30} className="order-2 lg:order-1">
             <ImagePlaceholder
-              fit="contain"
+              natural
               src={study.carousel[1]}
               label="Solución diseñada"
-              rounded="rounded-[28px] sm:rounded-[36px]"
-              className="w-full"
-              style={{ height: 'clamp(260px, 32vw, 420px)' }}
+              rounded="rounded-[24px] sm:rounded-[32px]"
+              maxHeight="clamp(300px, 40vw, 520px)"
             />
           </FadeIn>
           <div className="order-1 lg:order-2">
@@ -200,12 +197,11 @@ export default function CaseStudyPage() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <FadeIn y={30}>
               <ImagePlaceholder
-                fit="contain"
+                natural
                 src={study.carousel[2]}
                 label="Detalle clave"
-                rounded="rounded-[28px] sm:rounded-[36px]"
-                className="w-full"
-                style={{ height: 'clamp(260px, 32vw, 420px)' }}
+                rounded="rounded-[24px] sm:rounded-[32px]"
+                maxHeight="clamp(300px, 40vw, 520px)"
               />
             </FadeIn>
             <TextBlock section={study.insight} />

@@ -91,7 +91,8 @@ function ProjectCard({
               src={project.carousel[2]}
               label="Vista principal"
               rounded="rounded-2xl sm:rounded-3xl"
-              className="w-full h-full transition-transform duration-500 group-hover:scale-[1.02]"
+              className="w-full transition-transform duration-500 group-hover:scale-[1.02]"
+              style={{ height: 'clamp(282px, 35vw, 530px)' }}
             />
           </div>
         </Link>

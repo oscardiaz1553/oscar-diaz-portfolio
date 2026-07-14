@@ -351,9 +351,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     carousel: [
-      '/images/trib/slide-30.webp',
+      '/images/trib/mision-recompensas.webp',
       '/images/trib/slide-27.webp',
-      '/images/trib/misiones-pres.webp',
+      '/images/trib/tienda-tribcoins.webp',
     ],
     steps: [
       'Research',
