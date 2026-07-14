@@ -69,6 +69,7 @@ function ProjectCard({
         >
           <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 w-[40%]">
             <ImagePlaceholder
+              fit="contain"
               src={project.carousel[0]}
               label={project.cardTitle}
               rounded="rounded-2xl sm:rounded-3xl"
@@ -76,6 +77,7 @@ function ProjectCard({
               style={{ height: 'clamp(120px, 15vw, 210px)' }}
             />
             <ImagePlaceholder
+              fit="contain"
               src={project.carousel[1]}
               label="Detalle"
               rounded="rounded-2xl sm:rounded-3xl"
@@ -85,6 +87,7 @@ function ProjectCard({
           </div>
           <div className="w-[60%]">
             <ImagePlaceholder
+              fit="contain"
               src={project.carousel[2]}
               label="Vista principal"
               rounded="rounded-2xl sm:rounded-3xl"

@@ -78,6 +78,7 @@ export default function CaseStudyPage() {
           </div>
           <FadeIn delay={0.2} y={30}>
             <ImagePlaceholder
+              fit="contain"
               src={study.heroImage}
               label={study.cardTitle}
               alt={study.cardTitle}
@@ -133,6 +134,7 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn y={30}>
             <ImagePlaceholder
+              fit="contain"
               src={study.carousel[0]}
               label="Galería del proyecto"
               rounded="rounded-[28px] sm:rounded-[36px]"
@@ -178,6 +180,7 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <FadeIn y={30} className="order-2 lg:order-1">
             <ImagePlaceholder
+              fit="contain"
               src={study.carousel[1]}
               label="Solución diseñada"
               rounded="rounded-[28px] sm:rounded-[36px]"
@@ -197,6 +200,7 @@ export default function CaseStudyPage() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <FadeIn y={30}>
               <ImagePlaceholder
+                fit="contain"
                 src={study.carousel[2]}
                 label="Detalle clave"
                 rounded="rounded-[28px] sm:rounded-[36px]"

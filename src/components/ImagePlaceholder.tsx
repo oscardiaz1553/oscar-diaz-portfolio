@@ -7,6 +7,12 @@ interface ImagePlaceholderProps {
   className?: string;
   style?: CSSProperties;
   rounded?: string;
+  /**
+   * 'cover' fills and crops (good for decorative thumbnails); 'contain' shows
+   * the whole image, matted on a neutral frame (good for UI screenshots that
+   * shouldn't be cut off).
+   */
+  fit?: 'cover' | 'contain';
 }
 
 /**
@@ -20,16 +26,23 @@ export default function ImagePlaceholder({
   className = '',
   style,
   rounded = 'rounded-[28px] sm:rounded-[36px]',
+  fit = 'cover',
 }: ImagePlaceholderProps) {
   if (src) {
     return (
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        className={`object-cover ${rounded} ${className}`}
-        style={style}
-      />
+      <div
+        className={`overflow-hidden border border-black/10 ${rounded} ${className}`}
+        style={{ background: fit === 'contain' ? '#ECEBE4' : undefined, ...style }}
+      >
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className={`w-full h-full ${
+            fit === 'contain' ? 'object-contain' : 'object-cover'
+          }`}
+        />
+      </div>
     );
   }
 
