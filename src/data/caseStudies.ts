@@ -272,6 +272,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Game View — Ecosistema de Espacios 3D Interactivos',
     cardTitle: 'Game View — Ecosistema de Espacios 3D Interactivos',
     tag: 'Sofka Technologies',
+    heroImage: '/images/game-view/ps-1.webp',
+    thumb: '/images/game-view/evento-1.webp',
     subtitle:
       'Diseñé el sistema completo de dos productos alrededor de una experiencia 3D interactiva — una herramienta de creación de espacios 3D y su app de consumo para TV y móvil. El prototipo fue clave para conseguir el funding.',
     meta: [
@@ -289,7 +291,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     quote:
       'El cliente no tenía nada — ni wireframes, ni MVP, ni referente visual. Solo la idea. Mi trabajo fue convertir esa visión en un prototipo lo suficientemente sólido para presentarlo a inversores.',
-    carousel: [],
+    carousel: [
+      '/images/game-view/ps.webp',
+      '/images/game-view/evento-1.webp',
+      '/images/game-view/ps-1.webp',
+    ],
     steps: [
       'Customer Journey',
       'Decisiones de diseño',
