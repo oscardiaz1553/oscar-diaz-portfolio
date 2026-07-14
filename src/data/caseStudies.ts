@@ -161,6 +161,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'SUMMA - SNetwork',
     cardTitle: 'SUMMA - SNetwork',
     tag: 'Sofka Technologies',
+    heroImage: '/images/summa-snetwork/inicio.webp',
+    thumb: '/images/summa-snetwork/tabla.webp',
     subtitle:
       'Rediseño completo de una plataforma con más de 10 módulos, en un sistema complejo, convirtiendo cientos de pasos innecesarios a una experiencia unificada con flujos simplificados y un sistema de diseño documentado.',
     meta: [
@@ -178,7 +180,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     quote:
       'La decisión estratégica no fue "¿cómo migramos esto?" sino "¿qué de esto merece seguir existiendo tal como está?". Esa pregunta cambió todo el enfoque del proyecto.',
-    carousel: [],
+    carousel: [
+      '/images/summa-snetwork/seleccion-facturas.webp',
+      '/images/summa-snetwork/pqrs-gestion.webp',
+      '/images/summa-snetwork/usuario-seleccionado.webp',
+    ],
     steps: [
       'Evaluación heurística del sistema',
       'Mapeo de flujos críticos',
