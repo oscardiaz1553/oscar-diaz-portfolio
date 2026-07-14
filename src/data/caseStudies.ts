@@ -328,6 +328,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Trib',
     cardTitle: 'Trib',
     tag: 'Case Study',
+    heroImage: '/images/trib/slide-30.webp',
+    thumb: '/images/trib/user-persona.webp',
     subtitle:
       'UX case study de una app mobile: research, definición de personas, arquitectura de información, flujos, wireframes y un sistema de diseño completo (tipografía, color, grid, componentes).',
     meta: [
@@ -342,7 +344,11 @@ export const CASE_STUDIES: CaseStudy[] = [
         'Trib nace como un proyecto de estudio para explorar de punta a punta el proceso de diseño de producto: desde el research y la definición de personas hasta un sistema de diseño documentado y pantallas de alta fidelidad.',
       ],
     },
-    carousel: [],
+    carousel: [
+      '/images/trib/slide-29.webp',
+      '/images/trib/slide-27.webp',
+      '/images/trib/misiones-pres.webp',
+    ],
     steps: [
       'Research',
       'Personas y flujos',
