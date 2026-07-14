@@ -55,6 +55,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Metro de Medellín — Rediseño de Plataforma Interna',
     cardTitle: 'Metro de Medellín — Rediseño de Plataforma Interna',
     tag: 'Sofka Technologies',
+    heroImage: '/images/metro-de-medellin/sitva-parametrizacion.webp',
+    thumb: '/images/metro-de-medellin/intermunicipales-perfiles.webp',
     subtitle:
       'Rediseño de la plataforma de gestión de usuarios, permisos y movimientos del sistema de transporte público más importante de Colombia — de un sistema confuso a una herramienta centralizada implementada en producción.',
     meta: [
@@ -72,7 +74,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     quote:
       'En infraestructura pública crítica, un sistema confuso no es solo una molestia — es un riesgo operativo. Los errores de permisos o la falta de trazabilidad tienen consecuencias directas en la operación del transporte.',
-    carousel: [],
+    carousel: [
+      '/images/metro-de-medellin/sit-valores.webp',
+      '/images/metro-de-medellin/intermunicipales-valores.webp',
+      '/images/metro-de-medellin/intermunicipales-perfiles.webp',
+    ],
     steps: [
       'Análisis heurístico',
       'Identificación de puntos de fricción',
@@ -105,6 +111,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Logyca — Gestión de Inventario en Tiempo Real',
     cardTitle: 'Logyca — Gestión de Inventario en Tiempo Real',
     tag: 'Sofka Technologies',
+    heroImage: '/images/logyca/ingesta.webp',
+    thumb: '/images/logyca/ingesta-1.webp',
     subtitle:
       'Diseñé el corazón de una plataforma que reemplazó procesos manuales en Excel por un sistema visual e intuitivo para dos perfiles de usuario con necesidades radicalmente distintas.',
     meta: [
@@ -122,7 +130,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     quote:
       'El reto no era solo digitalizar el inventario. Era diseñar una sola plataforma que funcionara perfectamente para dos audiencias con objetivos, contextos y niveles técnicos completamente diferentes.',
-    carousel: [],
+    carousel: [
+      '/images/logyca/ingesta-1.webp',
+      '/images/logyca/ingesta-2.webp',
+      '/images/logyca/ingesta-3.webp',
+    ],
     steps: [
       'Research',
       'Arquitectura dual',
@@ -352,6 +364,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Sura México - Cotizadores',
     cardTitle: 'Sura México - Cotizadores',
     tag: 'Sofka Technologies',
+    heroImage: '/images/sura-mexico/calendario-abierto.webp',
+    thumb: '/images/sura-mexico/pantalla-cero.webp',
     subtitle:
       'Diseño desde cero de una plataforma enterprise que digitalizó completamente un proceso 100% manual, conectando 5 tipos de usuario en un solo flujo.',
     meta: [
@@ -366,7 +380,11 @@ export const CASE_STUDIES: CaseStudy[] = [
         'Sura México operaba un proceso de cotización 100% manual que involucraba a múltiples tipos de usuario sin un flujo unificado. El reto fue diseñar desde cero una plataforma enterprise capaz de digitalizar completamente el proceso.',
       ],
     },
-    carousel: [],
+    carousel: [
+      '/images/sura-mexico/calendario-abierto.webp',
+      '/images/sura-mexico/duplicidad.webp',
+      '/images/sura-mexico/boton-tooltip.webp',
+    ],
     steps: ['Discovery', 'Arquitectura', 'Flujos', 'Diseño UI'],
     solution: {
       title: 'La solución',
