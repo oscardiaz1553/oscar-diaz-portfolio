@@ -21,13 +21,11 @@ export default function Home() {
       <MarqueeSection />
       <ProjectsSection />
 
-      {/* Lámina I — peonía azul + mango fugado, titular calado */}
+      {/* Lámina I — peonía azul + mango fugado, a sangre y sin texto */}
       <EditorialPlate
         caption="Peonía azul, mango fugado"
         objectPosition="30% 45%"
         minH="min-h-[88vh]"
-        quoteObeys="Casi todo obedece."
-        quoteEscapes="Una se sale."
       />
 
       <AboutSection />

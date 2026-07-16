@@ -124,32 +124,6 @@ export default function ScrollVideoSection() {
           className="absolute inset-0 w-full h-full"
           aria-hidden
         />
-
-        {/* Scrim on-brand para que el wordmark claro siempre tenga contraste */}
-        <div className="absolute inset-0 bg-klein-deep/30 pointer-events-none" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(60% 60% at 50% 50%, rgba(20,30,92,0.35) 0%, rgba(20,30,92,0) 70%)',
-          }}
-        />
-
-        <h2
-          aria-label="Oscar Díaz"
-          className="relative z-10 font-display font-extrabold tracking-[-0.045em] leading-none flex items-baseline select-none text-paper-pure text-center"
-          style={{
-            fontSize: 'clamp(2.75rem, 12vw, 11rem)',
-            filter: 'drop-shadow(0 4px 44px rgba(20,30,92,0.45))',
-          }}
-        >
-          Oscar Díaz
-          <span
-            aria-hidden
-            className="inline-block rounded-full bg-carne"
-            style={{ width: '0.16em', height: '0.16em', marginLeft: '0.05em' }}
-          />
-        </h2>
       </div>
     </section>
   );
