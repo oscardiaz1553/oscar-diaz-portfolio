@@ -101,7 +101,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
           scale: orbBlueScale,
           x: orbBlueShift,
           y: orbBlueShift,
-          background: '#1c3fb8',
+          background: '#141E5C',
           boxShadow: '0 30px 60px -30px rgba(14,14,12,0.3)',
         }}
         aria-hidden
@@ -115,7 +115,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
           rotate: orbRotate,
           x: orbMove.x,
           y: orbMove.y,
-          background: '#2d5be3',
+          background: '#1B2FCC',
           boxShadow: '0 30px 60px -30px rgba(14,14,12,0.3)',
         }}
         aria-hidden
@@ -162,7 +162,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
             <div className="h-2.5 w-1/2 rounded-full bg-black/10" />
             <div className="mt-3 h-2 w-3/4 rounded-full bg-black/5" />
             <div className="mt-2 h-2 w-2/3 rounded-full bg-black/5" />
-            <div className="mt-4 h-16 rounded-xl bg-[#2d5be3]/10" />
+            <div className="mt-4 h-16 rounded-xl bg-[#1B2FCC]/10" />
           </div>
         </motion.div>
 
@@ -175,13 +175,13 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
         >
           <div className="p-4">
             <div className="flex items-center gap-2">
-              <div className="h-6 w-6 rounded-lg bg-[#2d5be3]" />
+              <div className="h-6 w-6 rounded-lg bg-[#1B2FCC]" />
               <div className="h-2.5 w-1/2 rounded-full bg-black/10" />
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2">
               <div className="h-10 rounded-lg bg-black/5" />
-              <div className="h-10 rounded-lg bg-[#2d5be3]/15" />
-              <div className="h-10 rounded-lg bg-[#2d5be3]/30" />
+              <div className="h-10 rounded-lg bg-[#1B2FCC]/15" />
+              <div className="h-10 rounded-lg bg-[#1B2FCC]/30" />
             </div>
             <div className="mt-3 h-2 w-3/4 rounded-full bg-black/5" />
           </div>
@@ -192,7 +192,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
           className="absolute w-[46%] h-[54%] rounded-3xl bg-white border border-black/10 shadow-2xl overflow-hidden"
           style={{ rotate: card3Rot, y: card3Y }}
         >
-          <div className="h-8 bg-[#2d5be3] flex items-center px-3 gap-1.5">
+          <div className="h-8 bg-[#1B2FCC] flex items-center px-3 gap-1.5">
             <span className="h-2 w-2 rounded-full bg-white/70" />
             <span className="h-2 w-2 rounded-full bg-white/40" />
             <span className="h-2 w-2 rounded-full bg-white/40" />
@@ -202,7 +202,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
             <div className="mt-3 h-2 w-full rounded-full bg-black/5" />
             <div className="mt-2 h-2 w-4/5 rounded-full bg-black/5" />
             <motion.div
-              className="mt-4 h-9 w-28 rounded-full bg-[#0e0e0c]"
+              className="mt-4 h-9 w-28 rounded-full bg-[#BC6039]"
               animate={reduce ? undefined : { opacity: [0.85, 1, 0.85] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
@@ -216,11 +216,11 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
         style={{ y: dotShift, x: dotMoveA.x, rotate: -8 }}
         aria-hidden
       >
-        <PenTool className="h-5 w-5 text-[#2d5be3]" />
+        <PenTool className="h-5 w-5 text-[#1B2FCC]" />
       </motion.div>
 
       <motion.div
-        className="absolute right-0 top-[8%] h-11 w-11 rounded-full bg-[#2d5be3] shadow-lg flex items-center justify-center"
+        className="absolute right-0 top-[8%] h-11 w-11 rounded-full bg-[#1B2FCC] shadow-lg flex items-center justify-center"
         style={{ y: dotShift2, x: dotMoveB.x }}
         aria-hidden
       >
@@ -228,7 +228,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
       </motion.div>
 
       <motion.div
-        className="absolute right-[14%] bottom-[6%] h-12 w-12 rounded-2xl bg-[#0e0e0c] shadow-lg flex items-center justify-center"
+        className="absolute right-[14%] bottom-[6%] h-12 w-12 rounded-2xl bg-[#141E5C] shadow-lg flex items-center justify-center"
         style={{ y: dotShift, x: dotMoveA.x, rotate: 10 }}
         aria-hidden
       >
@@ -237,7 +237,7 @@ export default function HeroArtifact({ progress, simplify }: HeroArtifactProps) 
 
       {/* Small orbiting dot */}
       <motion.span
-        className="absolute left-[10%] bottom-[20%] h-3 w-3 rounded-full bg-[#2d5be3]"
+        className="absolute left-[10%] bottom-[20%] h-3 w-3 rounded-full bg-[#1B2FCC]"
         style={{ y: dotShift2 }}
         animate={reduce ? undefined : { scale: [1, 1.6, 1] }}
         transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
