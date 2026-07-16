@@ -369,7 +369,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Game View — Ecosistema de Espacios 3D Interactivos',
     cardTitle: 'Game View — Ecosistema de Espacios 3D Interactivos',
     tag: 'Sofka Technologies',
-    heroImage: '/images/game-view/ps-1.webp',
+    heroImage: '/images/game-view/designer-3.webp',
     thumb: '/images/game-view/evento-1.webp',
     subtitle:
       'Diseñé el sistema completo de dos productos alrededor de una experiencia 3D interactiva — una herramienta de creación de espacios 3D y su app de consumo para TV y móvil. El prototipo fue clave para conseguir el funding.',
@@ -398,6 +398,56 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Decisiones de diseño',
       'Ecosistema — dos productos',
       'Prototipo para inversores',
+    ],
+    blocks: [
+      {
+        kind: 'wide',
+        image: '/images/game-view/understanding-1.webp',
+        caption: 'Customer Journey — Content producer',
+      },
+      {
+        kind: 'imageText',
+        title: 'El ecosistema — dos productos, una visión',
+        body: [
+          'Content creator: la herramienta con la que se crean los espacios 3D interactivos. Consumer App: la app donde los usuarios exploran y consumen esos espacios en TV y móvil. Dos productos, un mismo lenguaje visual y una misma visión de ecosistema.',
+        ],
+        image: '/images/game-view/ps-1.webp',
+      },
+      {
+        kind: 'gallery',
+        title: 'Content Creator — el editor de espacios 3D',
+        intro:
+          'La herramienta con la que los productores crean, editan y publican sus espacios 3D interactivos.',
+        cols: 2,
+        items: [
+          { image: '/images/game-view/designer-1.webp', caption: 'Selección de escena' },
+          { image: '/images/game-view/designer-2.webp', caption: 'Edición de objetos en escena' },
+        ],
+      },
+      {
+        kind: 'gallery',
+        title: 'Consumer App — TV y móvil',
+        intro: 'La app donde los usuarios exploran y consumen los espacios y eventos.',
+        cols: 2,
+        items: [
+          { image: '/images/game-view/ps.webp', caption: 'Explorar eventos' },
+          { image: '/images/game-view/evento-1.webp', caption: 'Detalle de evento' },
+        ],
+      },
+      {
+        kind: 'wide',
+        image: '/images/game-view/understanding-3.webp',
+        caption: 'User flow del creador de espacios',
+      },
+      {
+        kind: 'imageText',
+        reverse: true,
+        title: 'Diseñar para inversores, no solo para usuarios',
+        body: [
+          'El prototipo no solo tenía que resolver el problema de producto, no solo demostrar funcionalidad. Con un ciclo de vida más maduro y las mejores decisiones de UX bien fundamentadas, la visión de un ecosistema fue lo suficientemente sólida como para convencer a los inversores. El resultado habló por sí solo: funding conseguido.',
+        ],
+        image: '/images/game-view/understanding-2.webp',
+      },
     ],
     solution: {
       title: 'El ecosistema — dos productos, una visión',
