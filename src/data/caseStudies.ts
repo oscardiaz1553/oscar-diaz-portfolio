@@ -169,6 +169,37 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Nueva arquitectura',
       'Wireframing y diseño UI',
     ],
+    blocks: [
+      {
+        kind: 'imageText',
+        title: 'La solución — Plataforma rediseñada',
+        body: [
+          'El registro de movimientos en tiempo real fue uno de los cambios más valorados — pasó de ser una pantalla de difícil lectura a un log filtrable con indicadores visuales de estado que permite identificar anomalías de un vistazo y tomar decisiones operativas de forma inmediata.',
+        ],
+        image: '/images/metro-de-medellin/sit-valores.webp',
+      },
+      {
+        kind: 'imageText',
+        reverse: true,
+        title: 'La mayor fricción no era visual — era arquitectural.',
+        body: [
+          'El análisis heurístico reveló que gestionar los permisos de un solo usuario requería navegar por múltiples pantallas sin un punto de control unificado. La decisión de diseño más importante fue consolidar toda la gestión de permisos en una vista única por perfil de usuario — un panel donde el administrador ve de un vistazo qué accesos tiene, cuáles están activos y puede modificarlos sin salir de la pantalla. Esta decisión, simple en apariencia, eliminó la mayor fuente de errores operativos del sistema.',
+        ],
+        image: '/images/metro-de-medellin/intermunicipales-perfiles.webp',
+      },
+      {
+        kind: 'gallery',
+        title: 'La plataforma rediseñada',
+        intro:
+          'Parametrización de tarifas por ruta y perfil, valores del SIT e intermunicipales, y generación de la política tarifaria — todo desde un único punto de control.',
+        cols: 3,
+        items: [
+          { image: '/images/metro-de-medellin/intermunicipales-valores.webp', caption: 'Valores intermunicipales' },
+          { image: '/images/metro-de-medellin/politica-tarifaria.webp', caption: 'Generar política tarifaria' },
+          { image: '/images/metro-de-medellin/parametrizacion.webp', caption: 'Bienvenida · Parametrización' },
+        ],
+      },
+    ],
     solution: {
       title: 'La solución — Plataforma rediseñada',
       body: [
@@ -228,10 +259,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     blocks: [
       {
-        kind: 'text',
-        title: 'Wireframes',
-        body: [
+        kind: 'gallery',
+        title: 'Wireframes — baja fidelidad',
+        intro:
           'El proceso de creación de wireframes fue esencial para traducir los conceptos iniciales en diseños consensuados. Con estos wireframes de baja fidelidad pudimos validar las funcionalidades básicas de la plataforma, asegurándonos de que el flujo de usuarios fuera intuitivo y adecuado antes de invertir en el diseño de alta fidelidad.',
+        cols: 2,
+        items: [
+          { image: '/images/logyca/gestion-productos.webp', caption: 'Selección de módulo' },
+          { image: '/images/logyca/carga-masiva.webp', caption: 'Carga masiva' },
+          { image: '/images/logyca/cargas-individuales.webp', caption: 'Cargas individuales' },
+          { image: '/images/logyca/actualizacion-productos.webp', caption: 'Actualización de productos' },
         ],
       },
       {
@@ -244,9 +281,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'gallery',
-        title: 'Módulo de ingesta',
-        cols: 2,
+        title: 'Módulo de ingesta — alta fidelidad',
+        cols: 3,
         items: [
+          { image: '/images/logyca/ingesta.webp', caption: 'Vista general de módulos' },
           { image: '/images/logyca/ingesta-1.webp', caption: 'Registro de cargas' },
           { image: '/images/logyca/ingesta-3.webp', caption: 'Maestro de productos' },
         ],
