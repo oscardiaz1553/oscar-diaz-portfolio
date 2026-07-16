@@ -1,5 +1,6 @@
 import FadeIn from './FadeIn';
 import ContactButton from './ContactButton';
+import { BrandName } from './Brand';
 
 const EMAIL = 'oscardiaczs@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/oscarddiaz/';
@@ -49,9 +50,8 @@ export default function Footer() {
 
         <FadeIn delay={0.25} y={20}>
           <div className="mt-16 sm:mt-20 md:mt-24 pt-6 border-t border-black/10 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-ink font-bold tracking-tight">
-              Oscar Díaz<span className="text-accent">.</span>
-            </p>
+            <BrandName className="text-lg" />
+
             <div className="flex items-center gap-6 tracking-wide text-xs sm:text-sm font-medium" style={{ color: 'var(--muted)' }}>
               <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
                 LinkedIn

@@ -2,15 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Identidad Out. (derivada) — wordmark "Oscar Díaz."
+  El azul Klein es el sistema; el cálido (carne) es lo que se sale.
+  Sin negro puro, sin blanco puro. Proporción 60/30/10 (papel/azul/cálido).
+*/
 :root {
-  --bg: #f4f3ee;
-  --surface: #ffffff;
-  --ink: #0e0e0c;
-  --muted: rgba(14, 14, 12, 0.58);
-  --line: rgba(14, 14, 12, 0.12);
-  --accent: #2d5be3;
-  --accent-deep: #1c3fb8;
-  --accent-soft: rgba(45, 91, 227, 0.12);
+  /* Paleta Out. (exacta) */
+  --klein: #1b2fcc;
+  --klein-deep: #141e5c;
+  --klein-mid: #4a55c4;
+  --klein-soft: #c8cdf0;
+  --carne: #f2c6b4;
+  --carne-deep: #bc6039;
+  --carne-tinta: #9c3f1c;
+  --paper: #f3ede7;
+  --paper-pure: #fbf8f5;
+  --ink-2: #3c4375;
+
+  --display: 'Bricolage Grotesque Variable', sans-serif;
+  --body: 'Instrument Sans', sans-serif;
+
+  /* Aliases de compatibilidad: los componentes existentes usan estos nombres,
+     ahora apuntan a la paleta Out para adoptar la identidad sin reescribir todo. */
+  --bg: var(--paper);
+  --surface: var(--paper-pure);
+  --ink: var(--klein-deep);
+  --muted: #585d88;
+  --line: rgba(20, 30, 92, 0.14);
+  --accent: var(--klein);
+  --accent-deep: var(--klein-deep);
+  --accent-soft: rgba(27, 47, 204, 0.1);
 }
 
 * {
@@ -26,39 +48,54 @@ html {
 html,
 body,
 #root {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'Kanit', sans-serif;
+  background: var(--paper);
+  color: var(--klein-deep);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
 }
 
-/* Display headings: solid ink, no gradients on text. */
+body {
+  line-height: 1.5;
+}
+
+/* Display headings: Bricolage Grotesque, azul profundo, tracking apretado. */
 .hero-heading {
-  color: var(--ink);
+  font-family: var(--display);
+  color: var(--klein-deep);
+  letter-spacing: -0.03em;
 }
 
-/* Accent-tinted heading variant. */
+/* Palabra destacada. En el sistema Out el énfasis fuerte es el azul Klein. */
 .accent-text {
-  color: var(--accent);
+  color: var(--klein);
 }
 
-/* Outlined watermark type used behind the hero (stroke, not a gradient). */
+/* Variante cálida: "lo que se sale". Úsese con moderación (una por vista). */
+.carne-text {
+  color: var(--carne-tinta);
+}
+
+/* Watermark calado (stroke, sin degradado). */
 .outline-text {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(14, 14, 12, 0.1);
+  -webkit-text-stroke: 1.5px rgba(20, 30, 92, 0.12);
 }
 
-/* Visible keyboard focus on every interactive element. */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 6px;
+/* Selección y foco: cálidos, on-brand. */
+::selection {
+  background: var(--carne);
+  color: var(--klein-deep);
 }
-/* Don't show the focus ring for mouse users. */
+:focus-visible {
+  outline: 3px solid var(--carne-tinta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Buttons should signal they are clickable. */
 button {
   cursor: pointer;
 }
@@ -66,7 +103,42 @@ button:disabled {
   cursor: default;
 }
 
-/* Respect users who prefer reduced motion. */
+/* Dúotono editorial: azul Klein en las sombras, cálido en las luces.
+   Para capturas/láminas tratadas a sangre. */
+@layer components {
+  .duotone {
+    position: relative;
+    background-color: var(--klein);
+    background-image: radial-gradient(var(--klein-soft) 1.1px, transparent 1.4px);
+    background-size: 22px 22px;
+    overflow: hidden;
+  }
+}
+.duotone img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: luminosity;
+  filter: grayscale(1) contrast(1.05);
+  opacity: 0.9;
+}
+.duotone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    155deg,
+    color-mix(in srgb, var(--klein) 78%, transparent) 0%,
+    color-mix(in srgb, var(--klein) 30%, transparent) 45%,
+    color-mix(in srgb, var(--carne-tinta) 32%, transparent) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Respetar reduce-motion. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

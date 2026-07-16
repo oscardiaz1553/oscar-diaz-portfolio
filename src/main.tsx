@@ -2,6 +2,9 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
 import App from './App.tsx';
 import './index.css';
 
