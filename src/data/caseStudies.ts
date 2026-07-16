@@ -22,6 +22,7 @@ export interface CaseStudySection {
  * gallery/solution/insight sections), so each project can tell its own story.
  */
 export type CaseBlock =
+  | { kind: 'text'; title?: string; body: string[]; center?: boolean }
   | { kind: 'wide'; image: string; caption?: string }
   | {
       kind: 'gallery';
@@ -225,6 +226,32 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Sistema de diseño',
       'UI HiFi y prototipo',
     ],
+    blocks: [
+      {
+        kind: 'text',
+        title: 'Wireframes',
+        body: [
+          'El proceso de creación de wireframes fue esencial para traducir los conceptos iniciales en diseños consensuados. Con estos wireframes de baja fidelidad pudimos validar las funcionalidades básicas de la plataforma, asegurándonos de que el flujo de usuarios fuera intuitivo y adecuado antes de invertir en el diseño de alta fidelidad.',
+        ],
+      },
+      {
+        kind: 'imageText',
+        title: 'La solución — dos experiencias, un sistema',
+        body: [
+          'La clave de diseño fue crear dos experiencias diferenciadas dentro de un mismo sistema. El usuario interno ve toda la operación con herramientas de gestión completa; el cliente externo ve solo su información, con máxima claridad y sin ruido. Ambas experiencias comparten el mismo sistema de componentes y lenguaje visual.',
+        ],
+        image: '/images/logyca/ingesta-2.webp',
+      },
+      {
+        kind: 'gallery',
+        title: 'Módulo de ingesta',
+        cols: 2,
+        items: [
+          { image: '/images/logyca/ingesta-1.webp', caption: 'Registro de cargas' },
+          { image: '/images/logyca/ingesta-3.webp', caption: 'Maestro de productos' },
+        ],
+      },
+    ],
     solution: {
       title: 'La solución',
       body: [
@@ -285,6 +312,35 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Mapeo de flujos críticos',
       'Aceptación y extensión del sistema',
       'Rediseño y validación con QA',
+    ],
+    blocks: [
+      {
+        kind: 'imageText',
+        title: 'La solución — Plataforma rediseñada',
+        body: [
+          'El sistema de navegación lateral fue uno de los cambios más importantes — en lugar de menús dispersos por módulo, toda la plataforma se recorre desde una sola barra de navegación consistente. Esto redujo la desorientación de usuarios y eliminó la necesidad de recordar en qué parte de la plataforma estaban.',
+        ],
+        image: '/images/summa-snetwork/seleccion-facturas.webp',
+      },
+      {
+        kind: 'imageText',
+        reverse: true,
+        title: 'La decisión clave',
+        body: [
+          'No migrar — rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fielmente posible para no introducir errores. Pero después de la evaluación heurística, identifiqué flujos donde las mismas acciones repetitivas en múltiples pasos podían colapsarse en uno. Presenté la propuesta al equipo de producto y stakeholders, fue aceptada, y el resultado fue una plataforma notablemente más ágil para el trabajo diario.',
+        ],
+        image: '/images/summa-snetwork/usuario-seleccionado.webp',
+      },
+      {
+        kind: 'gallery',
+        title: 'Más del rediseño',
+        cols: 3,
+        items: [
+          { image: '/images/summa-snetwork/pqrs-gestion.webp', caption: 'Gestión de PQRS' },
+          { image: '/images/summa-snetwork/tabla.webp', caption: 'Listado de PQRS' },
+          { image: '/images/summa-snetwork/reclamo.webp', caption: 'Registro de reclamos' },
+        ],
+      },
     ],
     solution: {
       title: 'La solución — Plataforma rediseñada',

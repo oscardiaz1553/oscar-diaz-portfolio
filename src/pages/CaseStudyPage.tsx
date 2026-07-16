@@ -87,6 +87,18 @@ function CaseBlockView({ block }: { block: CaseBlock }) {
   const inner = 'max-w-6xl mx-auto';
 
   switch (block.kind) {
+    case 'text':
+      return (
+        <section className={wrap}>
+          <div className={block.center ? 'max-w-4xl mx-auto text-center' : inner}>
+            <TextBlock
+              section={{ title: block.title, body: block.body }}
+              align={block.center ? 'center' : 'left'}
+            />
+          </div>
+        </section>
+      );
+
     case 'wide':
       return (
         <section className={wrap}>
