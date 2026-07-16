@@ -28,7 +28,7 @@ export type CaseBlock =
       kind: 'gallery';
       title?: string;
       intro?: string;
-      cols?: 2 | 3 | 4;
+      cols?: 1 | 2 | 3 | 4;
       items: { image: string; caption?: string }[];
     }
   | {
@@ -401,9 +401,25 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     blocks: [
       {
-        kind: 'wide',
-        image: '/images/game-view/understanding-1.webp',
-        caption: 'Customer Journey — Content producer',
+        kind: 'gallery',
+        title: 'Entendimiento y contexto',
+        intro:
+          'Antes de diseñar una sola pantalla, mapeé el problema: el recorrido del productor de contenido, sus historias de usuario y el flujo completo de creación. Ese entendimiento fue la base de todas las decisiones de diseño.',
+        cols: 1,
+        items: [
+          {
+            image: '/images/game-view/understanding-1.webp',
+            caption: 'Customer Journey — Content producer',
+          },
+          {
+            image: '/images/game-view/understanding-2.webp',
+            caption: 'Mapeo de historias de usuario',
+          },
+          {
+            image: '/images/game-view/understanding-3.webp',
+            caption: 'User flow del creador de espacios',
+          },
+        ],
       },
       {
         kind: 'imageText',
@@ -435,18 +451,11 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
       },
       {
-        kind: 'wide',
-        image: '/images/game-view/understanding-3.webp',
-        caption: 'User flow del creador de espacios',
-      },
-      {
-        kind: 'imageText',
-        reverse: true,
+        kind: 'text',
         title: 'Diseñar para inversores, no solo para usuarios',
         body: [
           'El prototipo no solo tenía que resolver el problema de producto, no solo demostrar funcionalidad. Con un ciclo de vida más maduro y las mejores decisiones de UX bien fundamentadas, la visión de un ecosistema fue lo suficientemente sólida como para convencer a los inversores. El resultado habló por sí solo: funding conseguido.',
         ],
-        image: '/images/game-view/understanding-2.webp',
       },
     ],
     solution: {

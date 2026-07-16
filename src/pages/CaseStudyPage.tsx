@@ -123,8 +123,17 @@ function CaseBlockView({ block }: { block: CaseBlock }) {
           ? 'grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6'
           : cols === 3
           ? 'grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'
+          : cols === 1
+          ? 'grid grid-cols-1 gap-8 sm:gap-10'
           : 'grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8';
-      const maxH = cols >= 4 ? '460px' : cols === 3 ? '340px' : 'clamp(240px, 34vw, 400px)';
+      const maxH =
+        cols >= 4
+          ? '460px'
+          : cols === 3
+          ? '340px'
+          : cols === 1
+          ? 'clamp(300px, 46vw, 640px)'
+          : 'clamp(240px, 34vw, 400px)';
       return (
         <section className={wrap}>
           <div className={inner}>
