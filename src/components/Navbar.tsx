@@ -1,12 +1,6 @@
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { BrandName } from './Brand';
 
-const LINKS: { label: string; id: string }[] = [
-  { label: 'Trabajos', id: 'trabajos' },
-  { label: 'Acerca de mí', id: 'acerca' },
-  { label: 'Contacto', id: 'contacto' },
-];
-
 interface NavbarProps {
   variant?: 'light' | 'dark';
 }
@@ -37,16 +31,26 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
         <BrandName onBlue={variant === 'dark'} />
       </Link>
       <div className="flex items-center gap-5 md:gap-9">
-        {LINKS.map((link) => (
-          <button
-            key={link.id}
-            type="button"
-            onClick={() => goTo(link.id)}
-            className={`${textColor} font-medium tracking-wide text-xs md:text-sm transition-colors duration-200 hover:text-accent-deep`}
-          >
-            {link.label}
-          </button>
-        ))}
+        <button
+          type="button"
+          onClick={() => goTo('trabajos')}
+          className={`${textColor} font-medium tracking-wide text-xs md:text-sm transition-colors duration-200 hover:text-accent-deep`}
+        >
+          Trabajos
+        </button>
+        <Link
+          to="/acerca"
+          className={`${textColor} font-medium tracking-wide text-xs md:text-sm transition-colors duration-200 hover:text-accent-deep`}
+        >
+          Acerca de mí
+        </Link>
+        <button
+          type="button"
+          onClick={() => goTo('contacto')}
+          className={`${textColor} font-medium tracking-wide text-xs md:text-sm transition-colors duration-200 hover:text-accent-deep`}
+        >
+          Contacto
+        </button>
       </div>
     </nav>
   );

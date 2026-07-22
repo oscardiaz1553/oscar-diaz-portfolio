@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import AnimatedText from '../components/AnimatedText';
 import ContactButton from '../components/ContactButton';
@@ -78,7 +79,16 @@ export default function AboutSection() {
         </div>
 
         <FadeIn delay={0.1} y={30}>
-          <ContactButton />
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <ContactButton />
+            <Link
+              to="/acerca"
+              className="font-medium tracking-wide text-sm transition-colors duration-200 hover:text-accent underline underline-offset-4 decoration-accent/40"
+              style={{ color: 'var(--ink-2)' }}
+            >
+              Conoce mi trayectoria completa
+            </Link>
+          </div>
         </FadeIn>
       </div>
     </section>
