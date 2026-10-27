@@ -1,64 +1,67 @@
-import FadeIn from './FadeIn';
-import ContactButton from './ContactButton';
+import { Link } from 'react-router-dom';
+import AccentButton from './AccentButton';
 import { BrandName } from './Brand';
+import RevealText from './RevealText';
+import TitleFrame from './TitleFrame';
 
 const EMAIL = 'oscardiaczs@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/oscarddiaz/';
 
+/**
+ * Contacto y pie de página, con el estilo de Out: panel azul profundo, el
+ * título enmarcado por símbolos de la marca y una frase grande en crema.
+ */
 export default function Footer() {
   return (
     <footer
       id="contacto"
-      className="px-5 sm:px-8 md:px-10 pt-24 sm:pt-28 md:pt-32 pb-10"
-      style={{ background: 'var(--bg)' }}
+      className="relative overflow-hidden bg-klein-deep text-paper-pure px-6 md:px-10 lg:px-16 pt-16 sm:pt-20 md:pt-24 pb-10"
     >
-      <div className="max-w-6xl mx-auto">
-        <FadeIn as="p" className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
-          Contacto
-        </FadeIn>
-        <FadeIn
-          as="h2"
-          delay={0.05}
-          y={40}
-          className="hero-heading font-bold leading-[0.95] tracking-tight mt-4"
-          style={{ fontSize: 'clamp(2.25rem, 7vw, 6rem)' }}
+      <div className="relative max-w-[1400px] mx-auto">
+        <TitleFrame kind="angle" tone="light" fontSize="clamp(2rem, 4vw, 3.4rem)">
+          <RevealText
+            as="h2"
+            text="Contacto"
+            className="font-display font-semibold text-paper-pure tracking-[-0.035em]"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.4rem)' }}
+          />
+        </TitleFrame>
+
+        <p
+          className="mt-8 sm:mt-10 max-w-[18ch] font-display font-extrabold text-carne tracking-[-0.045em] leading-[0.98]"
+          style={{ fontSize: 'clamp(2.4rem, 7vw, 6rem)' }}
         >
-          Te gustaría que
-          <br />
-          trabajáramos <span className="accent-text">juntos?</span>
-        </FadeIn>
+          ¿Trabajamos juntos?
+        </p>
 
-        <FadeIn delay={0.12} y={20}>
-          <p className="mt-6 max-w-xl font-light leading-relaxed" style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 1.6vw, 1.25rem)' }}>
-            Abierto a roles de producto, freelance y colaboraciones. Cuéntame
-            qué estás construyendo — respondo en menos de 24 horas.
-          </p>
-        </FadeIn>
+        <p className="mt-6 max-w-[48ch] leading-relaxed text-paper-pure/85" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>
+          Estoy abierto a roles de producto, freelance y colaboraciones. Cuéntame qué estás construyendo y te respondo
+          en menos de 24 horas.
+        </p>
 
-        <FadeIn delay={0.18} y={20}>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <ContactButton label="Escríbeme" />
-            <a
-              href={`mailto:${EMAIL}`}
-              className="font-light hover:text-accent transition-colors duration-200"
-              style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-            >
-              {EMAIL}
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <AccentButton href={`mailto:${EMAIL}`} onBlue>
+            Escríbeme
+          </AccentButton>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="text-paper-pure/85 hover:text-carne transition-colors duration-200 underline underline-offset-4 decoration-paper-pure/30"
+            style={{ fontSize: 'clamp(1rem, 1.6vw, 1.25rem)' }}
+          >
+            {EMAIL}
+          </a>
+        </div>
+
+        <div className="mt-16 sm:mt-20 md:mt-24 pt-6 border-t border-paper-pure/15 flex flex-wrap items-center justify-between gap-4">
+          <Link to="/" className="text-xl text-paper-pure">
+            <BrandName onBlue />
+          </Link>
+          <div className="flex items-center gap-6 text-sm font-medium text-paper-pure/80">
+            <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-carne transition-colors duration-200">
+              LinkedIn
             </a>
           </div>
-        </FadeIn>
-
-        <FadeIn delay={0.25} y={20}>
-          <div className="mt-16 sm:mt-20 md:mt-24 pt-6 border-t border-black/10 flex flex-wrap items-center justify-between gap-4">
-            <BrandName className="text-lg" />
-
-            <div className="flex items-center gap-6 tracking-wide text-xs sm:text-sm font-medium" style={{ color: 'var(--muted)' }}>
-              <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors duration-200">
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </FadeIn>
+        </div>
       </div>
     </footer>
   );

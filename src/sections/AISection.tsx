@@ -1,21 +1,23 @@
 import FadeIn from '../components/FadeIn';
+import SectionHead from '../components/SectionHead';
+import SymbolField from '../components/SymbolField';
 
 const PHASES = [
   {
     title: 'Documentación',
-    copy: 'Especificaciones, handoff y documentación de producto más rápidos y consistentes.',
+    copy: 'Escribo especificaciones, handoff y documentación de producto más rápido y con más orden.',
   },
   {
     title: 'Research',
-    copy: 'Síntesis de entrevistas, análisis de hallazgos y benchmarking en menos tiempo.',
+    copy: 'Resumo entrevistas, analizo hallazgos y hago benchmarking en menos tiempo.',
   },
   {
     title: 'Descubrimiento',
-    copy: 'Exploración de ideas, mapas de oportunidad y una definición más nítida del problema.',
+    copy: 'Exploro ideas, armo mapas de oportunidad y defino el problema con más claridad.',
   },
   {
     title: 'Diseño',
-    copy: 'Ideación de flujos, variantes de UI y prototipos para validar antes y mejor.',
+    copy: 'Planteo flujos, pruebo variantes de UI y hago prototipos para validar antes.',
   },
 ];
 
@@ -25,34 +27,26 @@ export default function AISection() {
   return (
     <section
       id="ia"
-      className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28"
-      style={{ background: 'var(--bg)' }}
+      data-nav-bg="dark"
+      className="relative overflow-hidden bg-klein-deep text-paper-pure px-6 md:px-10 lg:px-16 py-16 sm:py-20 md:py-28"
     >
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-12 sm:mb-16 max-w-3xl">
-          <FadeIn as="p" className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
-            IA en mi flujo de trabajo
-          </FadeIn>
-          <FadeIn
-            as="h2"
-            delay={0.05}
-            y={30}
-            className="hero-heading font-bold tracking-tight leading-[0.95] mt-3"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)' }}
-          >
-            Diseño potenciado por <span className="accent-text">IA</span>
-          </FadeIn>
-          <FadeIn delay={0.12} y={20}>
-            <p
-              className="mt-6 font-light leading-relaxed"
-              style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}
-            >
-              Integro la IA en cada etapa del proceso para diseñar más rápido y
-              con mejores decisiones, sin perder el criterio. No reemplaza el
-              diseño — lo amplifica.
-            </p>
-          </FadeIn>
-        </div>
+      <SymbolField
+        color="#F5E3B3"
+        opacity={0.07}
+        items={[
+          { kind: 'curly', x: 6, y: 16, size: 'clamp(7rem, 15vw, 15rem)', rot: -8, dur: 14 },
+          { kind: 'square', x: 92, y: 88, size: 'clamp(6rem, 12vw, 12rem)', rot: 6, dur: 12, delay: 2, desktopOnly: true },
+        ]}
+      />
+      <div className="relative max-w-5xl mx-auto">
+        <SectionHead
+          kind="angle"
+          title="Mi flujo con IA"
+          onDark
+          statement="Diseño con IA en cada etapa."
+          lead="Uso IA en cada etapa del proceso para diseñar más rápido y decidir mejor. El criterio sigue siendo mío."
+          className="mb-12 sm:mb-16 max-w-3xl"
+        />
 
         {/* Editorial definition list */}
         <div>
@@ -61,17 +55,17 @@ export default function AISection() {
               key={phase.title}
               delay={i * 0.06}
               y={20}
-              className="group grid grid-cols-1 sm:grid-cols-[minmax(150px,240px)_1fr] gap-1 sm:gap-8 md:gap-16 py-6 sm:py-8 border-t border-black/10 last:border-b"
+              className="group grid grid-cols-1 sm:grid-cols-[minmax(150px,240px)_1fr] gap-1 sm:gap-8 md:gap-16 py-6 sm:py-8 border-t border-paper-pure/15 last:border-b"
             >
               <h3
-                className="text-ink font-medium leading-tight group-hover:text-accent transition-colors duration-300"
+                className="font-display font-bold tracking-[-0.02em] text-carne leading-tight"
                 style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)' }}
               >
                 {phase.title}
               </h3>
               <p
-                className="font-light leading-relaxed max-w-2xl"
-                style={{ color: 'var(--muted)', fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)' }}
+                className="leading-relaxed max-w-2xl text-paper-pure/80"
+                style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)' }}
               >
                 {phase.copy}
               </p>
@@ -86,18 +80,18 @@ export default function AISection() {
           className="mt-12 sm:mt-16 flex flex-col gap-8 md:flex-row md:items-start md:justify-between"
         >
           <p
-            className="font-light leading-relaxed max-w-md"
-            style={{ color: 'var(--muted)', fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)' }}
+            className="leading-relaxed max-w-md text-paper-pure/80"
+            style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)' }}
           >
-            También construyo sitios y plataformas web asistido por IA, del
-            concepto al producto funcional.
+            También construyo sitios y plataformas web con ayuda de la IA, de la
+            idea al producto funcionando.
           </p>
           <div className="md:text-right">
-            <p className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm">
+            <p className="text-carne font-medium text-xs sm:text-sm">
               Herramientas
             </p>
             <p
-              className="mt-2 text-ink font-medium"
+              className="mt-2 text-paper-pure font-medium"
               style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)' }}
             >
               {TOOLS.join('  ·  ')}

@@ -1,7 +1,7 @@
-// Identidad derivada de Out. — el punto es "lo que se sale": siempre cálido,
+// Identidad derivada de Out., el punto es "lo que se sale": siempre cálido,
 // nunca del color de la palabra. carne-deep sobre claro; carne sobre azul.
 const DOT_ON_LIGHT = '#BC6039';
-const DOT_ON_BLUE = '#F2C6B4';
+const DOT_ON_BLUE = '#F5E3B3';
 
 interface BrandDotProps {
   color?: string;

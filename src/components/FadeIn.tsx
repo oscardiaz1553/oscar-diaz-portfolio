@@ -1,45 +1,31 @@
-import { motion } from 'framer-motion';
-import type { ElementType, ReactNode, CSSProperties } from 'react';
-import { useMemo } from 'react';
+import { CSSProperties, ElementType, PointerEvent, ReactNode } from 'react';
 
 interface FadeInProps {
   children: ReactNode;
-  /** The element type to render (e.g. 'div', 'h1', 'p', 'nav'). Defaults to 'div'. */
-  as?: ElementType;
+  /** Se conservan por compatibilidad: ya no hay animación al hacer scroll. */
   delay?: number;
   duration?: number;
   x?: number;
   y?: number;
+  as?: ElementType;
   className?: string;
   style?: CSSProperties;
+  onPointerEnter?: (e: PointerEvent) => void;
 }
 
-/**
- * Reveals its children with a fade + slide as it enters the viewport.
- * Uses motion.create() so the animated element type can be chosen at runtime.
- */
+// Antes revelaba el contenido al hacer scroll. Ahora el contenido está
+// siempre visible desde el primer momento: quien llega quiere leer, no
+// esperar a que las cosas aparezcan.
 export default function FadeIn({
   children,
-  as = 'div',
-  delay = 0,
-  duration = 0.7,
-  x = 0,
-  y = 30,
+  as: Tag = 'div',
   className,
   style,
+  onPointerEnter,
 }: FadeInProps) {
-  const MotionTag = useMemo(() => motion.create(as), [as]);
-
   return (
-    <MotionTag
-      className={className}
-      style={style}
-      initial={{ opacity: 0, x, y }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: '50px', amount: 0 }}
-      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <Tag className={className} style={style} onPointerEnter={onPointerEnter}>
       {children}
-    </MotionTag>
+    </Tag>
   );
 }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import FadeIn from './FadeIn';
+import SectionHead from './SectionHead';
 import ImagePlaceholder from './ImagePlaceholder';
 import { getCaseStudy } from '../data/caseStudies';
 
@@ -18,9 +19,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
   return (
     <section className="px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-28">
       <div className="max-w-6xl mx-auto">
-        <FadeIn as="h2" y={30} className="text-ink font-bold tracking-tight mb-12 sm:mb-16" style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
-          Mira más proyectos
-        </FadeIn>
+        <SectionHead kind="square" title="Mira más proyectos" className="mb-12 sm:mb-16" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, i) => (
@@ -38,7 +37,7 @@ export default function MoreProjects({ slugs }: MoreProjectsProps) {
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-ink font-medium leading-tight group-hover:text-accent transition-colors duration-200 text-lg sm:text-xl">
+                    <h3 className="font-display font-bold tracking-[-0.02em] text-klein-deep leading-tight group-hover:text-accent transition-colors duration-200 text-lg sm:text-xl">
                       {project.cardTitle}
                     </h3>
                     <p className="mt-1 tracking-wide text-xs font-medium" style={{ color: 'var(--muted)' }}>

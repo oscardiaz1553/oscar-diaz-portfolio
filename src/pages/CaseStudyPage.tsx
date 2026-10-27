@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import MoreProjects from '../components/MoreProjects';
 import ImagePlaceholder from '../components/ImagePlaceholder';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { getCaseStudy } from '../data/caseStudies';
 import type { CaseStudySection, CaseBlock } from '../data/caseStudies';
 
@@ -20,8 +21,8 @@ function TextBlock({
         <FadeIn
           as="h2"
           y={30}
-          className="text-ink font-bold tracking-tight leading-tight mb-6"
-          style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)' }}
+          className="font-display font-extrabold text-klein tracking-[-0.04em] leading-[1.02] mb-6"
+          style={{ fontSize: 'clamp(1.8rem, 3.8vw, 2.9rem)' }}
         >
           {section.title}
         </FadeIn>
@@ -62,8 +63,8 @@ function BlockHeading({ title, intro }: { title?: string; intro?: string }) {
         <FadeIn
           as="h2"
           y={24}
-          className="text-ink font-bold tracking-tight leading-tight"
-          style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.4rem)' }}
+          className="font-display font-extrabold text-klein tracking-[-0.04em] leading-[1.02]"
+          style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.7rem)' }}
         >
           {title}
         </FadeIn>
@@ -78,6 +79,30 @@ function BlockHeading({ title, intro }: { title?: string; intro?: string }) {
           </p>
         </FadeIn>
       )}
+    </div>
+  );
+}
+
+/** Video del caso: el vertical en el celular, el horizontal en pantallas grandes. */
+function VideoBlock({ block }: { block: Extract<CaseBlock, { kind: 'video' }> }) {
+  const phone = useMediaQuery('(max-width: 639px)');
+  const media = phone ? block.vertical : block.horizontal;
+  return (
+    <div className={phone ? 'max-w-[340px] mx-auto' : 'max-w-4xl mx-auto'}>
+      <video
+        key={phone ? 'v' : 'h'}
+        controls
+        playsInline
+        preload="none"
+        poster={media.poster}
+        aria-label={block.title ?? 'Video del proyecto'}
+        className={`block w-full h-auto rounded-[24px] sm:rounded-[32px] bg-klein-deep shadow-[0_30px_80px_-40px_rgba(20,30,92,0.5)] ${
+          phone ? 'aspect-[9/16]' : 'aspect-video'
+        } object-cover`}
+      >
+        <source src={media.src} type="video/mp4" />
+      </video>
+      <Caption text={block.caption} />
     </div>
   );
 }
@@ -249,6 +274,16 @@ function CaseBlockView({ block }: { block: CaseBlock }) {
         </section>
       );
 
+    case 'video':
+      return (
+        <section className={wrap}>
+          <div className={inner}>
+            <BlockHeading title={block.title} intro={block.intro} />
+            <VideoBlock block={block} />
+          </div>
+        </section>
+      );
+
     case 'metrics':
       return (
         <section className={wrap}>
@@ -260,7 +295,7 @@ function CaseBlockView({ block }: { block: CaseBlock }) {
                 y={20}
                 className="rounded-2xl bg-surface border border-black/10 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.4)] p-6 text-center"
               >
-                <p className="text-accent font-bold text-2xl sm:text-3xl">{m.value}</p>
+                <p className="font-display font-extrabold tracking-[-0.03em] text-klein text-3xl sm:text-4xl">{m.value}</p>
                 <p className="mt-2 font-light text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
                   {m.label}
                 </p>
@@ -288,7 +323,7 @@ export default function CaseStudyPage() {
       <Navbar variant="light" />
 
       {/* Hero */}
-      <header className="px-5 sm:px-8 md:px-10 pt-14 sm:pt-16 md:pt-20">
+      <header className="px-5 sm:px-8 md:px-10 pt-28 sm:pt-32 md:pt-36">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <FadeIn as="p" className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm mb-5">
@@ -297,8 +332,8 @@ export default function CaseStudyPage() {
             <FadeIn
               as="h1"
               y={40}
-              className="hero-heading font-bold tracking-tight leading-[0.95]"
-              style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)' }}
+              className="font-display font-extrabold text-klein tracking-[-0.045em] leading-[0.95]"
+              style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)' }}
             >
               {study.title}
             </FadeIn>
@@ -393,8 +428,8 @@ export default function CaseStudyPage() {
                   className="flex-1 flex sm:flex-col items-center gap-4 sm:gap-5 sm:text-center"
                 >
                   <div className="flex items-center w-full sm:justify-center">
-                    <span className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center text-accent-deep font-medium">
-                      {i + 1}
+                    <span aria-hidden className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-carne flex items-center justify-center">
+                      <span className="w-3 h-3 rounded-full bg-carne-deep" />
                     </span>
                     {i < study.steps.length - 1 && (
                       <span className="hidden sm:block h-px flex-1 bg-black/15 ml-2" />

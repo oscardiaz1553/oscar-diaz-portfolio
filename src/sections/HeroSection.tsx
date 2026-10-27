@@ -1,78 +1,112 @@
-import Navbar from '../components/Navbar';
-import FadeIn from '../components/FadeIn';
+import { motion } from 'framer-motion';
 import AccentButton from '../components/AccentButton';
-import ConceptGrid from '../components/ConceptGrid';
-import { BrandName } from '../components/Brand';
+import { BrandDot, DOT_ON_BLUE } from '../components/Brand';
+import Magnetic from '../components/Magnetic';
+import MorphBrackets from '../components/MorphBrackets';
+import RotatingWord from '../components/RotatingWord';
+import Navbar from '../components/Navbar';
+
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+// La palabra que rota dice en qué trabajo. El texto completo vive en un sr-only
+// para lectores de pantalla y buscadores.
+const SUBJECTS = ['productos digitales', 'sistemas complejos', 'sitios en WordPress', 'tiendas en Shopify'];
+const SR_HEADLINE = `Oscar Díaz. Diseñador de producto UX/UI y desarrollador web. Diseño y construyo ${SUBJECTS.join(', ')}.`;
+
+const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
 /**
- * Portada editorial (sistema Out.): texto a la izquierda, la retícula-concepto
- * a sangre a la derecha. El wordmark gigante es el nombre; la retícula anima
- * "casi todo obedece, una se sale" — los puntos esquivan el cursor y cada
- * pocos segundos uno cálido se escapa cruzando el borde.
+ * Portada con el estilo de Out: azul Klein sólido, los símbolos de la marca
+ * cambiando de forma de fondo y una tipografía enorme que domina el primer
+ * pantallazo. El nombre es el titular; la palabra del medio rota entre lo que
+ * hace Oscar. Un CTA primario (hablemos) y uno secundario (ver trabajos).
  */
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100dvh] flex flex-col bg-paper overflow-hidden">
-      <Navbar variant="light" />
+    <section data-nav-bg="dark" className="relative min-h-[100dvh] flex flex-col overflow-hidden bg-klein">
+      <Navbar />
 
-      <div className="relative z-10 flex-1 grid grid-cols-1 md:grid-cols-[1.05fr_0.95fr] items-stretch">
-        {/* Texto */}
-        <div className="flex flex-col justify-center px-6 md:px-10 lg:px-16 py-14 md:py-0 order-2 md:order-1">
-          <FadeIn delay={0.1} y={16}>
-            <span className="text-base sm:text-lg text-carne-tinta">
-              Diseñador de Producto · UX/UI
-            </span>
-          </FadeIn>
+      <MorphBrackets className="absolute z-[1] right-[-4%] top-[8%] w-[70%] sm:w-[58%] lg:w-[50%] opacity-[0.17] sm:opacity-[0.24]" />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-b from-klein-deep/40 via-transparent to-klein-deep/55 pointer-events-none"
+      />
 
-          <FadeIn delay={0.2} y={24}>
-            <h1
-              className="font-display font-extrabold text-klein tracking-[-0.05em] leading-[0.86] mt-5"
-              style={{ fontSize: 'clamp(3.25rem, 11vw, 10rem)' }}
-              aria-label="Oscar Díaz"
-            >
-              <BrandName />
-            </h1>
-          </FadeIn>
+      <div className="relative z-10 flex-1 flex flex-col justify-end px-6 md:px-10 lg:px-16 pt-28 pb-16 sm:pb-20 lg:pb-24">
+        <h1 className="font-display font-extrabold tracking-[-0.045em]" style={{ fontSize: 'clamp(2.6rem, 7.4vw, 8rem)', lineHeight: 0.94 }}>
+          <span className="sr-only">{SR_HEADLINE}</span>
 
-          <FadeIn delay={0.34} y={18}>
-            <p
-              className="font-display font-semibold text-klein-mid tracking-[-0.03em] mt-6"
-              style={{ fontSize: 'clamp(1.4rem, 3vw, 2.6rem)' }}
-            >
-              Never the usual.
-            </p>
-          </FadeIn>
+          <motion.span
+            aria-hidden="true"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.7, ease: EASE }}
+            className="block text-paper-pure"
+          >
+            Oscar Díaz
+            <BrandDot color={DOT_ON_BLUE} />
+          </motion.span>
+          <motion.span
+            aria-hidden="true"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7, ease: EASE }}
+            className="block text-paper-pure mt-3 sm:mt-4"
+            style={{ fontSize: '0.62em', lineHeight: 1 }}
+          >
+            Diseño y construyo
+          </motion.span>
+          <motion.span
+            aria-hidden="true"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.42, duration: 0.7, ease: EASE }}
+            className="block text-carne"
+            style={{ fontSize: '0.62em', lineHeight: 1.05 }}
+          >
+            <RotatingWord words={SUBJECTS} interval={3000} className="pb-[0.14em] -mb-[0.14em]" />
+          </motion.span>
+        </h1>
 
-          <FadeIn delay={0.46} y={16}>
-            <p className="text-ink-2 leading-relaxed max-w-[46ch] mt-6 text-base sm:text-lg">
-              Casi todo obedece. Una cosa se sale. Diseño el sistema, no la pieza
-              suelta, y sé exactamente dónde romperlo — sistemas complejos vueltos
-              experiencias claras que llegan a producción.
-            </p>
-          </FadeIn>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.7 }}
+          className="mt-6 sm:mt-7 max-w-[46ch] text-paper-pure/85 leading-relaxed text-base sm:text-lg"
+        >
+          Casi todo obedece. Una cosa se sale. Diseño el sistema y no la pieza suelta, y sé exactamente dónde romperlo.
+          Tomo sistemas complejos y los vuelvo experiencias claras que llegan a producción.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.78, duration: 0.7 }}
+          className="mt-3 max-w-[46ch] text-paper-pure/70 leading-relaxed text-sm sm:text-base"
+        >
+          También diseño y desarrollo sitios en WordPress, y construyo tiendas en Shopify.
+        </motion.p>
 
-          <FadeIn delay={0.58} y={16} className="mt-9 flex flex-wrap items-center gap-4">
-            <AccentButton href="#contacto" className="sm:px-12 sm:py-4">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.7 }}
+          className="mt-8 sm:mt-10 flex flex-wrap items-center gap-x-7 gap-y-4"
+        >
+          <Magnetic>
+            <AccentButton onBlue onClick={() => go('contacto')} className="sm:px-12 sm:py-4">
               Hablemos
             </AccentButton>
-            <a
-              href="#trabajos"
-              className="rounded-full border border-klein/20 px-7 py-3 sm:py-3.5 font-sans font-medium text-sm text-klein-deep hover:border-klein hover:text-klein transition-colors duration-200"
-            >
-              Ver trabajos
-            </a>
-          </FadeIn>
-        </div>
+          </Magnetic>
+          <button
+            type="button"
+            onClick={() => go('trabajos')}
+            className="text-paper-pure font-medium text-sm sm:text-base underline underline-offset-[6px] decoration-paper-pure/40 hover:decoration-carne hover:text-carne transition-colors duration-200"
+          >
+            Ver trabajos
+          </button>
+        </motion.div>
 
-        {/* La retícula-concepto a sangre: toca los bordes derecho, superior e inferior */}
-        <FadeIn
-          delay={0.3}
-          y={0}
-          duration={1}
-          className="relative order-1 md:order-2 h-[42vh] md:h-auto md:min-h-[86vh] overflow-hidden"
-        >
-          <ConceptGrid className="absolute inset-0" />
-        </FadeIn>
+        <p className="mt-10 font-display font-semibold text-carne tracking-[-0.03em] text-xl sm:text-2xl">Never the usual.</p>
       </div>
     </section>
   );

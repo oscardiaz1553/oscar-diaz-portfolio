@@ -14,7 +14,7 @@ interface ImagePlaceholderProps {
   fit?: 'cover' | 'contain';
   /**
    * Frameless mode: render the real image at its natural aspect ratio (capped by
-   * `maxHeight`), centered, with a soft shadow — no box, no mat, no border. This
+   * `maxHeight`), centered, with a soft shadow, no box, no mat, no border. This
    * keeps screenshots fully visible and prominent instead of matted inside a
    * container. Best for case-study images.
    */
@@ -39,7 +39,7 @@ export default function ImagePlaceholder({
   maxHeight,
 }: ImagePlaceholderProps) {
   if (src) {
-    // Frameless: the image is the element — no wrapper box, no mat, no border.
+    // Frameless: the image is the element, no wrapper box, no mat, no border.
     if (natural) {
       return (
         <img

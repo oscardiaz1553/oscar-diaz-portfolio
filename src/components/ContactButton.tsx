@@ -7,7 +7,7 @@ interface ContactButtonProps {
 }
 
 /**
- * Primary CTA — accent green pill with a subtle lift on hover.
+ * Primary CTA, accent green pill with a subtle lift on hover.
  */
 export default function ContactButton({
   className = '',

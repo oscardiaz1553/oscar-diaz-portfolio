@@ -1,94 +1,44 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
-import AnimatedText from '../components/AnimatedText';
 import ContactButton from '../components/ContactButton';
+import SectionHead from '../components/SectionHead';
+import SymbolField from '../components/SymbolField';
 
 const ABOUT_TEXT =
-  'Soy diseñador ux/ui enfocado en producto. Me especializo en tomar sistemas complejos —plataformas internas, procesos manuales, herramientas enterprise— y convertirlos en experiencias claras, consistentes y usables. Disfruto trabajar cerca del negocio y del equipo de desarrollo para que el diseño llegue a producción y genere impacto real. ¡Construyamos algo increíble juntos!';
+  'Soy diseñador UX/UI enfocado en producto. Lo que mejor hago es tomar sistemas complejos (plataformas internas, procesos manuales, herramientas enterprise) y volverlos experiencias claras y fáciles de usar. Me gusta trabajar cerca del negocio y del equipo de desarrollo para que el diseño llegue a producción y sirva de verdad. También diseño y desarrollo sitios en WordPress, y diseño, desarrollo y construyo tiendas en Shopify. ¿Tienes algo en mente? Hablemos.';
 
 export default function AboutSection() {
   return (
     <section
       id="acerca"
-      className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-24 overflow-hidden"
-      style={{ background: 'var(--bg)' }}
+      className="relative overflow-hidden bg-paper-pure border-t border-klein-deep/10 px-6 md:px-10 lg:px-16 py-16 sm:py-20 md:py-28"
     >
-      {/* Decorative floating shapes — flat geometry only */}
-      <motion.div
-        className="absolute top-[12%] left-[8%] h-16 w-16 md:h-24 md:w-24 rounded-full border-2 border-accent/25 pointer-events-none"
-        animate={{ y: [0, -24, 0], x: [0, 14, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden
-      />
-      <motion.svg
-        className="absolute top-[14%] right-[10%] w-24 h-24 md:w-36 md:h-36 pointer-events-none"
-        viewBox="0 0 100 100"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-        aria-hidden
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="46"
-          fill="none"
-          stroke="rgba(14,14,12,0.15)"
-          strokeWidth="1"
-          strokeDasharray="1 8"
-          strokeLinecap="round"
-        />
-      </motion.svg>
-      <motion.div
-        className="absolute bottom-[18%] left-[12%] h-10 w-10 rounded-xl bg-accent/80 pointer-events-none"
-        animate={{ rotate: [0, 90, 0], y: [0, -14, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden
-      />
-      <motion.div
-        className="absolute top-[24%] left-[18%] h-6 w-6 rounded-full bg-accent/70 pointer-events-none"
-        animate={{ y: [0, 18, 0], x: [0, 10, 0] }}
-        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
-        aria-hidden
+      <SymbolField
+        color="#1B2FCC"
+        opacity={0.06}
+        items={[
+          { kind: 'square', x: 8, y: 22, size: 'clamp(6rem, 14vw, 13rem)', rot: -8, dur: 14 },
+          { kind: 'angle', x: 93, y: 84, size: 'clamp(5rem, 11vw, 11rem)', rot: 6, dur: 12, delay: 2, desktopOnly: true },
+        ]}
       />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-12 sm:gap-16 md:gap-20">
-        <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-14 text-center">
-          <FadeIn
-            as="p"
-            className="text-accent-deep font-medium tracking-wide text-xs sm:text-sm"
+      <div className="relative max-w-[1100px] mx-auto">
+        <SectionHead kind="square" title="Acerca de mí" statement="Diseño para que funcione." />
+
+        <FadeIn y={20} className="mt-8 sm:mt-10 max-w-[62ch]">
+          <p className="text-ink-2 leading-relaxed" style={{ fontSize: 'clamp(1.05rem, 1.7vw, 1.35rem)' }}>
+            {ABOUT_TEXT}
+          </p>
+        </FadeIn>
+
+        <FadeIn y={20} className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <ContactButton />
+          <Link
+            to="/acerca"
+            className="font-medium text-sm sm:text-base text-klein underline underline-offset-[6px] decoration-klein/30 hover:decoration-klein transition-colors duration-200"
           >
-            Acerca de mí
-          </FadeIn>
-          <FadeIn
-            as="h2"
-            delay={0.05}
-            y={40}
-            className="hero-heading font-bold leading-[0.95] tracking-tight text-center"
-            style={{ fontSize: 'clamp(2.5rem, 9vw, 110px)' }}
-          >
-            Diseño con <span className="accent-text">propósito</span>
-          </FadeIn>
-
-          <AnimatedText
-            text={ABOUT_TEXT}
-            className="text-ink font-medium text-center leading-relaxed max-w-[600px]"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-          />
-        </div>
-
-        <FadeIn delay={0.1} y={30}>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <ContactButton />
-            <Link
-              to="/acerca"
-              className="font-medium tracking-wide text-sm transition-colors duration-200 hover:text-accent underline underline-offset-4 decoration-accent/40"
-              style={{ color: 'var(--ink-2)' }}
-            >
-              Conoce mi trayectoria completa
-            </Link>
-          </div>
+            Conoce mi trayectoria completa
+          </Link>
         </FadeIn>
       </div>
     </section>
