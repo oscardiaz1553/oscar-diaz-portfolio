@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
+import { useEffect } from 'react';
 import AccentButton from '../components/AccentButton';
 import { BrandDot, DOT_ON_BLUE } from '../components/Brand';
 import Magnetic from '../components/Magnetic';
@@ -6,11 +7,66 @@ import MorphBrackets from '../components/MorphBrackets';
 import Navbar from '../components/Navbar';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
+const MANGO = `${import.meta.env.BASE_URL}mango-hero.webp`;
 
 // El texto completo vive en un sr-only para lectores de pantalla y buscadores.
 const SR_HEADLINE = 'Oscar Díaz. Diseñador UX/UI Senior.';
 
 const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
+/** Mango, la mascota de Out: flota y sigue al mouse con un leve parallax. */
+function MangoHero() {
+  const reduceMotion = useReducedMotion();
+  const px = useMotionValue(0);
+  const py = useMotionValue(0);
+  const x = useSpring(px, { stiffness: 80, damping: 18 });
+  const y = useSpring(py, { stiffness: 80, damping: 18 });
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const onMove = (e: PointerEvent) => {
+      if (e.pointerType !== 'mouse') return;
+      px.set((e.clientX / window.innerWidth - 0.5) * -34);
+      py.set((e.clientY / window.innerHeight - 0.5) * -26);
+    };
+    window.addEventListener('pointermove', onMove);
+    return () => window.removeEventListener('pointermove', onMove);
+  }, [reduceMotion, px, py]);
+
+  return (
+    <motion.div
+      aria-hidden
+      className="absolute z-[2] pointer-events-none select-none right-[-20%] top-[12%] w-[min(66vw,320px)] sm:right-[-9%] sm:top-[16%] sm:w-[clamp(300px,37vw,620px)]"
+      style={{ x, y }}
+    >
+      <motion.img
+        src={MANGO}
+        alt=""
+        width={1147}
+        height={930}
+        loading="eager"
+        className="w-full h-auto"
+        style={{ filter: 'drop-shadow(0 40px 70px rgba(10,14,50,0.45))' }}
+        initial={{ opacity: 0, scale: 0.82, rotate: -8 }}
+        animate={
+          reduceMotion
+            ? { opacity: 1, scale: 1, rotate: -4 }
+            : { opacity: 1, scale: 1, rotate: -4, y: [0, -14, 0] }
+        }
+        transition={
+          reduceMotion
+            ? { delay: 0.3, duration: 0.9, ease: EASE }
+            : {
+                opacity: { delay: 0.3, duration: 0.9, ease: EASE },
+                scale: { delay: 0.3, duration: 0.9, ease: EASE },
+                rotate: { delay: 0.3, duration: 0.9, ease: EASE },
+                y: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 },
+              }
+        }
+      />
+    </motion.div>
+  );
+}
 
 /**
  * Portada con el estilo de Out: azul Klein sólido, los símbolos de la marca
@@ -28,6 +84,8 @@ export default function HeroSection() {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-b from-klein-deep/40 via-transparent to-klein-deep/55 pointer-events-none"
       />
+
+      <MangoHero />
 
       <div className="relative z-10 flex-1 flex flex-col justify-end px-6 md:px-10 lg:px-16 pt-28 pb-16 sm:pb-20 lg:pb-24">
         <h1 className="font-display font-extrabold tracking-[-0.045em]" style={{ fontSize: 'clamp(2.6rem, 7.4vw, 8rem)', lineHeight: 0.94 }}>
