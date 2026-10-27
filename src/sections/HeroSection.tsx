@@ -5,13 +5,14 @@ import Magnetic from '../components/Magnetic';
 import MorphBrackets from '../components/MorphBrackets';
 import RotatingWord from '../components/RotatingWord';
 import Navbar from '../components/Navbar';
+import { ClaudeName } from '../components/ClaudeMark';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 // La palabra que rota dice en qué trabajo. El texto completo vive en un sr-only
 // para lectores de pantalla y buscadores.
-const SUBJECTS = ['productos digitales', 'sistemas complejos', 'sitios en WordPress', 'tiendas en Shopify'];
-const SR_HEADLINE = `Oscar Díaz. Diseñador de producto UX/UI y desarrollador web. Diseño y construyo ${SUBJECTS.join(', ')}.`;
+const SUBJECTS = ['plataformas enterprise', 'sistemas de diseño', 'flujos complejos', 'prototipos con IA'];
+const SR_HEADLINE = `Oscar Díaz. Diseñador UX/UI Senior. Especializado en ${SUBJECTS.join(', ')}.`;
 
 const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
@@ -51,20 +52,23 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7, ease: EASE }}
-            className="block text-paper-pure mt-3 sm:mt-4"
+            className="block text-carne mt-2 sm:mt-3"
             style={{ fontSize: '0.62em', lineHeight: 1 }}
           >
-            Diseño y construyo
+            Diseñador UX/UI Senior
           </motion.span>
           <motion.span
             aria-hidden="true"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.42, duration: 0.7, ease: EASE }}
-            className="block text-carne"
-            style={{ fontSize: '0.62em', lineHeight: 1.05 }}
+            className="block text-paper-pure/90 mt-4 sm:mt-5"
+            style={{ fontSize: '0.3em', lineHeight: 1.1, letterSpacing: '-0.025em' }}
           >
-            <RotatingWord words={SUBJECTS} interval={3000} className="pb-[0.14em] -mb-[0.14em]" />
+            Especializado en{' '}
+            <span className="text-paper-pure">
+              <RotatingWord words={SUBJECTS} interval={3000} className="pb-[0.14em] -mb-[0.14em]" />
+            </span>
           </motion.span>
         </h1>
 
@@ -74,8 +78,8 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.7 }}
           className="mt-6 sm:mt-7 max-w-[46ch] text-paper-pure/85 leading-relaxed text-base sm:text-lg"
         >
-          Casi todo obedece. Una cosa se sale. Diseño el sistema y no la pieza suelta, y sé exactamente dónde romperlo.
-          Tomo sistemas complejos y los vuelvo experiencias claras que llegan a producción.
+          Diseño plataformas enterprise para seguros, banca, logística e infraestructura pública. Armo sistemas de
+          diseño en Figma, trabajo de cerca con producto y desarrollo, y entrego prototipos en HTML 1:1 con el diseño.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -83,7 +87,8 @@ export default function HeroSection() {
           transition={{ delay: 0.78, duration: 0.7 }}
           className="mt-3 max-w-[46ch] text-paper-pure/70 leading-relaxed text-sm sm:text-base"
         >
-          También diseño y desarrollo sitios en WordPress, y construyo tiendas en Shopify.
+          Desde junio de 2024 estoy en Sofka Technologies, donde además soy UX/UI Practice Lead. Prototipo en código
+          con <ClaudeName />. WordPress y Shopify son mi complemento.
         </motion.p>
 
         <motion.div
@@ -94,7 +99,7 @@ export default function HeroSection() {
         >
           <Magnetic>
             <AccentButton onBlue onClick={() => go('contacto')} className="sm:px-12 sm:py-4">
-              Hablemos
+              Contáctame
             </AccentButton>
           </Magnetic>
           <button
@@ -102,11 +107,17 @@ export default function HeroSection() {
             onClick={() => go('trabajos')}
             className="text-paper-pure font-medium text-sm sm:text-base underline underline-offset-[6px] decoration-paper-pure/40 hover:decoration-carne hover:text-carne transition-colors duration-200"
           >
-            Ver trabajos
+            Ver casos de estudio
           </button>
+          <a
+            href="/cv/Oscar-Diaz-CV-ES.pdf"
+            download
+            className="text-paper-pure/80 font-medium text-sm sm:text-base underline underline-offset-[6px] decoration-paper-pure/30 hover:decoration-carne hover:text-carne transition-colors duration-200"
+          >
+            Descargar CV (PDF)
+          </a>
         </motion.div>
 
-        <p className="mt-10 font-display font-semibold text-carne tracking-[-0.03em] text-xl sm:text-2xl">Never the usual.</p>
       </div>
     </section>
   );

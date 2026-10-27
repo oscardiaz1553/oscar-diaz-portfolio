@@ -110,17 +110,17 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'diario-deportes',
     title: 'Diario Deportes: Rediseño y migración en vivo',
     cardTitle: 'Diario Deportes: Rediseño y migración en vivo',
-    tag: 'Diseño y desarrollo web',
+    tag: 'Proyecto propio, UX/UI y desarrollo web',
     short: 'Rediseño y migración en vivo de un diario con más de 47.000 notas.',
     isNew: true,
     heroImage: '/images/diario-deportes/hero.webp',
     thumb: '/images/diario-deportes/hero.webp',
     subtitle:
-      'Auditoré, rediseñé y reconstruí en WordPress Diario Deportes, el diario deportivo del Caribe colombiano. Migré en vivo más de 47.000 notas sin detener a la redacción.',
+      'Auditoré, rediseñé y reconstruí en WordPress Diario Deportes, el diario deportivo del Caribe colombiano. Migré en vivo más de 47.000 notas sin detener a la redacción, y el peso de la portada en celular bajó de 32,5 a 4,3 MB.',
     meta: [
       { label: 'Rol', value: 'Diseño UX/UI y desarrollo web' },
-      { label: 'Cliente', value: 'Diario Deportes, Barranquilla' },
-      { label: 'Plataforma', value: 'WordPress' },
+      { label: 'Alcance', value: 'Auditoría, rediseño, desarrollo en WordPress y migración en vivo' },
+      { label: 'Medio', value: 'Diario Deportes, Barranquilla' },
       { label: 'Sitio', value: 'diariodeportes.com.co' },
     ],
     problem: {
@@ -271,24 +271,24 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'sura-mexico',
-    short: 'Plataforma enterprise que digitalizó un proceso 100 % manual.',
+    short: 'Lideré la interfaz de una plataforma enterprise que digitalizó un proceso 100% manual.',
     title: 'Sura México: Cotizadores',
-    cardTitle: 'Sura México: Cotizadores',
+    cardTitle: 'Sura México: Cotización y emisión de pólizas',
     tag: 'Sofka Technologies',
     heroImage: '/images/sura-mexico/calendario-abierto.webp',
     thumb: '/images/sura-mexico/calendario-abierto.webp',
     subtitle:
-      'Diseñé desde cero una plataforma enterprise que digitalizó un proceso 100% manual y conecta 5 tipos de usuario en un solo flujo.',
+      'Lideré la interfaz de una plataforma enterprise de cotización y emisión de pólizas. La diseñé desde cero: digitalizó un proceso 100% manual y conecta 5 tipos de usuario en un solo flujo.',
     meta: [
-      { label: 'Rol', value: 'UX/UI Designer' },
+      { label: 'Rol', value: 'UX/UI Designer, líder de la interfaz' },
+      { label: 'Alcance', value: 'Plataforma enterprise desde cero, con 5 tipos de usuario' },
       { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma' },
-      { label: 'Usuarios', value: '5 tipos de usuario' },
     ],
     problem: {
       title: 'El problema de negocio',
       body: [
-        'Sura México cotizaba 100% a mano, con varios tipos de usuario y sin un flujo común. El reto fue diseñar desde cero una plataforma enterprise que pasara todo el proceso a digital.',
+        'Sura México cotizaba 100% a mano, con varios tipos de usuario y sin un flujo común. El reto fue diseñar desde cero una plataforma enterprise que pasara todo el proceso a digital. Lideré la interfaz y acompañé a desarrollo de forma continua.',
       ],
     },
     carousel: [
@@ -300,7 +300,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: {
       title: 'La solución',
       body: [
-        'Una plataforma enterprise que conecta a los 5 tipos de usuario en un solo flujo digital. Se acabó el proceso manual y la cotización quedó centralizada de punta a punta.',
+        'Una plataforma enterprise que conecta a los 5 tipos de usuario en un solo flujo digital. Se acabó el proceso manual y la cotización quedó centralizada de punta a punta. El sistema es responsive y resuelve flujos multi-rol.',
       ],
     },
     result: {
@@ -314,19 +314,19 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'metro-de-medellin',
-    short: 'Usuarios, permisos y movimientos del sistema de transporte público, en producción.',
+    short: 'Rediseñé la plataforma interna de usuarios, permisos y movimientos del sistema de transporte público. Ya está en producción.',
     title: 'Metro de Medellín: Rediseño de plataforma interna',
-    cardTitle: 'Metro de Medellín: Rediseño de plataforma interna',
+    cardTitle: 'Metro de Medellín: Usuarios, permisos y trazabilidad',
     tag: 'Sofka Technologies',
     heroImage: '/images/metro-de-medellin/sitva-parametrizacion.webp',
     thumb: '/images/metro-de-medellin/intermunicipales-perfiles.webp',
     subtitle:
-      'Rediseño de la plataforma de gestión de usuarios, permisos y movimientos del sistema de transporte público más importante de Colombia. Pasó de ser un sistema confuso a una herramienta centralizada que ya está en producción.',
+      'Rediseñé la plataforma de gestión de usuarios, permisos y movimientos del sistema de transporte público más importante de Colombia. Pasó de ser un sistema confuso a una herramienta centralizada que ya está en producción.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
+      { label: 'Alcance', value: 'Plataforma interna para administradores: usuarios, permisos y movimientos' },
       { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Miro' },
-      { label: 'Usuarios', value: 'Administradores internos' },
     ],
     problem: {
       title: 'El problema de negocio',
@@ -402,19 +402,19 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'logyca',
-    short: 'Del Excel a un sistema visual para dos perfiles de usuario.',
+    short: 'De hojas de cálculo a una plataforma de inventario para usuarios internos y externos.',
     title: 'Logyca: Gestión de inventario en tiempo real',
     cardTitle: 'Logyca: Gestión de inventario en tiempo real',
     tag: 'Sofka Technologies',
     heroImage: '/images/logyca/ingesta.webp',
     thumb: '/images/logyca/ingesta-1.webp',
     subtitle:
-      'Diseñé el corazón de una plataforma que reemplazó los procesos manuales en Excel por un sistema visual para dos perfiles de usuario con necesidades muy distintas.',
+      'Diseñé de punta a punta una plataforma de inventario que reemplazó los procesos manuales en Excel por un sistema visual para dos perfiles de usuario con necesidades muy distintas.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
+      { label: 'Alcance', value: 'Diseño de punta a punta, para usuarios internos y externos' },
       { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Miro' },
-      { label: 'Usuarios', value: 'Internos y externos' },
     ],
     problem: {
       title: 'El problema del negocio',
@@ -498,19 +498,19 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'summa-snetwork',
-    short: 'Rediseño de una plataforma de más de 10 módulos, con sistema de diseño.',
+    short: 'Rediseñé una plataforma de más de 10 módulos y armé su sistema de diseño. Sigue en desarrollo.',
     title: 'SUMMA: SNetwork',
-    cardTitle: 'SUMMA: SNetwork',
+    cardTitle: 'SUMMA: Rediseño de SNetwork y sistema de diseño',
     tag: 'Sofka Technologies',
     heroImage: '/images/summa-snetwork/inicio.webp',
     thumb: '/images/summa-snetwork/tabla.webp',
     subtitle:
-      'Rediseño completo de una plataforma de más de 10 módulos. Cientos de pasos innecesarios pasaron a una experiencia unificada, con flujos más simples y un sistema de diseño documentado.',
+      'Rediseñé por completo una plataforma interna de más de 10 módulos. Cientos de pasos innecesarios pasaron a una experiencia unificada, con flujos más simples y un sistema de diseño documentado.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
+      { label: 'Alcance', value: '+10 módulos rediseñados, con sistema de diseño y librería de componentes' },
       { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Figma Make · VO · Cursor · Azure' },
-      { label: 'Alcance', value: '+10 módulos rediseñados' },
     ],
     problem: {
       title: 'El problema de negocio',
@@ -546,7 +546,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         reverse: true,
         title: 'La decisión clave',
         body: [
-          'No migrar, rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Pero después de la evaluación heurística encontré flujos donde las mismas acciones repetitivas, en varios pasos, se podían reducir a uno. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron, y la plataforma quedó mucho más ágil para el trabajo diario.',
+          'No migrar, rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Pero después de la evaluación heurística encontré flujos donde las mismas acciones repetitivas, en varios pasos, se podían reducir a uno. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron, y la plataforma quedó mucho más ágil para el trabajo diario. Además armé el sistema de diseño, la librería de componentes y prototipos HTML que hacen de especificación viva.',
         ],
         image: '/images/summa-snetwork/usuario-seleccionado.webp',
       },
@@ -570,13 +570,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     insight: {
       title: 'La decisión clave',
       body: [
-        'No migrar, rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Pero después de la evaluación heurística encontré flujos donde las mismas acciones repetitivas, en varios pasos, se podían reducir a uno. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron, y la plataforma quedó mucho más ágil para el trabajo diario.',
+        'No migrar, rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Pero después de la evaluación heurística encontré flujos donde las mismas acciones repetitivas, en varios pasos, se podían reducir a uno. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron, y la plataforma quedó mucho más ágil para el trabajo diario. Además armé el sistema de diseño, la librería de componentes y prototipos HTML que hacen de especificación viva.',
       ],
     },
     result: {
       title: 'Estado actual',
       body: [
-        'Así encontramos el producto. Hicimos una evaluación heurística, hablamos con stakeholders y usuarios, y acordamos las grandes mejoras de experiencia e interfaz que encontramos.',
+        'El proyecto sigue en curso. Hasta ahora hicimos una evaluación heurística, hablamos con stakeholders y usuarios, y acordamos las grandes mejoras de experiencia e interfaz que encontramos.',
       ],
     },
     status: 'Este proyecto sigue en desarrollo.',
@@ -585,7 +585,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'game-view',
-    short: 'Dos productos alrededor de una experiencia 3D interactiva.',
+    short: 'Dos productos 3D diseñados desde cero. El prototipo fue clave para conseguir el funding.',
     title: 'Game View: Dos productos para espacios 3D interactivos',
     cardTitle: 'Game View: Dos productos para espacios 3D interactivos',
     tag: 'Sofka Technologies',
@@ -595,7 +595,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Diseñé el sistema completo de dos productos alrededor de una experiencia 3D interactiva: una herramienta para crear espacios 3D y su app de consumo para TV y móvil. El prototipo fue clave para conseguir el funding.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Empresa', value: 'Sofka Technologies' },
+      { label: 'Alcance', value: 'Dos productos desde cero: creador de espacios 3D y app para TV y móvil' },
       { label: 'Herramientas', value: 'Figma · Miro · Stitch · Lovable' },
       { label: 'Impacto', value: 'Funding conseguido' },
     ],
@@ -707,19 +707,19 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'trib',
-    short: 'App mobile: research, sistema de diseño y UI de alta fidelidad.',
+    short: 'Proyecto de estudio: research, sistema de diseño y UI de alta fidelidad para una app mobile.',
     title: 'Trib',
     cardTitle: 'Trib',
-    tag: 'Case Study',
+    tag: 'Proyecto de estudio',
     heroImage: '/images/trib/misiones-pres.webp',
     thumb: '/images/trib/user-persona.webp',
     subtitle:
-      'Case study UX de una app mobile: research, personas, arquitectura de información, flujos, wireframes y un sistema de diseño con tipografía, color, grid y componentes.',
+      'Proyecto de estudio en el que recorrí de punta a punta el diseño de una app mobile: research, personas, arquitectura de información, flujos, wireframes y un sistema de diseño con tipografía, color, grid y componentes.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
+      { label: 'Alcance', value: 'App mobile: research, sistema de diseño y UI de alta fidelidad' },
       { label: 'Tipo', value: 'Proyecto de estudio' },
       { label: 'Herramientas', value: 'Figma' },
-      { label: 'Plataforma', value: 'Mobile app' },
     ],
     problem: {
       title: 'El problema',

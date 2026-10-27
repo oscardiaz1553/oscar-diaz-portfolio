@@ -32,7 +32,7 @@ function NewBadge({ className = '' }: { className?: string }) {
     <span
       className={`inline-flex items-center rounded-full bg-klein px-2.5 py-1 text-[11px] font-medium text-carne ${className}`}
     >
-      New
+      Nuevo
     </span>
   );
 }
@@ -171,12 +171,12 @@ export default function ProjectsSection() {
       className="relative z-10 overflow-hidden bg-paper-pure md:bg-carne border-b border-klein-deep/10 md:border-b-0 px-6 md:px-10 lg:px-16 py-14 sm:py-16 md:py-20"
     >
       <div className="relative max-w-[1400px] mx-auto">
-        <SectionHead kind="curly" title="Proyectos" className="mb-8 sm:mb-12" />
+        <SectionHead kind="curly" title="Casos de estudio" className="mb-8 sm:mb-12" />
 
         {/* Celular: todos los proyectos como tarjetas, en un carrusel a todo el ancho. */}
         <div
           role="region"
-          aria-label="Proyectos"
+          aria-label="Casos de estudio"
           tabIndex={0}
           className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory overscroll-x-contain scroll-px-6 pb-2 [&::-webkit-scrollbar]:hidden"
           style={{

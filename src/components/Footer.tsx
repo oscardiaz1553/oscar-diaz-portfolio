@@ -35,8 +35,8 @@ export default function Footer() {
         </p>
 
         <p className="mt-6 max-w-[48ch] leading-relaxed text-paper-pure/85" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}>
-          Estoy abierto a roles de producto, freelance y colaboraciones. Cuéntame qué estás construyendo y te respondo
-          en menos de 24 horas.
+          Estoy abierto a roles de diseño UX/UI y producto, y también a proyectos freelance y colaboraciones. Cuéntame
+          qué estás buscando o construyendo y te respondo en menos de 24 horas.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
@@ -57,6 +57,9 @@ export default function Footer() {
             <BrandName onBlue />
           </Link>
           <div className="flex items-center gap-6 text-sm font-medium text-paper-pure/80">
+            <a href="/cv/Oscar-Diaz-CV-ES.pdf" download className="hover:text-carne transition-colors duration-200">
+              Descargar CV
+            </a>
             <a href={LINKEDIN} target="_blank" rel="noreferrer" className="hover:text-carne transition-colors duration-200">
               LinkedIn
             </a>

@@ -5,6 +5,7 @@ import FadeIn from '../components/FadeIn';
 import PageHead from '../components/SectionHead';
 import TitleFrame from '../components/TitleFrame';
 import type { FrameKind } from '../components/TitleFrame';
+import ClaudeMark, { ClaudeName } from '../components/ClaudeMark';
 
 /*
   /acerca, "Acerca de mí": la historia + el CV navegable, con la misma
@@ -13,30 +14,37 @@ import type { FrameKind } from '../components/TitleFrame';
   (PDF ES/EN en /public/cv).
 */
 
-const ABOUT_TEXT =
-  'Soy diseñador UX/UI enfocado en producto. Lo que mejor hago es tomar sistemas complejos (plataformas internas, procesos manuales, herramientas enterprise) y volverlos experiencias claras y fáciles de usar. Me gusta trabajar cerca del negocio y del equipo de desarrollo para que el diseño llegue a producción y sirva de verdad. También tengo experiencia diseñando y desarrollando sitios en WordPress, y diseñando, desarrollando y construyendo tiendas en Shopify.';
+const ABOUT_TEXT = (
+  <>
+    Soy diseñador UX/UI Senior, con foco en plataformas enterprise. Tomo sistemas complejos, como plataformas internas,
+    procesos manuales y herramientas enterprise, y los vuelvo experiencias claras y fáciles de usar. Trabajo cerca del
+    negocio y del equipo de desarrollo para que el diseño llegue a producción y sirva de verdad. Uso IA con criterio,
+    con agentes y <ClaudeName />, para investigar, documentar y prototipar en código. Como complemento, diseño y
+    desarrollo sitios en WordPress, y diseño, desarrollo y construyo tiendas en Shopify.
+  </>
+);
 
 const EXPERIENCE = [
   {
     title: 'UI/UX Specialist, proyectos enterprise',
     org: 'Sofka Technologies',
     dates: 'De junio de 2024 a la actualidad',
-    desc: 'Diseño interfaces para plataformas enterprise complejas. Armo el sistema visual, los componentes y los UI Kits en Figma, documento estilos e interacciones, y hago prototipos navegables en HTML de alta fidelidad (1:1 con Figma).',
+    desc: 'Diseño interfaces para plataformas enterprise complejas de seguros, banca, logística e infraestructura pública. Soy responsable del sistema visual: componentes y UI Kits en Figma, con estilos e interacciones documentados. Entrego prototipos navegables en HTML de alta fidelidad, 1:1 con Figma, para que desarrollo tenga una referencia clara.',
     projects: [
-      ['Sura México', 'lideré la interfaz de la plataforma de cotización y emisión de pólizas, con sistema responsive, flujos multi-rol y acompañamiento continuo a desarrollo.'],
-      ['Summa', 'migración completa de la plataforma interna, con sistema de diseño, librería de componentes y prototipos HTML que hacen de especificación viva.'],
-      ['Metro de Medellín', 'rediseño de la gestión de usuarios y permisos, con flujos clave más simples y mejor trazabilidad.'],
-      ['Yappy', 'flujo de inscripción de cuentas multi-dispositivo, con prototipo navegable de alta fidelidad y microinteracciones.'],
-      ['Logyca', 'diseño end-to-end de la plataforma de gestión de inventario, con prototipos animados.'],
-      ['Crystal', 'diseño desde cero: arquitectura de flujos, sistema visual y prototipos navegables.'],
-      ['UX/UI Practice Lead', 'revisiones de calidad, entrevistas técnicas y acompañamiento a los diseñadores del equipo.'],
+      ['UX/UI Practice Lead', 'hago revisiones de calidad, entrevistas técnicas y acompaño a los diseñadores del equipo.'],
+      ['Sura México', 'lideré la interfaz de la plataforma de cotización y emisión de pólizas. Entregué un sistema responsive y flujos multi-rol, con acompañamiento continuo a desarrollo.'],
+      ['Summa', 'migración completa de la plataforma interna. Entregué el sistema de diseño, la librería de componentes y prototipos HTML que hacen de especificación viva.'],
+      ['Metro de Medellín', 'rediseñé la gestión de usuarios y permisos. Los flujos clave quedaron más simples y mejoró la trazabilidad.'],
+      ['Yappy', 'diseñé el flujo de inscripción de cuentas multi-dispositivo, con prototipo navegable de alta fidelidad y microinteracciones.'],
+      ['Logyca', 'diseñé de punta a punta la plataforma de gestión de inventario, con prototipos animados.'],
+      ['Crystal', 'diseñé desde cero la arquitectura de flujos, el sistema visual y los prototipos navegables.'],
     ] as [string, string][],
   },
   {
     title: 'UI/UX Designer, freelance',
     org: 'Clientes de salud, retail y servicios',
     dates: 'De enero de 2021 a la actualidad',
-    desc: 'Diseño interfaces y sistemas visuales con prototipos navegables en Figma. Desarrollo y personalizo sitios en WordPress y Shopify (temas, secciones y maquetación propia) y hablo directamente con cada cliente para ir mostrando avances.',
+    desc: 'Diseño interfaces y sistemas visuales, con prototipos navegables en Figma. Desarrollo y personalizo sitios en WordPress y Shopify (temas, secciones y maquetación propia). Hablo directamente con cada cliente y le muestro avances a medida que los tengo.',
     projects: [] as [string, string][],
   },
   {
@@ -55,29 +63,29 @@ const EDUCATION = [
 ];
 
 const SKILLS = [
-  'Diseño de interfaces y jerarquía visual',
   'Sistemas de diseño y UI Kits',
-  'Maquetación HTML / CSS',
-  'Diseño y desarrollo en WordPress',
-  'Diseño, desarrollo y construcción en Shopify',
+  'Diseño de interfaces y jerarquía visual',
   'Documentación y specs de interacción',
   'Prototipado y microinteracciones',
-  'Consistencia con identidad de marca',
   'Arquitectura de información',
   'Research y validación',
   'Stakeholder management',
   'Diseño acelerado con IA',
+  'Consistencia con identidad de marca',
+  'Maquetación HTML / CSS',
+  'Diseño y desarrollo en WordPress',
+  'Diseño, desarrollo y construcción en Shopify',
 ];
 
 const TOOLS = [
   ['Figma', 'incluido Figma Make'],
   ['Claude / Claude Code', 'prototipos en código'],
-  ['Adobe', 'Ps · Ai · Ae'],
   ['v0 (Vercel) · Gemini', 'IA generativa'],
   ['HTML / CSS', 'maquetación'],
+  ['Azure DevOps · Miro', 'gestión y colaboración'],
+  ['Adobe', 'Ps · Ai · Ae'],
   ['WordPress', 'diseño y desarrollo de sitios'],
   ['Shopify', 'diseño, desarrollo y construcción de tiendas'],
-  ['Azure DevOps · Miro', 'gestión y colaboración'],
 ];
 
 function SectionHead({ kind, title }: { kind: FrameKind; title: string }) {
@@ -116,10 +124,12 @@ export default function AboutPage() {
               className="mt-5 max-w-2xl font-light leading-relaxed"
               style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 1.6vw, 1.25rem)' }}
             >
-              Llevo más de 3 años diseñando productos digitales para sectores
-              regulados: seguros, banca, logística e infraestructura pública.
-              Diseño la UI sobre sistemas de diseño y UI Kits en Figma, y maqueto
-              en HTML/CSS para que el handoff con desarrollo sea más rápido.
+              Diseño interfaces y productos digitales desde enero de 2021. Desde
+              junio de 2024 lo hago en Sofka Technologies, en plataformas de
+              sectores regulados: seguros, banca, logística e infraestructura
+              pública. Diseño la UI sobre sistemas de diseño y UI Kits en Figma, y
+              maqueto en HTML/CSS para validar la viabilidad técnica y agilizar el
+              handoff con desarrollo.
             </p>
           </FadeIn>
 
@@ -133,7 +143,7 @@ export default function AboutPage() {
                 style={{ background: 'var(--klein)', color: 'var(--paper-pure)' }}
               >
                 <Download size={16} strokeWidth={2.2} />
-                Descargar CV (español)
+                Descargar CV en español (PDF)
               </a>
               <a
                 href="/cv/Oscar-Diaz-CV-EN.pdf"
@@ -142,7 +152,7 @@ export default function AboutPage() {
                 style={{ borderColor: 'var(--line)', color: 'var(--ink-2)' }}
               >
                 <Download size={16} strokeWidth={2.2} />
-                English version
+                CV in English (PDF)
               </a>
             </div>
           </FadeIn>
@@ -241,6 +251,9 @@ export default function AboutPage() {
                     {TOOLS.map(([name, detail]) => (
                       <p key={name} className="text-sm" style={{ color: 'var(--ink-2)' }}>
                         <b className="font-semibold" style={{ color: 'var(--klein-deep)' }}>
+                          {name.startsWith('Claude') && (
+                            <ClaudeMark className="inline-block h-4 w-4 align-[-0.2em] mr-1.5" />
+                          )}
                           {name}
                         </b>
                         <span style={{ color: 'var(--muted)' }}>: {detail}</span>

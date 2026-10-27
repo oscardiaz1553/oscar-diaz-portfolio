@@ -1,27 +1,38 @@
 import FadeIn from '../components/FadeIn';
 import SectionHead from '../components/SectionHead';
 import SymbolField from '../components/SymbolField';
+import ClaudeMark, { ClaudeName } from '../components/ClaudeMark';
+import type { ReactNode } from 'react';
 
-const PHASES = [
-  {
-    title: 'Documentación',
-    copy: 'Escribo especificaciones, handoff y documentación de producto más rápido y con más orden.',
-  },
+const PHASES: { title: string; copy: ReactNode }[] = [
   {
     title: 'Research',
-    copy: 'Resumo entrevistas, analizo hallazgos y hago benchmarking en menos tiempo.',
+    copy: 'Resumo entrevistas, ordeno hallazgos y hago benchmarking en menos tiempo. Contrasto los resultados con las fuentes antes de usarlos.',
   },
   {
     title: 'Descubrimiento',
-    copy: 'Exploro ideas, armo mapas de oportunidad y defino el problema con más claridad.',
+    copy: 'Exploro ideas, armo mapas de oportunidad y defino el problema con más claridad. La IA propone y yo decido qué sirve.',
   },
   {
-    title: 'Diseño',
-    copy: 'Planteo flujos, pruebo variantes de UI y hago prototipos para validar antes.',
+    title: 'Diseño y prototipos',
+    copy: (
+      <>
+        Planteo flujos, pruebo variantes de UI y hago prototipos en código con <ClaudeName />, además de prototipos
+        navegables en HTML de alta fidelidad, 1:1 con Figma.
+      </>
+    ),
+  },
+  {
+    title: 'Documentación',
+    copy: 'Con agentes escribo especificaciones, handoff y documentación de producto más rápido y con más orden. Reviso cada entrega antes de compartirla.',
+  },
+  {
+    title: 'Mis límites',
+    copy: 'Las decisiones de diseño y la validación con usuarios no se delegan. Todo lo que genera la IA lo reviso, y no entrego lo que no entiendo.',
   },
 ];
 
-const TOOLS = ['Claude', 'Claude Code', 'Gemini', 'ChatGPT', 'NotebookLM'];
+const TOOLS = ['Claude', 'Claude Code', 'Gemini', 'ChatGPT', 'NotebookLM', 'Figma Make'];
 
 export default function AISection() {
   return (
@@ -43,8 +54,13 @@ export default function AISection() {
           kind="angle"
           title="Mi flujo con IA"
           onDark
-          statement="Diseño con IA en cada etapa."
-          lead="Uso IA en cada etapa del proceso para diseñar más rápido y decidir mejor. El criterio sigue siendo mío."
+          statement="La IA acelera. El criterio es mío."
+          lead={
+            <>
+              Trabajo con agentes y con <ClaudeName /> en mi proceso de diseño y en prototipos en código. Me ayudan a ir
+              más rápido y a revisar más opciones. Las decisiones las tomo yo.
+            </>
+          }
           className="mb-12 sm:mb-16 max-w-3xl"
         />
 
@@ -83,8 +99,7 @@ export default function AISection() {
             className="leading-relaxed max-w-md text-paper-pure/80"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)' }}
           >
-            También construyo sitios y plataformas web con ayuda de la IA, de la
-            idea al producto funcionando.
+            Con <ClaudeName /> también construyo sitios y plataformas web, de la idea al producto funcionando.
           </p>
           <div className="md:text-right">
             <p className="text-carne font-medium text-xs sm:text-sm">
@@ -94,7 +109,19 @@ export default function AISection() {
               className="mt-2 text-paper-pure font-medium"
               style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)' }}
             >
-              {TOOLS.join('  ·  ')}
+              {TOOLS.map((tool, i) => (
+                <span key={tool}>
+                  {i > 0 && (
+                    <span aria-hidden className="mx-2">
+                      ·
+                    </span>
+                  )}
+                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+                    {tool.startsWith('Claude') && <ClaudeMark className="h-5 w-5 shrink-0" />}
+                    {tool}
+                  </span>
+                </span>
+              ))}
             </p>
           </div>
         </FadeIn>

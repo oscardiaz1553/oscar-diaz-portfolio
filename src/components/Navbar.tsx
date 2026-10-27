@@ -126,7 +126,7 @@ function MobileMenu({ onClose, go }: { onClose: () => void; go: (t: NavTarget) =
           className="w-full flex items-center justify-between gap-4 rounded-full bg-carne pl-7 pr-2 py-2 shadow-[0_16px_40px_rgba(245,227,179,0.22)]"
         >
           <span className="font-display font-extrabold tracking-[-0.03em] text-klein-deep text-[clamp(1.1rem,5.6vw,1.4rem)] leading-none whitespace-nowrap">
-            Hablemos
+            Contáctame
           </span>
           <span className="w-12 h-12 shrink-0 rounded-full bg-klein-deep text-paper-pure flex items-center justify-center">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -259,7 +259,7 @@ export default function Navbar(_props: NavbarProps) {
             <div className="justify-self-end flex items-center gap-3">
               <div className="hidden sm:block">
                 <AccentButton onClick={() => go({ id: 'contacto' })} onBlue={onDark} className="px-6 py-2.5 text-sm">
-                  Hablemos
+                  Contáctame
                 </AccentButton>
               </div>
               <button

@@ -3,9 +3,18 @@ import FadeIn from '../components/FadeIn';
 import ContactButton from '../components/ContactButton';
 import SectionHead from '../components/SectionHead';
 import SymbolField from '../components/SymbolField';
+import { ClaudeName } from '../components/ClaudeMark';
 
-const ABOUT_TEXT =
-  'Soy diseñador UX/UI enfocado en producto. Lo que mejor hago es tomar sistemas complejos (plataformas internas, procesos manuales, herramientas enterprise) y volverlos experiencias claras y fáciles de usar. Me gusta trabajar cerca del negocio y del equipo de desarrollo para que el diseño llegue a producción y sirva de verdad. También diseño y desarrollo sitios en WordPress, y diseño, desarrollo y construyo tiendas en Shopify. ¿Tienes algo en mente? Hablemos.';
+const ABOUT_TEXT = (
+  <>
+    Soy diseñador UX/UI Senior, con foco en plataformas enterprise. Tomo sistemas complejos, como plataformas internas,
+    procesos manuales y herramientas enterprise, y los vuelvo experiencias claras y fáciles de usar. Trabajo cerca del
+    negocio y de desarrollo para que el diseño llegue a producción: armo sistemas de diseño en Figma y entrego
+    prototipos en HTML 1:1 con el diseño. Uso IA con criterio, con agentes y <ClaudeName />. Como complemento,
+    diseño y desarrollo sitios en WordPress, y diseño, desarrollo y construyo tiendas en Shopify. ¿Tienes un rol en
+    mente? Hablemos.
+  </>
+);
 
 export default function AboutSection() {
   return (

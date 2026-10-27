@@ -1,7 +1,8 @@
-# Oscar Díaz — Portafolio UX/UI
+# Oscar Díaz, Portafolio UX/UI
 
-Portafolio personal de Oscar Díaz (diseñador UX/UI), con una landing animada de
-tema oscuro y páginas de case study detalladas.
+Portafolio de búsqueda de empleo de Oscar Díaz, Diseñador UX/UI Senior: plataformas
+enterprise, sistemas de diseño, flujos complejos y prototipos con IA. Incluye una
+landing animada, páginas de case study detalladas y el CV descargable.
 
 ## Stack
 
@@ -31,7 +32,7 @@ src/
 Las imágenes se cargan mediante `ImagePlaceholder`: mientras un campo de imagen
 esté vacío se muestra un placeholder con etiqueta. Para publicar imágenes reales
 basta con rellenar los campos `heroImage`, `thumb` y `carousel` en
-`src/data/caseStudies.ts` (y el retrato del hero) — el layout se completa solo.
+`src/data/caseStudies.ts` (y el retrato del hero). El layout se completa solo.
 
 ## Comandos
 

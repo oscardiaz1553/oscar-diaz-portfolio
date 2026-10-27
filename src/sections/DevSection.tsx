@@ -6,17 +6,17 @@ import SectionHead from '../components/SectionHead';
 const CAPABILITIES = [
   {
     title: 'WordPress',
-    copy: 'Tengo experiencia diseñando y desarrollando sitios en WordPress: landing pages, sitios corporativos, blogs y medios digitales. Diseño a la medida y listos para que el cliente los administre y los haga crecer.',
+    copy: 'Diseño y desarrollo sitios en WordPress: landing pages, sitios corporativos, blogs y medios digitales. Los hago a la medida y listos para que el cliente los administre y los haga crecer.',
   },
   {
     title: 'Shopify',
-    copy: 'Tengo experiencia diseñando, desarrollando y construyendo tiendas online en Shopify, de principio a fin, con catálogo, checkout y una experiencia de compra bien pensada.',
+    copy: 'Diseño, desarrollo y construyo tiendas online en Shopify, de principio a fin, con catálogo, checkout y una experiencia de compra bien pensada.',
   },
 ];
 
 // Proyectos propios y colaboraciones, con enlace.
 const OWN_PROJECTS = [
-  { name: 'Diario Deportes', url: '#/trabajos/diario-deportes', detail: 'Sitio en WordPress: rediseño y migración en vivo de más de 47.000 notas', internal: true },
+  { name: 'Diario Deportes', url: '#/trabajos/diario-deportes', detail: 'UX/UI y desarrollo en WordPress: rediseño y migración en vivo de más de 47.000 notas', internal: true },
   { name: 'BARCI', url: 'https://barci.com.co/', detail: 'Tienda en Shopify, lista para vender desde el día uno', internal: false },
 ];
 
@@ -79,9 +79,9 @@ export default function DevSection() {
       <div className="max-w-5xl mx-auto">
         <SectionHead
           kind="square"
-          title="Más allá del diseño"
+          title="Desarrollo web"
           statement="También lo construyo."
-          lead="Además de diseñar la experiencia, la llevo a la web. Entiendo el producto de punta a punta, desde la interfaz hasta que sale al aire."
+          lead="Como complemento al diseño de producto, llevo sitios y tiendas a la web. Maquetar en HTML/CSS me sirve para validar la viabilidad técnica y agilizar el handoff con desarrollo."
           className="mb-12 sm:mb-16 max-w-3xl"
         />
 
