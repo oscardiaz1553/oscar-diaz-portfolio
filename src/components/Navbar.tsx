@@ -134,7 +134,6 @@ function MobileMenu({ onClose, go }: { onClose: () => void; go: (t: NavTarget) =
             </svg>
           </span>
         </motion.button>
-        <span className="text-xs text-paper-pure/65">Respondo en menos de 24 horas</span>
       </motion.div>
     </motion.div>
   );

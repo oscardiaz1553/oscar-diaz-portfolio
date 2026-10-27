@@ -3,18 +3,9 @@ import FadeIn from '../components/FadeIn';
 import ContactButton from '../components/ContactButton';
 import SectionHead from '../components/SectionHead';
 import SymbolField from '../components/SymbolField';
-import { ClaudeName } from '../components/ClaudeMark';
 
-const ABOUT_TEXT = (
-  <>
-    Soy diseñador UX/UI Senior, con foco en plataformas enterprise. Tomo sistemas complejos, como plataformas internas,
-    procesos manuales y herramientas enterprise, y los vuelvo experiencias claras y fáciles de usar. Trabajo cerca del
-    negocio y de desarrollo para que el diseño llegue a producción: armo sistemas de diseño en Figma y entrego
-    prototipos en HTML 1:1 con el diseño. Uso IA con criterio, con agentes y <ClaudeName />. Como complemento,
-    diseño y desarrollo sitios en WordPress, y diseño, desarrollo y construyo tiendas en Shopify. ¿Tienes un rol en
-    mente? Hablemos.
-  </>
-);
+const ABOUT_TEXT =
+  'Convierto procesos manuales y plataformas internas confusas en herramientas fáciles de usar. Armo sistemas de diseño en Figma y entrego prototipos en HTML 1:1 con el diseño, en contacto directo con producto y desarrollo.';
 
 export default function AboutSection() {
   return (
@@ -32,7 +23,7 @@ export default function AboutSection() {
       />
 
       <div className="relative max-w-[1100px] mx-auto">
-        <SectionHead kind="square" title="Acerca de mí" statement="Diseño para que funcione." />
+        <SectionHead kind="square" title="Acerca de mí" />
 
         <FadeIn y={20} className="mt-8 sm:mt-10 max-w-[62ch]">
           <p className="text-ink-2 leading-relaxed" style={{ fontSize: 'clamp(1.05rem, 1.7vw, 1.35rem)' }}>
@@ -46,7 +37,7 @@ export default function AboutSection() {
             to="/acerca"
             className="font-medium text-sm sm:text-base text-klein underline underline-offset-[6px] decoration-klein/30 hover:decoration-klein transition-colors duration-200"
           >
-            Conoce mi trayectoria completa
+            Ver mi trayectoria
           </Link>
         </FadeIn>
       </div>

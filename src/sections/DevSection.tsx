@@ -1,29 +1,17 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import FadeIn from '../components/FadeIn';
 import SectionHead from '../components/SectionHead';
-
-const CAPABILITIES = [
-  {
-    title: 'WordPress',
-    copy: 'Diseño y desarrollo sitios en WordPress: landing pages, sitios corporativos, blogs y medios digitales. Los hago a la medida y listos para que el cliente los administre y los haga crecer.',
-  },
-  {
-    title: 'Shopify',
-    copy: 'Diseño, desarrollo y construyo tiendas online en Shopify, de principio a fin, con catálogo, checkout y una experiencia de compra bien pensada.',
-  },
-];
 
 // Proyectos propios y colaboraciones, con enlace.
 const OWN_PROJECTS = [
-  { name: 'Diario Deportes', url: '#/trabajos/diario-deportes', detail: 'UX/UI y desarrollo en WordPress: rediseño y migración en vivo de más de 47.000 notas', internal: true },
-  { name: 'BARCI', url: 'https://barci.com.co/', detail: 'Tienda en Shopify, lista para vender desde el día uno', internal: false },
+  { name: 'Diario Deportes', url: '#/trabajos/diario-deportes', detail: 'Rediseño en WordPress y migración en vivo de más de 47.000 notas', internal: true },
+  { name: 'BARCI', url: 'https://barci.com.co/', detail: 'Tienda en Shopify', internal: false },
 ];
 
 const COLLAB_PROJECTS = [
-  { name: 'Eticolor', url: 'https://eticolor.com.co/', detail: 'Tienda en Shopify, en colaboración' },
-  { name: 'The Black Box', url: 'https://theblackboxsnack.com/', detail: 'Tienda en Shopify, en colaboración' },
-  { name: 'Maison Caviar', url: 'https://maisoncaviar.com.co/', detail: 'Tienda en Shopify, en colaboración' },
+  { name: 'Eticolor', url: 'https://eticolor.com.co/', detail: 'Tienda en Shopify' },
+  { name: 'The Black Box', url: 'https://theblackboxsnack.com/', detail: 'Tienda en Shopify' },
+  { name: 'Maison Caviar', url: 'https://maisoncaviar.com.co/', detail: 'Tienda en Shopify' },
 ];
 
 type ListItem = { name: string; url: string; detail: string; internal?: boolean };
@@ -80,38 +68,12 @@ export default function DevSection() {
         <SectionHead
           kind="square"
           title="Desarrollo web"
-          statement="También lo construyo."
-          lead="Como complemento al diseño de producto, llevo sitios y tiendas a la web. Maquetar en HTML/CSS me sirve para validar la viabilidad técnica y agilizar el handoff con desarrollo."
+          lead="Diseño y desarrollo sitios en WordPress y tiendas en Shopify, como complemento al diseño de producto."
           className="mb-12 sm:mb-16 max-w-3xl"
         />
 
-        <div>
-          {CAPABILITIES.map((cap, i) => (
-            <FadeIn
-              key={cap.title}
-              delay={i * 0.08}
-              y={20}
-              as="article"
-              className="group grid grid-cols-1 sm:grid-cols-[minmax(150px,240px)_1fr] gap-1 sm:gap-8 md:gap-16 py-6 sm:py-8 border-t border-black/10 last:border-b"
-            >
-              <h3
-                className="font-display font-bold tracking-[-0.02em] text-klein-deep leading-tight group-hover:text-accent transition-colors duration-300"
-                style={{ fontSize: 'clamp(1.2rem, 2vw, 1.7rem)' }}
-              >
-                {cap.title}
-              </h3>
-              <p
-                className="font-light leading-relaxed max-w-2xl"
-                style={{ color: 'var(--muted)', fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)' }}
-              >
-                {cap.copy}
-              </p>
-            </FadeIn>
-          ))}
-        </div>
-
         {/* Proyectos en producción: los propios y las colaboraciones */}
-        <ProjectList title="Proyectos propios" items={OWN_PROJECTS} className="mt-16 sm:mt-20" />
+        <ProjectList title="Proyectos propios" items={OWN_PROJECTS} />
         <ProjectList title="Tiendas en colaboración" items={COLLAB_PROJECTS} className="mt-14 sm:mt-16" />
       </div>
     </section>

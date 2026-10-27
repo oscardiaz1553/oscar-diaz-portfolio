@@ -1,8 +1,7 @@
 # Oscar Díaz, Portafolio UX/UI
 
-Portafolio de búsqueda de empleo de Oscar Díaz, Diseñador UX/UI Senior: plataformas
-enterprise, sistemas de diseño, flujos complejos y prototipos con IA. Incluye una
-landing animada, páginas de case study detalladas y el CV descargable.
+Portafolio de búsqueda de empleo de Oscar Díaz, Diseñador UX/UI Senior. Incluye una
+landing animada, páginas de case study y el CV descargable.
 
 ## Stack
 

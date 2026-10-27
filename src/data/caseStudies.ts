@@ -116,7 +116,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/diario-deportes/hero.webp',
     thumb: '/images/diario-deportes/hero.webp',
     subtitle:
-      'Auditoré, rediseñé y reconstruí en WordPress Diario Deportes, el diario deportivo del Caribe colombiano. Migré en vivo más de 47.000 notas sin detener a la redacción, y el peso de la portada en celular bajó de 32,5 a 4,3 MB.',
+      'Auditoré, rediseñé y reconstruí en WordPress el sitio de Diario Deportes y migré en vivo más de 47.000 notas. La portada en celular bajó de 32,5 a 4,3 MB.',
     meta: [
       { label: 'Rol', value: 'Diseño UX/UI y desarrollo web' },
       { label: 'Alcance', value: 'Auditoría, rediseño, desarrollo en WordPress y migración en vivo' },
@@ -126,8 +126,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       title: 'El problema',
       body: [
-        'Diario Deportes tiene más de 20 años y su sitio había crecido sin orden. La auditoría mostró seis problemas: un menú de diez secciones al mismo nivel, contenido duplicado en la portada, siete o más banners sueltos y sin etiqueta, widgets de terceros que rompían la imagen del diario, ninguna jerarquía editorial y una accesibilidad floja.',
-        'Medido el 19 de octubre, la portada pesaba unos 32 MB. En celular, el rendimiento en PageSpeed era de 29 sobre 100, y el contenido principal tardaba 38 segundos en aparecer con una red lenta simulada.',
+        'Diario Deportes tiene más de 20 años y su sitio había crecido sin orden. La auditoría encontró seis problemas: un menú de diez secciones al mismo nivel, contenido duplicado en la portada, siete o más banners sueltos y sin etiqueta, widgets de terceros que rompían la imagen del diario, ninguna jerarquía editorial y una accesibilidad floja.',
+        'Medido el 19 de octubre, la portada pesaba unos 32 MB. En celular, PageSpeed daba 29 sobre 100 y el contenido principal tardaba 38 segundos en aparecer con una red lenta simulada.',
       ],
     },
     quote: '“Una palabra: espectacular. Quedó excelente.” Hugo Illera, director de Diario Deportes',
@@ -142,13 +142,13 @@ export const CASE_STUDIES: CaseStudy[] = [
         kind: 'text',
         title: 'La idea',
         body: [
-          'Poner orden sin perder la voz del diario: una nota principal que manda, la publicidad en su lugar y siempre etiquetada, los datos del fútbol con diseño propio y una redacción que publica sin pelear con la página. Todo editable por el equipo del diario, sin depender de mí.',
+          'Ordenar el sitio sin perder la voz del diario: una nota principal, la publicidad etiquetada y en su lugar, datos de fútbol con diseño propio y una redacción que publica sin pelear con la página. El equipo del diario puede editar todo sin depender de mí.',
         ],
       },
       {
         kind: 'gallery',
         title: 'Antes y ahora, en el celular',
-        intro: 'El sitio se pensó primero para el celular, sin desplazamiento lateral y con áreas táctiles grandes.',
+        intro: 'Lo diseñé primero para el celular, sin desplazamiento lateral y con áreas táctiles grandes.',
         cols: 2,
         items: [
           { image: '/images/diario-deportes/antes.webp', caption: 'Antes: un encabezado enorme y publicidad sobre lo que se quiere leer' },
@@ -162,10 +162,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'imageText',
-        title: 'Una estructura que se lee',
+        title: 'Estructura del sitio',
         body: [
-          'Reduje el menú a pocas secciones principales más un «Más», sin cambiar ninguna dirección web, para no afectar el posicionamiento en Google. La portada ahora tiene jerarquía: una nota principal, secciones con su nota destacada y notas secundarias con foto.',
-          'Cada sección tiene un diseño ajustado a lo suyo: Fútbol Colombiano, Internacional, Béisbol, Boxeo, Más Deportes, Columnistas con foto y En video, conectado al canal de YouTube. Cada categoría, como el Junior o el béisbol, tiene además su propia ficha.',
+          'Reduje el menú a pocas secciones más un «Más», sin cambiar ninguna dirección web para no afectar el posicionamiento en Google. La portada tiene una nota principal, secciones con su nota destacada y notas secundarias con foto.',
+          'Cada sección tiene su propio diseño: Fútbol Colombiano, Internacional, Béisbol, Boxeo, Más Deportes, Columnistas con foto y En video, conectado al canal de YouTube. Cada categoría, como el Junior o el béisbol, tiene su ficha.',
         ],
         image: '/images/diario-deportes/menu.webp',
       },
@@ -181,16 +181,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'imageText',
-        title: 'La publicidad, en su lugar',
+        title: 'La publicidad',
         body: [
-          'Espacios fijos y predecibles, cada uno con su etiqueta «Publicidad», y un sistema que reparte los anuncios para que nunca haya tres a la vista al mismo tiempo. Las nueve piezas de los anunciantes del diario quedaron en su lugar, y hay un bloque «Anuncie en Diario Deportes» con sus logos.',
+          'Espacios fijos, cada uno con su etiqueta «Publicidad», y un sistema que reparte los anuncios para que nunca haya tres a la vista al mismo tiempo. Las nueve piezas de los anunciantes quedaron en su lugar, y hay un bloque «Anuncie en Diario Deportes» con sus logos.',
         ],
         image: '/images/diario-deportes/futbol-colombiano.webp',
       },
       {
         kind: 'columns',
         title: 'Herramientas para la redacción',
-        intro: 'Un sitio de noticias se juega en la redacción, así que construí herramientas para quienes lo usan todos los días.',
+        intro: 'Construí herramientas para quienes usan el sitio todos los días en la redacción.',
         items: [
           {
             label: 'Lo más leído hoy',
@@ -207,7 +207,7 @@ export const CASE_STUDIES: CaseStudy[] = [
           },
           {
             label: 'Edición y efemérides',
-            description: 'El número de edición y «Un día como hoy» cambian solos a medianoche, sin que nadie toque nada.',
+            description: 'El número de edición y «Un día como hoy» cambian solos a medianoche.',
           },
           {
             label: 'Accesibilidad',
@@ -226,10 +226,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'text',
-        title: 'La migración: cambiar el motor con el avión en vuelo',
+        title: 'La migración',
         body: [
-          'Reconstruí el sitio en WordPress. El reto no era el diseño, era pasar más de 47.000 notas a un sitio nuevo sin que la redacción dejara de publicar.',
-          'Antes de tocar el sitio real, monté una copia completa en un subdominio cerrado y corrí todo el procedimiento de principio a fin. La noche del lanzamiento, entre el 20 y el 21 de octubre, arranqué a las 8 p. m. con el sitio detrás de una página de mantenimiento que le dice a Google «vuelvo pronto». La redacción siguió publicando durante toda la noche, y el sitio nuevo salió a las 3:10 a. m.: casi tres horas antes de lo que esperaba el cliente.',
+          'Reconstruí el sitio en WordPress. El reto principal fue pasar más de 47.000 notas a un sitio nuevo sin que la redacción dejara de publicar.',
+          'Antes de tocar el sitio real, monté una copia completa en un subdominio cerrado y corrí todo el procedimiento. La noche del 20 al 21 de octubre arranqué a las 8 p. m., con el sitio detrás de una página de mantenimiento que le dice a Google «vuelvo pronto». La redacción publicó toda la noche y el sitio nuevo salió a las 3:10 a. m., casi tres horas antes de lo que esperaba el cliente.',
         ],
       },
       {
@@ -258,13 +258,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: {
       title: 'La solución',
       body: [
-        'Un sitio con jerarquía editorial, publicidad ordenada, datos de fútbol en vivo con diseño propio y herramientas para la redacción. Salió en una noche y no se perdió ni una nota.',
+        'Un sitio con jerarquía editorial, publicidad ordenada, datos de fútbol en vivo y herramientas para la redacción. Salió en una noche sin perder ninguna nota.',
       ],
     },
     result: {
       title: 'Lo que cambió',
       body: [
-        'El peso de la portada en celular pasó de 32,5 a 4,3 MB, el rendimiento en celular de 29 a 50 sobre 100 en PageSpeed, y el tiempo hasta ver el contenido principal de 38,3 a 12,5 segundos. Se migraron 47.616 notas sin perder ninguna.',
+        'En celular, el peso de la portada pasó de 32,5 a 4,3 MB, el puntaje de PageSpeed de 29 a 50 sobre 100 y el tiempo hasta ver el contenido principal de 38,3 a 12,5 segundos. Se migraron 47.616 notas sin perder ninguna.',
       ],
     },
     more: ['game-view', 'summa-snetwork', 'logyca'],
@@ -278,7 +278,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/sura-mexico/calendario-abierto.webp',
     thumb: '/images/sura-mexico/calendario-abierto.webp',
     subtitle:
-      'Lideré la interfaz de una plataforma enterprise de cotización y emisión de pólizas. La diseñé desde cero: digitalizó un proceso 100% manual y conecta 5 tipos de usuario en un solo flujo.',
+      'Lideré la interfaz de la plataforma de cotización y emisión de pólizas de Sura México. Digitalizó un proceso 100% manual y conecta 5 tipos de usuario en un solo flujo.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer, líder de la interfaz' },
       { label: 'Alcance', value: 'Plataforma enterprise desde cero, con 5 tipos de usuario' },
@@ -288,7 +288,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       title: 'El problema de negocio',
       body: [
-        'Sura México cotizaba 100% a mano, con varios tipos de usuario y sin un flujo común. El reto fue diseñar desde cero una plataforma enterprise que pasara todo el proceso a digital. Lideré la interfaz y acompañé a desarrollo de forma continua.',
+        'Sura México cotizaba 100% a mano, con varios tipos de usuario y sin un flujo común. Diseñé desde cero una plataforma que pasara todo el proceso a digital. Lideré la interfaz y acompañé continuamente a desarrollo.',
       ],
     },
     carousel: [
@@ -300,7 +300,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: {
       title: 'La solución',
       body: [
-        'Una plataforma enterprise que conecta a los 5 tipos de usuario en un solo flujo digital. Se acabó el proceso manual y la cotización quedó centralizada de punta a punta. El sistema es responsive y resuelve flujos multi-rol.',
+        'Una plataforma que conecta a los 5 tipos de usuario en un solo flujo digital y centraliza la cotización. Es responsive y resuelve flujos multi-rol.',
       ],
     },
     result: {
@@ -321,7 +321,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/metro-de-medellin/sitva-parametrizacion.webp',
     thumb: '/images/metro-de-medellin/intermunicipales-perfiles.webp',
     subtitle:
-      'Rediseñé la plataforma de gestión de usuarios, permisos y movimientos del sistema de transporte público más importante de Colombia. Pasó de ser un sistema confuso a una herramienta centralizada que ya está en producción.',
+      'Rediseñé la plataforma interna de usuarios, permisos y movimientos del Metro de Medellín, para sus administradores. Ya está en producción.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
       { label: 'Alcance', value: 'Plataforma interna para administradores: usuarios, permisos y movimientos' },
@@ -331,12 +331,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       title: 'El problema de negocio',
       body: [
-        'El Metro de Medellín opera el sistema de transporte público más crítico de la ciudad. Su plataforma interna hacía tres cosas: administrar usuarios internos, asignar permisos por rol y registrar los movimientos de los usuarios finales del sistema.',
-        'La herramienta era confusa e inconsistente, y sus flujos causaban errores operativos. Los administradores no podían manejar los permisos en un solo lugar, así que se apoyaban en procesos paralelos y manuales para compensar. Eso frenaba la operación y hacía más difícil decidir en tiempo real.',
+        'La plataforma interna del Metro de Medellín administra usuarios internos, asigna permisos por rol y registra los movimientos de los usuarios finales del sistema.',
+        'Era confusa e inconsistente y sus flujos causaban errores operativos. Los administradores no podían manejar los permisos en un solo lugar y compensaban con procesos manuales paralelos, lo que frenaba la operación y dificultaba decidir en tiempo real.',
       ],
     },
-    quote:
-      'En infraestructura pública crítica, un sistema confuso es un riesgo operativo, no una simple molestia. Un error de permisos o la falta de trazabilidad afecta directamente la operación del transporte.',
     carousel: [
       '/images/metro-de-medellin/sit-valores.webp',
       '/images/metro-de-medellin/intermunicipales-valores.webp',
@@ -351,18 +349,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     blocks: [
       {
         kind: 'imageText',
-        title: 'La solución: la plataforma rediseñada',
+        title: 'El registro de movimientos',
         body: [
-          'El registro de movimientos en tiempo real fue uno de los cambios más valorados. Pasó de ser una pantalla difícil de leer a un registro filtrable, con indicadores de estado que dejan ver las anomalías de un vistazo y decidir al instante.',
+          'El registro de movimientos en tiempo real pasó de ser una pantalla difícil de leer a un registro filtrable, con indicadores de estado que muestran las anomalías de un vistazo. Fue uno de los cambios más valorados.',
         ],
         image: '/images/metro-de-medellin/sit-valores.webp',
       },
       {
         kind: 'imageText',
         reverse: true,
-        title: 'El problema de fondo era la arquitectura.',
+        title: 'La arquitectura de permisos',
         body: [
-          'El análisis heurístico mostró que manejar los permisos de un solo usuario obligaba a pasar por varias pantallas, sin un punto de control único. La decisión de diseño más importante fue juntar toda la gestión de permisos en una sola vista por perfil: un panel donde el administrador ve de un vistazo qué accesos tiene el usuario y cuáles están activos, y puede cambiarlos sin salir de la pantalla. Parece una decisión simple, pero eliminó la mayor fuente de errores operativos del sistema.',
+          'El análisis heurístico mostró que cambiar los permisos de un usuario obligaba a pasar por varias pantallas, sin un punto de control único. Junté toda la gestión de permisos en una sola vista por perfil, donde el administrador ve qué accesos tiene el usuario, cuáles están activos y los cambia sin salir de la pantalla. Eso eliminó la mayor fuente de errores operativos del sistema.',
         ],
         image: '/images/metro-de-medellin/intermunicipales-perfiles.webp',
       },
@@ -380,21 +378,21 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     solution: {
-      title: 'La solución: la plataforma rediseñada',
+      title: 'El registro de movimientos',
       body: [
-        'El registro de movimientos en tiempo real fue uno de los cambios más valorados. Pasó de ser una pantalla difícil de leer a un registro filtrable, con indicadores de estado que dejan ver las anomalías de un vistazo y decidir al instante.',
+        'El registro de movimientos en tiempo real pasó de ser una pantalla difícil de leer a un registro filtrable, con indicadores de estado que muestran las anomalías de un vistazo. Fue uno de los cambios más valorados.',
       ],
     },
     insight: {
-      title: 'El problema de fondo era la arquitectura.',
+      title: 'La arquitectura de permisos',
       body: [
-        'El análisis heurístico mostró que manejar los permisos de un solo usuario obligaba a pasar por varias pantallas, sin un punto de control único. La decisión de diseño más importante fue juntar toda la gestión de permisos en una sola vista por perfil: un panel donde el administrador ve de un vistazo qué accesos tiene el usuario y cuáles están activos, y puede cambiarlos sin salir de la pantalla. Parece una decisión simple, pero eliminó la mayor fuente de errores operativos del sistema.',
+        'El análisis heurístico mostró que cambiar los permisos de un usuario obligaba a pasar por varias pantallas, sin un punto de control único. Junté toda la gestión de permisos en una sola vista por perfil, donde el administrador ve qué accesos tiene el usuario, cuáles están activos y los cambia sin salir de la pantalla. Eso eliminó la mayor fuente de errores operativos del sistema.',
       ],
     },
     result: {
       title: 'El resultado',
       body: [
-        'La plataforma rediseñada ya está en producción. Los administradores pasaron de un sistema fragmentado y confuso a una herramienta centralizada para gestionar usuarios, permisos y trazabilidad de movimientos desde un solo lugar. Hay menos errores operativos y las decisiones se toman más rápido.',
+        'La plataforma ya está en producción. Los administradores gestionan usuarios, permisos y trazabilidad de movimientos desde un solo lugar. Hay menos errores operativos y las decisiones se toman más rápido.',
       ],
     },
     more: ['trib', 'summa-snetwork', 'sura-mexico'],
@@ -409,22 +407,20 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/logyca/ingesta.webp',
     thumb: '/images/logyca/ingesta-1.webp',
     subtitle:
-      'Diseñé de punta a punta una plataforma de inventario que reemplazó los procesos manuales en Excel por un sistema visual para dos perfiles de usuario con necesidades muy distintas.',
+      'Diseñé la plataforma de inventario de Logyca, que reemplazó los procesos manuales en Excel y sirve a usuarios internos y a clientes externos.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
-      { label: 'Alcance', value: 'Diseño de punta a punta, para usuarios internos y externos' },
+      { label: 'Alcance', value: 'Diseño de la plataforma, para usuarios internos y externos' },
       { label: 'Empresa', value: 'Sofka Technologies' },
       { label: 'Herramientas', value: 'Figma · Miro' },
     ],
     problem: {
       title: 'El problema del negocio',
       body: [
-        'Logyca necesitaba una plataforma para gestionar inventarios en tiempo real. Los usuarios trabajaban con hojas de cálculo dispersas y sin una vista central, y eso hacía lentas las decisiones y propensos a fallos los procesos manuales.',
-        'Había otro reto: la plataforma tenía que servir al mismo tiempo a dos tipos de usuario con necesidades muy distintas, los empleados internos de Logyca y los clientes externos, sin sacrificar la usabilidad de ninguno.',
+        'Logyca necesitaba gestionar inventarios en tiempo real. Los usuarios trabajaban con hojas de cálculo dispersas y sin una vista central, lo que hacía lentas las decisiones y los procesos manuales propensos a fallos.',
+        'La plataforma tenía que servir a dos tipos de usuario con necesidades distintas: los empleados internos de Logyca y los clientes externos.',
       ],
     },
-    quote:
-      'El reto era digitalizar el inventario y, a la vez, hacer una sola plataforma que funcionara bien para dos audiencias con objetivos, contextos y niveles técnicos distintos.',
     carousel: [
       '/images/logyca/ingesta-1.webp',
       '/images/logyca/ingesta-2.webp',
@@ -442,7 +438,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         kind: 'gallery',
         title: 'Wireframes de baja fidelidad',
         intro:
-          'Los wireframes sirvieron para convertir las ideas iniciales en diseños que todos aprobaron. Con la baja fidelidad validamos las funciones básicas y comprobamos que el flujo fuera claro antes de invertir en la alta fidelidad.',
+          'Con la baja fidelidad convertimos las ideas iniciales en diseños que todos aprobaron, validamos las funciones básicas y comprobamos que el flujo fuera claro antes de pasar a la alta fidelidad.',
         cols: 2,
         items: [
           { image: '/images/logyca/gestion-productos.webp', caption: 'Selección de módulo' },
@@ -453,9 +449,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'imageText',
-        title: 'La solución: dos experiencias, un sistema',
+        title: 'Dos experiencias en un sistema',
         body: [
-          'La clave fue crear dos experiencias distintas dentro de un mismo sistema. El usuario interno ve toda la operación y tiene las herramientas de gestión completas. El cliente externo ve solo su información, clara y sin ruido. Las dos comparten los mismos componentes y el mismo lenguaje visual.',
+          'Hice dos experiencias dentro de un mismo sistema. El usuario interno ve toda la operación y tiene las herramientas de gestión completas. El cliente externo ve solo su información. Las dos comparten componentes y lenguaje visual.',
         ],
         image: '/images/logyca/ingesta-2.webp',
       },
@@ -473,25 +469,25 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: {
       title: 'La solución',
       body: [
-        'La clave fue crear dos experiencias distintas dentro de un mismo sistema. El usuario interno ve toda la operación y tiene las herramientas de gestión completas. El cliente externo ve solo su información, clara y sin ruido. Las dos comparten los mismos componentes y el mismo lenguaje visual.',
+        'Hice dos experiencias dentro de un mismo sistema. El usuario interno ve toda la operación y tiene las herramientas de gestión completas. El cliente externo ve solo su información. Las dos comparten componentes y lenguaje visual.',
       ],
     },
     insight: {
       title: 'Wireframes',
       body: [
-        'Los wireframes sirvieron para convertir las ideas iniciales en diseños que todos aprobaron. Con la baja fidelidad validamos las funciones básicas y comprobamos que el flujo fuera claro antes de invertir en la alta fidelidad.',
+        'Con la baja fidelidad convertimos las ideas iniciales en diseños que todos aprobaron, validamos las funciones básicas y comprobamos que el flujo fuera claro antes de pasar a la alta fidelidad.',
       ],
     },
     result: {
       title: 'El resultado',
       body: [
-        'La plataforma reemplazó los procesos manuales en hojas de cálculo por un sistema visual centralizado, con actualización en tiempo real. El diseño se aprobó y se entregó a desarrollo con un sistema de componentes documentado.',
+        'La plataforma reemplazó las hojas de cálculo por un sistema centralizado con actualización en tiempo real. El diseño se aprobó y se entregó a desarrollo con un sistema de componentes documentado.',
       ],
     },
     metrics: [
-      { label: 'experiencias diferenciadas dentro de un mismo sistema', value: '2 experiencias' },
+      { label: 'Experiencias diferenciadas en un mismo sistema', value: '2 experiencias' },
       { label: 'Feedback positivo de usuarios internos y externos en validación', value: 'Feedback positivo' },
-      { label: 'Cero dependencia de Excel, con el proceso completamente digitalizado', value: '0 excel' },
+      { label: 'Proceso digitalizado, sin depender de Excel', value: '0 excel' },
     ],
     more: ['metro-de-medellin', 'trib', 'sura-mexico'],
   },
@@ -505,7 +501,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/summa-snetwork/inicio.webp',
     thumb: '/images/summa-snetwork/tabla.webp',
     subtitle:
-      'Rediseñé por completo una plataforma interna de más de 10 módulos. Cientos de pasos innecesarios pasaron a una experiencia unificada, con flujos más simples y un sistema de diseño documentado.',
+      'Rediseñé SNetwork, la plataforma interna de Summa, de más de 10 módulos. Quité cientos de pasos innecesarios de sus flujos y armé el sistema de diseño.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
       { label: 'Alcance', value: '+10 módulos rediseñados, con sistema de diseño y librería de componentes' },
@@ -515,12 +511,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       title: 'El problema de negocio',
       body: [
-        'SNetwork, la plataforma interna de Summa, necesitaba una migración compleja. El equipo vio rápido que migrarla tal cual sería un error: acumulaba años de deuda de diseño, con más de 10 módulos distintos entre sí en lo visual, flujos llenos de pasos innecesarios y una experiencia que frenaba el trabajo diario de los usuarios.',
-        'La oportunidad era clara. La migración era el momento de rediseñar la experiencia desde adentro, unificar el lenguaje visual y quitar la fricción acumulada en los flujos más críticos.',
+        'SNetwork, la plataforma interna de Summa, necesitaba una migración compleja. Migrarla tal cual habría sido un error: acumulaba años de deuda de diseño, con más de 10 módulos distintos entre sí en lo visual, flujos llenos de pasos innecesarios y una experiencia que frenaba el trabajo diario.',
+        'La migración era el momento de unificar el lenguaje visual y quitar la fricción acumulada en los flujos más críticos.',
       ],
     },
-    quote:
-      'En vez de preguntarnos "¿cómo migramos esto?", nos preguntamos "¿qué de esto merece seguir igual?". Esa pregunta cambió el enfoque de todo el proyecto.',
     carousel: [
       '/images/summa-snetwork/seleccion-facturas.webp',
       '/images/summa-snetwork/pqrs-gestion.webp',
@@ -535,18 +529,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     blocks: [
       {
         kind: 'imageText',
-        title: 'La solución: la plataforma rediseñada',
+        title: 'Navegación lateral',
         body: [
-          'La navegación lateral fue uno de los cambios más importantes. En lugar de menús sueltos por módulo, toda la plataforma se recorre desde una sola barra consistente. Los usuarios se desorientan menos y ya no tienen que recordar en qué parte de la plataforma están.',
+          'Reemplacé los menús sueltos por módulo con una sola barra de navegación lateral para toda la plataforma. Los usuarios se desorientan menos y ya no tienen que recordar en qué parte están.',
         ],
         image: '/images/summa-snetwork/seleccion-facturas.webp',
       },
       {
         kind: 'imageText',
         reverse: true,
-        title: 'La decisión clave',
+        title: 'Rediseñar en lugar de migrar',
         body: [
-          'No migrar, rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Pero después de la evaluación heurística encontré flujos donde las mismas acciones repetitivas, en varios pasos, se podían reducir a uno. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron, y la plataforma quedó mucho más ágil para el trabajo diario. Además armé el sistema de diseño, la librería de componentes y prototipos HTML que hacen de especificación viva.',
+          'El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Después de la evaluación heurística encontré flujos donde acciones repetitivas en varios pasos se podían reducir a uno, y propuse rediseñar los más críticos en lugar de migrarlos tal cual. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron y la plataforma quedó más ágil para el trabajo diario. También armé el sistema de diseño, la librería de componentes y prototipos HTML que sirven de especificación.',
         ],
         image: '/images/summa-snetwork/usuario-seleccionado.webp',
       },
@@ -562,21 +556,21 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     solution: {
-      title: 'La solución: la plataforma rediseñada',
+      title: 'Navegación lateral',
       body: [
-        'La navegación lateral fue uno de los cambios más importantes. En lugar de menús sueltos por módulo, toda la plataforma se recorre desde una sola barra consistente. Los usuarios se desorientan menos y ya no tienen que recordar en qué parte de la plataforma están.',
+        'Reemplacé los menús sueltos por módulo con una sola barra de navegación lateral para toda la plataforma. Los usuarios se desorientan menos y ya no tienen que recordar en qué parte están.',
       ],
     },
     insight: {
-      title: 'La decisión clave',
+      title: 'Rediseñar en lugar de migrar',
       body: [
-        'No migrar, rediseñar. Propuse ir más allá de la migración fiel y rediseñar los flujos más críticos. El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Pero después de la evaluación heurística encontré flujos donde las mismas acciones repetitivas, en varios pasos, se podían reducir a uno. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron, y la plataforma quedó mucho más ágil para el trabajo diario. Además armé el sistema de diseño, la librería de componentes y prototipos HTML que hacen de especificación viva.',
+        'El objetivo inicial era replicar el sistema existente lo más fiel posible para no meter errores. Después de la evaluación heurística encontré flujos donde acciones repetitivas en varios pasos se podían reducir a uno, y propuse rediseñar los más críticos en lugar de migrarlos tal cual. Presenté la propuesta al equipo de producto y a los stakeholders, la aceptaron y la plataforma quedó más ágil para el trabajo diario. También armé el sistema de diseño, la librería de componentes y prototipos HTML que sirven de especificación.',
       ],
     },
     result: {
       title: 'Estado actual',
       body: [
-        'El proyecto sigue en curso. Hasta ahora hicimos una evaluación heurística, hablamos con stakeholders y usuarios, y acordamos las grandes mejoras de experiencia e interfaz que encontramos.',
+        'Hasta ahora hicimos una evaluación heurística, hablamos con stakeholders y usuarios y acordamos las mejoras principales de experiencia e interfaz.',
       ],
     },
     status: 'Este proyecto sigue en desarrollo.',
@@ -592,7 +586,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/game-view/designer-3.webp',
     thumb: '/images/game-view/evento-1.webp',
     subtitle:
-      'Diseñé el sistema completo de dos productos alrededor de una experiencia 3D interactiva: una herramienta para crear espacios 3D y su app de consumo para TV y móvil. El prototipo fue clave para conseguir el funding.',
+      'Diseñé dos productos desde cero: una herramienta para crear espacios 3D interactivos y su app para verlos en TV y móvil. El prototipo fue clave para conseguir el funding.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
       { label: 'Alcance', value: 'Dos productos desde cero: creador de espacios 3D y app para TV y móvil' },
@@ -602,12 +596,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       title: 'El problema de negocio',
       body: [
-        'El cliente llegó con una idea y un objetivo: una plataforma para crear espacios 3D interactivos y una herramienta de distribución para verlos en televisores. Dos plataformas, dos audiencias muy distintas.',
-        'El reto era doble: diseñar dos productos muy distintos que funcionaran juntos de forma coherente, y hacerlo sin referencias claras. El cliente no tenía wireframes, ni MVP, ni referente visual. Solo la idea. Mi trabajo fue convertirla en un prototipo lo bastante sólido para presentarlo a inversores.',
+        'El cliente llegó con una idea: una plataforma para crear espacios 3D interactivos y una herramienta para verlos en televisores. Dos plataformas, dos audiencias distintas.',
+        'Había que diseñar dos productos que funcionaran juntos, sin referencias: el cliente no tenía wireframes, MVP ni referente visual. Mi trabajo fue convertir la idea en un prototipo que se pudiera presentar a inversores.',
       ],
     },
-    quote:
-      'El cliente no tenía nada: ni wireframes, ni MVP, ni referente visual. Solo la idea. Mi trabajo fue convertir esa visión en un prototipo lo bastante sólido para presentarlo a inversores.',
     carousel: [
       '/images/game-view/ps.webp',
       '/images/game-view/evento-1.webp',
@@ -624,7 +616,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         kind: 'gallery',
         title: 'Entendimiento y contexto',
         intro:
-          'Antes de diseñar una sola pantalla, mapeé el problema: el recorrido del productor de contenido, sus historias de usuario y el flujo completo de creación. Eso fue la base de todas las decisiones de diseño.',
+          'Antes de diseñar, mapeé el recorrido del productor de contenido, sus historias de usuario y el flujo completo de creación. Fue la base de las decisiones de diseño.',
         cols: 1,
         items: [
           {
@@ -643,9 +635,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'imageText',
-        title: 'Dos productos, una misma visión',
+        title: 'Dos productos',
         body: [
-          'Content creator: la herramienta con la que se crean los espacios 3D interactivos. Consumer App: la app donde los usuarios exploran esos espacios en TV y móvil. Dos productos con el mismo lenguaje visual y la misma visión.',
+          'Content Creator es la herramienta para crear los espacios 3D interactivos. Consumer App es la app donde los usuarios los exploran en TV y móvil. Los dos comparten lenguaje visual.',
         ],
         image: '/images/game-view/ps-1.webp',
       },
@@ -653,7 +645,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         kind: 'gallery',
         title: 'Content Creator: el editor de espacios 3D',
         intro:
-          'La herramienta con la que los productores crean, editan y publican sus espacios 3D interactivos.',
+          'Donde los productores crean, editan y publican espacios 3D interactivos.',
         cols: 2,
         items: [
           { image: '/images/game-view/designer-1.webp', caption: 'Selección de escena' },
@@ -663,7 +655,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         kind: 'gallery',
         title: 'Consumer App: TV y móvil',
-        intro: 'La app donde los usuarios exploran y consumen los espacios y eventos.',
+        intro: 'Donde los usuarios exploran los espacios y eventos.',
         cols: 2,
         items: [
           { image: '/images/game-view/ps.webp', caption: 'Explorar eventos' },
@@ -672,28 +664,28 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         kind: 'text',
-        title: 'Diseñar para inversores y para usuarios',
+        title: 'Diseñar para inversores y usuarios',
         body: [
-          'El prototipo tenía que resolver el problema de producto, demostrar que funcionaba y, además, convencer a los inversores. Con decisiones de UX bien fundamentadas, la visión quedó lo bastante sólida para lograrlo. El resultado habló por sí solo: funding conseguido.',
+          'El prototipo tenía que resolver el problema de producto, demostrar que funcionaba y convencer a los inversores. Se consiguió el funding.',
         ],
       },
     ],
     solution: {
-      title: 'Dos productos, una misma visión',
+      title: 'Dos productos',
       body: [
-        'Content creator: la herramienta con la que se crean los espacios 3D interactivos. Consumer App: la app donde los usuarios exploran esos espacios en TV y móvil. Dos productos con el mismo lenguaje visual y la misma visión.',
+        'Content Creator es la herramienta para crear los espacios 3D interactivos. Consumer App es la app donde los usuarios los exploran en TV y móvil. Los dos comparten lenguaje visual.',
       ],
     },
     insight: {
-      title: 'Diseñar para inversores y para usuarios',
+      title: 'Diseñar para inversores y usuarios',
       body: [
-        'El prototipo tenía que resolver el problema de producto, demostrar que funcionaba y, además, convencer a los inversores. Con decisiones de UX bien fundamentadas, la visión quedó lo bastante sólida para lograrlo. El resultado habló por sí solo: funding conseguido.',
+        'El prototipo tenía que resolver el problema de producto, demostrar que funcionaba y convencer a los inversores. Se consiguió el funding.',
       ],
     },
     result: {
       title: 'El resultado',
       body: [
-        'Dos productos que funcionan juntos, un prototipo de alta fidelidad y el funding conseguido para llevar la visión a la realidad.',
+        'Dos productos que funcionan juntos, un prototipo de alta fidelidad y el funding conseguido.',
       ],
     },
     metrics: [
@@ -714,7 +706,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: '/images/trib/misiones-pres.webp',
     thumb: '/images/trib/user-persona.webp',
     subtitle:
-      'Proyecto de estudio en el que recorrí de punta a punta el diseño de una app mobile: research, personas, arquitectura de información, flujos, wireframes y un sistema de diseño con tipografía, color, grid y componentes.',
+      'Proyecto de estudio: diseñé una app mobile con research, personas, arquitectura de información, flujos, wireframes y un sistema de diseño.',
     meta: [
       { label: 'Rol', value: 'UX/UI Designer' },
       { label: 'Alcance', value: 'App mobile: research, sistema de diseño y UI de alta fidelidad' },
@@ -724,7 +716,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     problem: {
       title: 'El problema',
       body: [
-        'Trib nació como un proyecto de estudio para recorrer de punta a punta el proceso de diseño de producto, desde el research y las personas hasta un sistema de diseño documentado y pantallas de alta fidelidad.',
+        'Trib es un proyecto de estudio para recorrer el proceso de diseño de producto, desde el research y las personas hasta un sistema de diseño documentado y pantallas de alta fidelidad.',
       ],
     },
     carousel: [
@@ -754,7 +746,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         kind: 'gallery',
         title: 'Sistema de diseño',
         intro:
-          'Un sistema de diseño documentado que mantiene consistente toda la experiencia.',
+          'El sistema de diseño de la app, documentado.',
         cols: 2,
         items: [
           { image: '/images/trib/slide-27.webp', caption: 'Tipografía · Poppins' },
@@ -779,13 +771,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: {
       title: 'Sistema de diseño',
       body: [
-        'El sistema de diseño incluye tipografía (Poppins), paleta de color, grid, spacing, iconografía, botones y componentes reutilizables, para que toda la experiencia sea consistente.',
+        'El sistema de diseño incluye tipografía (Poppins), paleta de color, grid, spacing, iconografía, botones y componentes reutilizables.',
       ],
     },
     result: {
       title: 'El resultado',
       body: [
-        'Un case study end-to-end que documenta todo el proceso de diseño, desde la investigación hasta una app mobile con su propio sistema de diseño.',
+        'Un case study que documenta el proceso completo, desde la investigación hasta una app mobile con su propio sistema de diseño.',
       ],
     },
     more: ['metro-de-medellin', 'logyca', 'game-view'],

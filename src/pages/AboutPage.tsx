@@ -16,11 +16,9 @@ import ClaudeMark, { ClaudeName } from '../components/ClaudeMark';
 
 const ABOUT_TEXT = (
   <>
-    Soy diseñador UX/UI Senior, con foco en plataformas enterprise. Tomo sistemas complejos, como plataformas internas,
-    procesos manuales y herramientas enterprise, y los vuelvo experiencias claras y fáciles de usar. Trabajo cerca del
-    negocio y del equipo de desarrollo para que el diseño llegue a producción y sirva de verdad. Uso IA con criterio,
-    con agentes y <ClaudeName />, para investigar, documentar y prototipar en código. Como complemento, diseño y
-    desarrollo sitios en WordPress, y diseño, desarrollo y construyo tiendas en Shopify.
+    Convierto procesos manuales y plataformas internas confusas en herramientas fáciles de usar. Trabajo de cerca con
+    producto y desarrollo para que el diseño llegue a producción. Uso agentes de IA y <ClaudeName /> para investigar,
+    documentar y prototipar en código.
   </>
 );
 
@@ -29,14 +27,14 @@ const EXPERIENCE = [
     title: 'UI/UX Specialist, proyectos enterprise',
     org: 'Sofka Technologies',
     dates: 'De junio de 2024 a la actualidad',
-    desc: 'Diseño interfaces para plataformas enterprise complejas de seguros, banca, logística e infraestructura pública. Soy responsable del sistema visual: componentes y UI Kits en Figma, con estilos e interacciones documentados. Entrego prototipos navegables en HTML de alta fidelidad, 1:1 con Figma, para que desarrollo tenga una referencia clara.',
+    desc: 'Diseño interfaces de plataformas enterprise de seguros, banca, logística e infraestructura pública. Soy responsable del sistema visual, con componentes y UI Kits en Figma y los estilos y las interacciones documentados. Entrego prototipos navegables en HTML, 1:1 con Figma, como referencia para desarrollo.',
     projects: [
       ['UX/UI Practice Lead', 'hago revisiones de calidad, entrevistas técnicas y acompaño a los diseñadores del equipo.'],
-      ['Sura México', 'lideré la interfaz de la plataforma de cotización y emisión de pólizas. Entregué un sistema responsive y flujos multi-rol, con acompañamiento continuo a desarrollo.'],
-      ['Summa', 'migración completa de la plataforma interna. Entregué el sistema de diseño, la librería de componentes y prototipos HTML que hacen de especificación viva.'],
-      ['Metro de Medellín', 'rediseñé la gestión de usuarios y permisos. Los flujos clave quedaron más simples y mejoró la trazabilidad.'],
+      ['Sura México', 'lideré la interfaz de la plataforma de cotización y emisión de pólizas, con un sistema responsive, flujos multi-rol y acompañamiento continuo a desarrollo.'],
+      ['Summa', 'migración completa de la plataforma interna, con sistema de diseño, librería de componentes y prototipos HTML que sirven de especificación.'],
+      ['Metro de Medellín', 'rediseñé la gestión de usuarios y permisos, con flujos más simples y mejor trazabilidad.'],
       ['Yappy', 'diseñé el flujo de inscripción de cuentas multi-dispositivo, con prototipo navegable de alta fidelidad y microinteracciones.'],
-      ['Logyca', 'diseñé de punta a punta la plataforma de gestión de inventario, con prototipos animados.'],
+      ['Logyca', 'diseñé la plataforma de gestión de inventario, con prototipos animados.'],
       ['Crystal', 'diseñé desde cero la arquitectura de flujos, el sistema visual y los prototipos navegables.'],
     ] as [string, string][],
   },
@@ -44,14 +42,14 @@ const EXPERIENCE = [
     title: 'UI/UX Designer, freelance',
     org: 'Clientes de salud, retail y servicios',
     dates: 'De enero de 2021 a la actualidad',
-    desc: 'Diseño interfaces y sistemas visuales, con prototipos navegables en Figma. Desarrollo y personalizo sitios en WordPress y Shopify (temas, secciones y maquetación propia). Hablo directamente con cada cliente y le muestro avances a medida que los tengo.',
+    desc: 'Diseño interfaces y sistemas visuales, con prototipos navegables en Figma. Desarrollo y personalizo sitios en WordPress y Shopify: temas, secciones y maquetación propia. Trato directamente con cada cliente.',
     projects: [] as [string, string][],
   },
   {
     title: 'Visual/UI Designer',
     org: 'SanMarteam',
     dates: 'De enero de 2021 a noviembre de 2022',
-    desc: 'Lideré el diseño de identidades de marca e interfaces web para varios clientes de la agencia, cuidando que la marca y el producto digital fueran coherentes.',
+    desc: 'Lideré el diseño de identidades de marca e interfaces web para varios clientes de la agencia.',
     projects: [] as [string, string][],
   },
 ];
@@ -70,7 +68,7 @@ const SKILLS = [
   'Arquitectura de información',
   'Research y validación',
   'Stakeholder management',
-  'Diseño acelerado con IA',
+  'Diseño con IA',
   'Consistencia con identidad de marca',
   'Maquetación HTML / CSS',
   'Diseño y desarrollo en WordPress',
@@ -108,7 +106,7 @@ export default function AboutPage() {
       <div className="px-5 sm:px-8 md:px-10 pt-28 md:pt-36 pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Encabezado */}
-          <PageHead kind="square" as="h1" title="Acerca de mí" statement="Diseño para que funcione." />
+          <PageHead kind="square" as="h1" title="Acerca de mí" />
 
           <FadeIn delay={0.12} y={20}>
             <p
@@ -124,12 +122,10 @@ export default function AboutPage() {
               className="mt-5 max-w-2xl font-light leading-relaxed"
               style={{ color: 'var(--muted)', fontSize: 'clamp(1rem, 1.6vw, 1.25rem)' }}
             >
-              Diseño interfaces y productos digitales desde enero de 2021. Desde
-              junio de 2024 lo hago en Sofka Technologies, en plataformas de
-              sectores regulados: seguros, banca, logística e infraestructura
-              pública. Diseño la UI sobre sistemas de diseño y UI Kits en Figma, y
-              maqueto en HTML/CSS para validar la viabilidad técnica y agilizar el
-              handoff con desarrollo.
+              Diseño interfaces y productos digitales desde enero de 2021. Maqueto
+              en HTML/CSS para validar la viabilidad técnica y agilizar el handoff
+              con desarrollo. Como complemento, hago sitios en WordPress y tiendas
+              en Shopify.
             </p>
           </FadeIn>
 

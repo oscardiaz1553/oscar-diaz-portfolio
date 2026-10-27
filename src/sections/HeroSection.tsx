@@ -3,24 +3,20 @@ import AccentButton from '../components/AccentButton';
 import { BrandDot, DOT_ON_BLUE } from '../components/Brand';
 import Magnetic from '../components/Magnetic';
 import MorphBrackets from '../components/MorphBrackets';
-import RotatingWord from '../components/RotatingWord';
 import Navbar from '../components/Navbar';
-import { ClaudeName } from '../components/ClaudeMark';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-// La palabra que rota dice en qué trabajo. El texto completo vive en un sr-only
-// para lectores de pantalla y buscadores.
-const SUBJECTS = ['plataformas enterprise', 'sistemas de diseño', 'flujos complejos', 'prototipos con IA'];
-const SR_HEADLINE = `Oscar Díaz. Diseñador UX/UI Senior. Especializado en ${SUBJECTS.join(', ')}.`;
+// El texto completo vive en un sr-only para lectores de pantalla y buscadores.
+const SR_HEADLINE = 'Oscar Díaz. Diseñador UX/UI Senior.';
 
 const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
 /**
  * Portada con el estilo de Out: azul Klein sólido, los símbolos de la marca
  * cambiando de forma de fondo y una tipografía enorme que domina el primer
- * pantallazo. El nombre es el titular; la palabra del medio rota entre lo que
- * hace Oscar. Un CTA primario (hablemos) y uno secundario (ver trabajos).
+ * pantallazo. El nombre y el rol son el titular. Un CTA primario (hablemos) y
+ * uno secundario (ver trabajos).
  */
 export default function HeroSection() {
   return (
@@ -57,19 +53,6 @@ export default function HeroSection() {
           >
             Diseñador UX/UI Senior
           </motion.span>
-          <motion.span
-            aria-hidden="true"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.42, duration: 0.7, ease: EASE }}
-            className="block text-paper-pure/90 mt-4 sm:mt-5"
-            style={{ fontSize: '0.3em', lineHeight: 1.1, letterSpacing: '-0.025em' }}
-          >
-            Especializado en{' '}
-            <span className="text-paper-pure">
-              <RotatingWord words={SUBJECTS} interval={3000} className="pb-[0.14em] -mb-[0.14em]" />
-            </span>
-          </motion.span>
         </h1>
 
         <motion.p
@@ -78,8 +61,7 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.7 }}
           className="mt-6 sm:mt-7 max-w-[46ch] text-paper-pure/85 leading-relaxed text-base sm:text-lg"
         >
-          Diseño plataformas enterprise para seguros, banca, logística e infraestructura pública. Armo sistemas de
-          diseño en Figma, trabajo de cerca con producto y desarrollo, y entrego prototipos en HTML 1:1 con el diseño.
+          Diseño plataformas enterprise para seguros, banca, logística e infraestructura pública.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -87,8 +69,7 @@ export default function HeroSection() {
           transition={{ delay: 0.78, duration: 0.7 }}
           className="mt-3 max-w-[46ch] text-paper-pure/70 leading-relaxed text-sm sm:text-base"
         >
-          Desde junio de 2024 estoy en Sofka Technologies, donde además soy UX/UI Practice Lead. Prototipo en código
-          con <ClaudeName />. WordPress y Shopify son mi complemento.
+          Desde junio de 2024 estoy en Sofka Technologies, donde también soy UX/UI Practice Lead.
         </motion.p>
 
         <motion.div
