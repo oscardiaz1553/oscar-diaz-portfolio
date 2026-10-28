@@ -29,7 +29,6 @@ const EXPERIENCE = [
     dates: 'De junio de 2024 a la actualidad',
     desc: 'Diseño interfaces de plataformas enterprise de seguros, banca, logística e infraestructura pública. Soy responsable del sistema visual, con componentes y UI Kits en Figma y los estilos y las interacciones documentados. Entrego prototipos navegables en HTML, 1:1 con Figma, como referencia para desarrollo.',
     projects: [
-      ['UX/UI Practice Lead', 'hago revisiones de calidad, entrevistas técnicas y acompaño a los diseñadores del equipo.'],
       ['Sura México', 'lideré la interfaz de la plataforma de cotización y emisión de pólizas, con un sistema responsive, flujos multi-rol y acompañamiento continuo a desarrollo.'],
       ['Summa', 'migración completa de la plataforma interna, con sistema de diseño, librería de componentes y prototipos HTML que sirven de especificación.'],
       ['Metro de Medellín', 'rediseñé la gestión de usuarios y permisos, con flujos más simples y mejor trazabilidad.'],
