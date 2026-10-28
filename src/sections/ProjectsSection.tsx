@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BrandDot } from '../components/Brand';
 import SectionHead from '../components/SectionHead';
@@ -11,7 +11,7 @@ import type { CaseStudy } from '../data/caseStudies';
 const KINDS: FrameKind[] = ['square', 'curly', 'paren', 'angle'];
 const SPRING = { type: 'spring', stiffness: 320, damping: 26 } as const;
 // El nombre va en una sola línea: el tamaño baja con el ancho de la pantalla.
-const NAME_SIZE = 'clamp(2rem, 7.4vw, 6rem)';
+const NAME_SIZE = 'clamp(1.75rem, 4.4vw, 4rem)';
 
 // Colores del sistema para las tarjetas del celular (nada de rosado ni azul claro).
 const LOOKS = [
@@ -57,8 +57,23 @@ function ProjectRow({
         to={`/trabajos/${project.slug}`}
         onPointerEnter={(e) => e.pointerType === 'mouse' && onHover(index)}
         onPointerLeave={(e) => e.pointerType === 'mouse' && onHover(null)}
-        className="group grid grid-cols-1 lg:grid-cols-[1fr_19rem] items-center gap-x-6 gap-y-3 py-6 sm:py-8"
+        className="group grid grid-cols-1 lg:grid-cols-[15rem_minmax(0,1fr)_17rem] items-center gap-x-8 gap-y-3 py-6 sm:py-8"
       >
+        {/* Escritorio: lámina con la imagen del proyecto, a la izquierda del nombre. */}
+        <div
+          aria-hidden
+          className="hidden lg:block relative aspect-[4/3] overflow-hidden rounded-2xl border border-klein-deep/10 bg-paper shadow-[0_10px_30px_rgba(20,30,92,0.14)] transition-[transform,box-shadow] duration-300 group-hover:-translate-y-1 group-hover:rotate-[-1.5deg] group-hover:shadow-[0_18px_44px_rgba(20,30,92,0.26)]"
+        >
+          {project.thumb && (
+            <img
+              src={project.thumb}
+              alt=""
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
+        </div>
+
         <div className="relative min-w-0 px-[0.62em]" style={{ fontSize: NAME_SIZE }}>
           <span className="relative inline-flex items-center">
             <motion.span
@@ -147,23 +162,7 @@ function PhoneCard({ project, index }: { project: CaseStudy; index: number }) {
 }
 
 export default function ProjectsSection() {
-  const reduceMotion = useReducedMotion();
   const [hovered, setHovered] = useState<number | null>(null);
-  const listRef = useRef<HTMLUListElement>(null);
-
-  // Escritorio: una vista previa del proyecto sigue al cursor sobre cada fila.
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, { stiffness: 400, damping: 32, mass: 0.5 });
-  const sy = useSpring(y, { stiffness: 400, damping: 32, mass: 0.5 });
-  const onMove = (e: React.PointerEvent) => {
-    if (e.pointerType !== 'mouse' || !listRef.current) return;
-    const r = listRef.current.getBoundingClientRect();
-    x.set(e.clientX - r.left);
-    y.set(e.clientY - r.top);
-  };
-  const hoveredProject = hovered === null ? null : CASE_STUDIES[hovered];
-  const showPreview = !reduceMotion && Boolean(hoveredProject?.thumb);
 
   return (
     <section
@@ -171,12 +170,12 @@ export default function ProjectsSection() {
       className="relative z-10 overflow-hidden bg-paper-pure px-6 md:px-10 lg:px-16 py-14 sm:py-16 md:py-20"
     >
       <div className="relative max-w-[1400px] mx-auto">
-        <SectionHead kind="curly" title="Casos de estudio" className="mb-8 sm:mb-12" />
+        <SectionHead kind="curly" title="Proyectos" className="mb-8 sm:mb-12" />
 
         {/* Celular: todos los proyectos como tarjetas, en un carrusel a todo el ancho. */}
         <div
           role="region"
-          aria-label="Casos de estudio"
+          aria-label="Proyectos"
           tabIndex={0}
           className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory overscroll-x-contain scroll-px-6 pb-2 [&::-webkit-scrollbar]:hidden"
           style={{
@@ -190,31 +189,11 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <ul ref={listRef} onPointerMove={onMove} className="relative hidden md:block">
+        <ul className="relative hidden md:block">
           {CASE_STUDIES.map((p, i) => (
             <ProjectRow key={p.slug} project={p} index={i} active={hovered === i} onHover={setHovered} />
           ))}
 
-          {!reduceMotion && (
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute left-0 top-0 z-20 hidden lg:block"
-              style={{ x: sx, y: sy }}
-            >
-              <div className="translate-x-6 translate-y-6">
-                <motion.div
-                  initial={false}
-                  animate={{ scale: showPreview ? 1 : 0.6, opacity: showPreview ? 1 : 0 }}
-                  transition={SPRING}
-                  className="w-[300px] aspect-[4/3] rounded-2xl overflow-hidden bg-paper-pure shadow-[0_20px_60px_rgba(20,30,92,0.35)]"
-                >
-                  {hoveredProject?.thumb && (
-                    <img src={hoveredProject.thumb} alt="" className="w-full h-full object-cover" />
-                  )}
-                </motion.div>
-              </div>
-            </motion.div>
-          )}
         </ul>
       </div>
     </section>

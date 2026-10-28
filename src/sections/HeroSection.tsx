@@ -138,7 +138,7 @@ export default function HeroSection() {
             onClick={() => go('trabajos')}
             className="text-paper-pure font-medium text-sm sm:text-base underline underline-offset-[6px] decoration-paper-pure/40 hover:decoration-carne hover:text-carne transition-colors duration-200"
           >
-            Ver casos de estudio
+            Ver proyectos
           </button>
           <a
             href="/cv/Oscar-Diaz-CV-ES.pdf"
