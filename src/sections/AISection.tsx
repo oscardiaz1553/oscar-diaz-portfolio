@@ -1,9 +1,17 @@
 import FadeIn from '../components/FadeIn';
 import SectionHead from '../components/SectionHead';
 import SymbolField from '../components/SymbolField';
-import ClaudeMark, { ClaudeName } from '../components/ClaudeMark';
+import ToolLogo from '../components/ToolLogo';
+import type { ToolLogoName } from '../components/ToolLogo';
 
-const TOOLS = ['Claude', 'Claude Code', 'Gemini', 'ChatGPT', 'NotebookLM', 'Figma Make'];
+const TOOLS: { name: string; logo: ToolLogoName }[] = [
+  { name: 'Claude', logo: 'claude' },
+  { name: 'Claude Code', logo: 'claudecode' },
+  { name: 'Gemini', logo: 'gemini' },
+  { name: 'ChatGPT', logo: 'chatgpt' },
+  { name: 'NotebookLM', logo: 'notebooklm' },
+  { name: 'Figma Make', logo: 'figma' },
+];
 
 export default function AISection() {
   return (
@@ -27,9 +35,9 @@ export default function AISection() {
           onDark
           lead={
             <>
-              En mi flujo de trabajo incluyo agentes de inteligencia artificial, como <ClaudeName />, en el proceso de
-              diseño y en entregables que ayudan al equipo de desarrollo y a los product owners a tener más claridad
-              sobre los flujos y los productos.
+              En mi flujo de trabajo incluyo agentes de inteligencia artificial en el proceso de diseño y en entregables
+              que ayudan al equipo de desarrollo y a los product owners a tener más claridad sobre los flujos y los
+              productos.
             </>
           }
           className="mb-12 sm:mb-16 max-w-3xl"
@@ -45,24 +53,17 @@ export default function AISection() {
             <p className="text-carne font-medium text-xs sm:text-sm">
               Herramientas
             </p>
-            <p
-              className="mt-2 text-paper-pure font-medium"
-              style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.5rem)' }}
-            >
-              {TOOLS.map((tool, i) => (
-                <span key={tool}>
-                  {i > 0 && (
-                    <span aria-hidden className="mx-2">
-                      ·
-                    </span>
-                  )}
-                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-                    {tool.startsWith('Claude') && <ClaudeMark className="h-5 w-5 shrink-0" />}
-                    {tool}
-                  </span>
-                </span>
+            <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-3 text-paper-pure font-medium" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.3rem)' }}>
+              {TOOLS.map((tool) => (
+                <li
+                  key={tool.name}
+                  className="inline-flex items-center gap-2.5 rounded-full border border-paper-pure/15 bg-paper-pure/[0.06] pl-3.5 pr-4 py-2 whitespace-nowrap"
+                >
+                  <ToolLogo name={tool.logo} className="h-[1.15em] w-[1.15em] shrink-0" />
+                  {tool.name}
+                </li>
               ))}
-            </p>
+            </ul>
           </div>
         </FadeIn>
       </div>
