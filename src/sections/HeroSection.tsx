@@ -10,7 +10,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const MANGO = `${import.meta.env.BASE_URL}mango-hero.webp`;
 
 // El texto completo vive en un sr-only para lectores de pantalla y buscadores.
-const SR_HEADLINE = 'Oscar Díaz. Diseñador UX/UI Senior.';
+const SR_HEADLINE = 'Oscar Díaz. Diseñador UX/UI.';
 
 const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
@@ -109,7 +109,7 @@ export default function HeroSection() {
             className="block text-carne mt-2 sm:mt-3"
             style={{ fontSize: '0.62em', lineHeight: 1 }}
           >
-            Diseñador UX/UI Senior
+            Diseñador UX/UI
           </motion.span>
         </h1>
 
@@ -120,14 +120,6 @@ export default function HeroSection() {
           className="mt-6 sm:mt-7 max-w-[46ch] text-paper-pure/85 leading-relaxed text-base sm:text-lg"
         >
           Diseño plataformas enterprise para seguros, banca, logística e infraestructura pública.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.78, duration: 0.7 }}
-          className="mt-3 max-w-[46ch] text-paper-pure/70 leading-relaxed text-sm sm:text-base"
-        >
-          Desde junio de 2024 estoy en Sofka Technologies, donde también soy UX/UI Practice Lead.
         </motion.p>
 
         <motion.div
