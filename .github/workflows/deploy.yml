@@ -41,7 +41,7 @@ jobs:
 
       - name: Build
         run: npm run build
-        # Custom domain (oscardiaz.online) serves the site at the root,
+        # Custom domain (oscard.online) serves the site at the root,
         # so assets are built with base "/".
 
       - name: Upload artifact
