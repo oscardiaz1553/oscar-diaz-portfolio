@@ -319,7 +319,7 @@ export default function CaseStudyPage() {
   const hasBlocks = !!study.blocks && study.blocks.length > 0;
 
   return (
-    <div style={{ background: 'var(--bg)' }} className="overflow-x-clip">
+    <div style={{ background: 'var(--paper-pure)' }} className="overflow-x-clip">
       <Navbar variant="light" />
 
       {/* Hero */}

@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import type { CSSProperties } from 'react';
+import ImageLightbox from './ImageLightbox';
 
 interface ImagePlaceholderProps {
   src?: string;
@@ -38,17 +40,29 @@ export default function ImagePlaceholder({
   natural = false,
   maxHeight,
 }: ImagePlaceholderProps) {
+  const [zoom, setZoom] = useState(false);
+
   if (src) {
     // Frameless: the image is the element, no wrapper box, no mat, no border.
     if (natural) {
       return (
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          className={`block mx-auto max-w-full h-auto object-contain shadow-[0_35px_90px_-45px_rgba(0,0,0,0.4)] ${rounded} ${className}`}
-          style={{ maxHeight, ...style }}
-        />
+        <>
+          <button
+            type="button"
+            onClick={() => setZoom(true)}
+            aria-label={`Ampliar imagen${alt || label !== 'Imagen' ? `: ${alt || label}` : ''}`}
+            className="block mx-auto w-fit max-w-full cursor-zoom-in"
+          >
+            <img
+              src={src}
+              alt={alt}
+              loading="lazy"
+              className={`block max-w-full h-auto object-contain shadow-[0_35px_90px_-45px_rgba(0,0,0,0.4)] ${rounded} ${className}`}
+              style={{ maxHeight, ...style }}
+            />
+          </button>
+          <ImageLightbox src={src} alt={alt} open={zoom} onClose={() => setZoom(false)} />
+        </>
       );
     }
 
