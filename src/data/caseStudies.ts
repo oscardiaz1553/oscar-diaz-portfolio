@@ -78,6 +78,8 @@ export interface CaseStudy {
   thumb?: string;
   /** Una línea para las tarjetas de la home. */
   short?: string;
+  /** Sitio en vivo del proyecto, si existe: aparece como botón en la página. */
+  siteUrl?: string;
   /** true = lleva la etiqueta "New" (proyecto reciente). */
   isNew?: boolean;
   meta: MetaItem[];
@@ -112,6 +114,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     cardTitle: 'Diario Deportes: Rediseño y migración en vivo',
     tag: 'Proyecto propio, UX/UI y desarrollo web',
     short: 'Rediseño y migración en vivo de un diario con más de 47.000 notas.',
+    siteUrl: 'https://diariodeportes.com.co',
     isNew: true,
     heroImage: '/images/diario-deportes/hero.webp',
     thumb: '/images/diario-deportes/hero.webp',

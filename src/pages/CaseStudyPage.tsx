@@ -1,4 +1,6 @@
+import { ArrowUpRight } from 'lucide-react';
 import { useParams, Navigate } from 'react-router-dom';
+import AccentButton from '../components/AccentButton';
 import FadeIn from '../components/FadeIn';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -345,6 +347,14 @@ export default function CaseStudyPage() {
                 {study.subtitle}
               </p>
             </FadeIn>
+            {study.siteUrl && (
+              <FadeIn delay={0.25} y={20} className="mt-8">
+                <AccentButton href={study.siteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+                  Visitar {study.siteUrl.replace(/^https?:\/\//, '')}
+                  <ArrowUpRight aria-hidden className="h-4 w-4" />
+                </AccentButton>
+              </FadeIn>
+            )}
           </div>
           <FadeIn delay={0.2} y={30}>
             <ImagePlaceholder
