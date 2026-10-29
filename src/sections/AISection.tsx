@@ -18,7 +18,7 @@ export default function AISection() {
     <section
       id="ia"
       data-nav-bg="dark"
-      className="relative overflow-hidden bg-klein-deep text-paper-pure px-6 md:px-10 lg:px-16 py-16 sm:py-20 md:py-28"
+      className="relative overflow-hidden bg-klein text-paper-pure px-6 md:px-10 lg:px-16 py-16 sm:py-20 md:py-28"
     >
       <SymbolField
         color="#F5E3B3"
